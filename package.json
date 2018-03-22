@@ -1,0 +1,27 @@
+{
+  "name": "whare-hauora",
+  "version": "1.0.0",
+  "description": "Whare hauora app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhareHauora/App.git"
+  },
+  "author": "Manu Innovations",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WhareHauora/App/issues"
+  },
+  "homepage": "https://github.com/WhareHauora/App#readme",
+  "dependencies": {
+    "emotion": "^9.0.2",
+    "next": "^5.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
