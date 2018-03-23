@@ -185,10 +185,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("next/link");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Layouts__ = __webpack_require__("./components/Layouts.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__("firebase");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
 var _jsxFileName = '/Users/janietito/Documents/workspace/App/pages/index.js';
 
 
 
+
+
+var config = {
+  apiKey: "AIzaSyC9cQqCdDXyjjAmtK7MkZpU3617vixnL44",
+  authDomain: "whare-hauora-app-64525.firebaseapp.com",
+  databaseURL: "https://whare-hauora-app-64525.firebaseio.com",
+  projectId: "whare-hauora-app-64525",
+  storageBucket: "whare-hauora-app-64525.appspot.com",
+  messagingSenderId: "608987462417"
+};
+__WEBPACK_IMPORTED_MODULE_3_firebase__["initializeApp"](config);
+
+var messaging = __WEBPACK_IMPORTED_MODULE_3_firebase__["messaging"]();
+messaging.requestPermission().then(function () {
+  console.log('Have permission');
+}).catch(function (err) {
+  console.log('Error happened');
+});
 
 var Index = function Index() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -196,7 +216,7 @@ var Index = function Index() {
     {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 5
+        lineNumber: 28
       }
     },
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -204,7 +224,7 @@ var Index = function Index() {
       {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 6
+          lineNumber: 29
         }
       },
       'Welcome to our awesome app'
@@ -221,6 +241,13 @@ var Index = function Index() {
 
 module.exports = __webpack_require__("./pages/index.js");
 
+
+/***/ }),
+
+/***/ "firebase":
+/***/ (function(module, exports) {
+
+module.exports = require("firebase");
 
 /***/ }),
 
