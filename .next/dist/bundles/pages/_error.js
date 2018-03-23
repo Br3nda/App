@@ -72,17 +72,17 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "/Users/janietito/Documents/workspace/App/node_modules/next/dist/pages/_error.js":
+/***/ "/home/juliet/App/node_modules/next/dist/pages/_error.js":
 /***/ (function(module, exports) {
 
-module.exports = require("/Users/janietito/Documents/workspace/App/node_modules/next/dist/pages/_error.js");
+module.exports = require("/home/juliet/App/node_modules/next/dist/pages/_error.js");
 
 /***/ }),
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("/Users/janietito/Documents/workspace/App/node_modules/next/dist/pages/_error.js");
+module.exports = __webpack_require__("/home/juliet/App/node_modules/next/dist/pages/_error.js");
 
 
 /***/ })

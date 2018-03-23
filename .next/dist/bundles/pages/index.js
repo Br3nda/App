@@ -80,7 +80,7 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("next/link");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
-var _jsxFileName = '/Users/janietito/Documents/workspace/App/components/Header.js';
+var _jsxFileName = '/home/juliet/App/components/Header.js';
 
 
 
@@ -143,7 +143,7 @@ var Header = function Header() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header__ = __webpack_require__("./components/Header.js");
-var _jsxFileName = '/Users/janietito/Documents/workspace/App/components/Layouts.js';
+var _jsxFileName = '/home/juliet/App/components/Layouts.js';
 
 
 
@@ -175,6 +175,27 @@ var Layouts = function Layouts(props) {
 
 /***/ }),
 
+/***/ "./firebase.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__("firebase");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
+
+
+var config = {
+  apiKey: 'AIzaSyC9cQqCdDXyjjAmtK7MkZpU3617vixnL44',
+  authDomain: 'whare-hauora-app-64525.firebaseapp.com',
+  databaseURL: 'https://whare-hauora-app-64525.firebaseio.com',
+  projectId: 'whare-hauora-app-64525',
+  storageBucket: 'whare-hauora-app-64525.appspot.com',
+  messagingSenderId: '608987462417'
+};
+console.log('firebase apps', __WEBPACK_IMPORTED_MODULE_0_firebase__["apps"]);
+/* harmony default export */ __webpack_exports__["a"] = (!__WEBPACK_IMPORTED_MODULE_0_firebase__["apps"].length ? __WEBPACK_IMPORTED_MODULE_0_firebase__["initializeApp"](config) : __WEBPACK_IMPORTED_MODULE_0_firebase__);
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -182,28 +203,18 @@ var Layouts = function Layouts(props) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("next/link");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Layouts__ = __webpack_require__("./components/Layouts.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__("firebase");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
-var _jsxFileName = '/Users/janietito/Documents/workspace/App/pages/index.js';
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Layouts__ = __webpack_require__("./components/Layouts.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_head__ = __webpack_require__("next/head");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_head__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__firebase__ = __webpack_require__("./firebase.js");
+var _jsxFileName = '/home/juliet/App/pages/index.js';
 
 
 
 
 
-var config = {
-  apiKey: "AIzaSyC9cQqCdDXyjjAmtK7MkZpU3617vixnL44",
-  authDomain: "whare-hauora-app-64525.firebaseapp.com",
-  databaseURL: "https://whare-hauora-app-64525.firebaseio.com",
-  projectId: "whare-hauora-app-64525",
-  storageBucket: "whare-hauora-app-64525.appspot.com",
-  messagingSenderId: "608987462417"
-};
-__WEBPACK_IMPORTED_MODULE_3_firebase__["initializeApp"](config);
-
-var messaging = __WEBPACK_IMPORTED_MODULE_3_firebase__["messaging"]();
+console.log('firebase name is ', __WEBPACK_IMPORTED_MODULE_3__firebase__["a" /* default */].name);
+var messaging = __WEBPACK_IMPORTED_MODULE_3__firebase__["a" /* default */].messaging();
 messaging.requestPermission().then(function () {
   console.log('Have permission');
 }).catch(function (err) {
@@ -212,22 +223,46 @@ messaging.requestPermission().then(function () {
 
 var Index = function Index() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    __WEBPACK_IMPORTED_MODULE_2__components_Layouts__["a" /* default */],
+    'div',
     {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 16
       }
     },
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'p',
+      __WEBPACK_IMPORTED_MODULE_2_next_head___default.a,
       {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 17
         }
       },
-      'Welcome to our awesome app'
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { rel: 'manifest', href: 'static/manifest.json', __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        }
+      }),
+      ' '
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      __WEBPACK_IMPORTED_MODULE_1__components_Layouts__["a" /* default */],
+      {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        }
+      },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'p',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19
+          }
+        },
+        'Welcome to our awesome app'
+      )
     )
   );
 };
@@ -248,6 +283,13 @@ module.exports = __webpack_require__("./pages/index.js");
 /***/ (function(module, exports) {
 
 module.exports = require("firebase");
+
+/***/ }),
+
+/***/ "next/head":
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ }),
 
