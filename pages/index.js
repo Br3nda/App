@@ -3,7 +3,9 @@ import Head from 'next/head'
 
 const Index = () => (
   <div>
-    <Head><link rel='manifest' href='static/manifest.json' /> </Head>
+    <Head>
+      <link rel='manifest' href='static/manifest.json' />
+    </Head>
     <Layouts>
       <p>Welcome to our awesome app</p>
     </Layouts>
