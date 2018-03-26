@@ -9,11 +9,11 @@ const style = {
 
 class Layouts extends React.Component {
   componentDidMount () {
-    if ('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator && 'PushManager' in window) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js').then(registration => {
           console.log('SW registered: ', registration)
-          Notification.requestPermission().then(function(result) {
+          Notification.requestPermission().then(function (result) {
             console.log(result)
           })
         }).catch(registrationError => {
@@ -23,7 +23,7 @@ class Layouts extends React.Component {
     }
   }
 
-  render() {
+  render () {
     return (
       <div style={style}>
         <Head>
