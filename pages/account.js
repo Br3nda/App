@@ -1,16 +1,16 @@
 import Layouts from '../components/Layouts'
-import Login from '../components/Login'
+import Dashboard from '../components/Dashboard'
 import Head from 'next/head'
 
-const Index = () => (
+const Account = () => (
   <div>
     <Head>
       <link rel='manifest' href ='static/manifest.json' />
     </Head>
     <Layouts>
-      <Login />
+      <Dashboard />
     </Layouts>
   </div>
 )
 
-export default Index
+export default Account

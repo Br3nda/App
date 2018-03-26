@@ -1,11 +1,8 @@
 import Header from './Header'
-import Login from './Login'
-
 
 const Layouts = (props) => (
   <div>
     <Header />
-    <Login />
     {props.children}
     <style jsx global>{`
       /* /////////////////////////////////
@@ -1190,7 +1187,7 @@ const Layouts = (props) => (
           width: 174px;
           height: 17px;
           margin: 0 auto 18px;
-          background: transparent url("../img/logo-sm.svg") no-repeat left top;
+          background: transparent url("../static/img/logo-sm.svg") no-repeat left top;
         }
         body.pre-log .header .btn {
           margin: 24px auto;
@@ -1852,7 +1849,7 @@ const Layouts = (props) => (
       	Temperature Scale
       ///////////////////////////////// */
       .reading.temp-high-2b .vis {
-        background: #e38e14 url("../img/scale/temp-high-2b.svg") no-repeat center center;
+        background: #e38e14 url("../static/img/scale/temp-high-2b.svg") no-repeat center center;
       }
 
       .reading.temp-high-2b .value {
@@ -1860,7 +1857,7 @@ const Layouts = (props) => (
       }
 
       .reading.temp-high-2a .vis {
-        background: #e38e14 url("../img/scale/temp-high-2a.svg") no-repeat center center;
+        background: #e38e14 url("../static/img/scale/temp-high-2a.svg") no-repeat center center;
       }
 
       .reading.temp-high-2a .value {
@@ -1868,7 +1865,7 @@ const Layouts = (props) => (
       }
 
       .reading.temp-high-1b .vis {
-        background: #e0b50a url("../img/scale/temp-high-1b.svg") no-repeat center center;
+        background: #e0b50a url("../static/img/scale/temp-high-1b.svg") no-repeat center center;
       }
 
       .reading.temp-high-1b .value {
@@ -1876,7 +1873,7 @@ const Layouts = (props) => (
       }
 
       .reading.temp-high-1a .vis {
-        background: #e0b50a url("../img/scale/temp-high-1a.svg") no-repeat center center;
+        background: #e0b50a url("../static/img/scale/temp-high-1a.svg") no-repeat center center;
       }
 
       .reading.temp-high-1a .value {
@@ -1884,7 +1881,7 @@ const Layouts = (props) => (
       }
 
       .reading.temp-mid-b .vis {
-        background: #4d9d2e url("../img/scale/temp-mid-b.svg") no-repeat center center;
+        background: #4d9d2e url("../static/img/scale/temp-mid-b.svg") no-repeat center center;
       }
 
       .reading.temp-mid-b .value {
@@ -1892,7 +1889,7 @@ const Layouts = (props) => (
       }
 
       .reading.temp-mid-a .vis {
-        background: #4d9d2e url("../img/scale/temp-mid-a.svg") no-repeat center center;
+        background: #4d9d2e url("../static/img/scale/temp-mid-a.svg") no-repeat center center;
       }
 
       .reading.temp-mid-a .value {
@@ -1900,7 +1897,7 @@ const Layouts = (props) => (
       }
 
       .reading.temp-low-1a .vis {
-        background: #2d8d73 url("../img/scale/temp-low-1a.svg") no-repeat center center;
+        background: #2d8d73 url("../static/img/scale/temp-low-1a.svg") no-repeat center center;
       }
 
       .reading.temp-low-1a .value {
@@ -1908,7 +1905,7 @@ const Layouts = (props) => (
       }
 
       .reading.temp-low-1b .vis {
-        background: #2d8d73 url("../img/scale/temp-low-1b.svg") no-repeat center center;
+        background: #2d8d73 url("../static/img/scale/temp-low-1b.svg") no-repeat center center;
       }
 
       .reading.temp-low-1b .value {
@@ -1916,7 +1913,7 @@ const Layouts = (props) => (
       }
 
       .reading.temp-low-2a .vis {
-        background: #356bb5 url("../img/scale/temp-low-2a.svg") no-repeat center center;
+        background: #356bb5 url("../static/img/scale/temp-low-2a.svg") no-repeat center center;
       }
 
       .reading.temp-low-2a .value {
@@ -1924,7 +1921,7 @@ const Layouts = (props) => (
       }
 
       .reading.temp-low-2b .vis {
-        background: #356bb5 url("../img/scale/temp-low-2b.svg") no-repeat center center;
+        background: #356bb5 url("../static/img/scale/temp-low-2b.svg") no-repeat center center;
       }
 
       .reading.temp-low-2b .value {
@@ -1935,7 +1932,7 @@ const Layouts = (props) => (
       	Humidity Scale
       ///////////////////////////////// */
       .reading.hum-high-2b .vis {
-        background: #13a3bd url("../img/scale/hum-high-2b.svg") no-repeat center center;
+        background: #13a3bd url("../static/img/scale/hum-high-2b.svg") no-repeat center center;
       }
 
       .reading.hum-high-2b .value {
@@ -1943,7 +1940,7 @@ const Layouts = (props) => (
       }
 
       .reading.hum-high-2a .vis {
-        background: #13a3bd url("../img/scale/hum-high-2a.svg") no-repeat center center;
+        background: #13a3bd url("../static/img/scale/hum-high-2a.svg") no-repeat center center;
       }
 
       .reading.hum-high-2a .value {
@@ -1951,7 +1948,7 @@ const Layouts = (props) => (
       }
 
       .reading.hum-high-1b .vis {
-        background: #30a076 url("../img/scale/hum-high-1b.svg") no-repeat center center;
+        background: #30a076 url("../static/img/scale/hum-high-1b.svg") no-repeat center center;
       }
 
       .reading.hum-high-1b .value {
@@ -1959,7 +1956,7 @@ const Layouts = (props) => (
       }
 
       .reading.hum-high-1a .vis {
-        background: #30a076 url("../img/scale/hum-high-1a.svg") no-repeat center center;
+        background: #30a076 url("../static/img/scale/hum-high-1a.svg") no-repeat center center;
       }
 
       .reading.hum-high-1a .value {
@@ -1967,7 +1964,7 @@ const Layouts = (props) => (
       }
 
       .reading.hum-mid-b .vis {
-        background: #4d9d2e url("../img/scale/hum-mid-b.svg") no-repeat center center;
+        background: #4d9d2e url("../static/img/scale/hum-mid-b.svg") no-repeat center center;
       }
 
       .reading.hum-mid-b .value {
@@ -1975,7 +1972,7 @@ const Layouts = (props) => (
       }
 
       .reading.hum-mid-a .vis {
-        background: #4d9d2e url("../img/scale/hum-mid-a.svg") no-repeat center center;
+        background: #4d9d2e url("../static/img/scale/hum-mid-a.svg") no-repeat center center;
       }
 
       .reading.hum-mid-a .value {
@@ -1986,7 +1983,7 @@ const Layouts = (props) => (
       	Dewpoint Scale
       ///////////////////////////////// */
       .reading.dew-high-2 .vis {
-        background: #13a3bd url("../img/scale/dew-high-2.svg") no-repeat center calc(50% - 1px);
+        background: #13a3bd url("../static/img/scale/dew-high-2.svg") no-repeat center calc(50% - 1px);
       }
 
       .reading.dew-high-2 .value {
@@ -1994,7 +1991,7 @@ const Layouts = (props) => (
       }
 
       .reading.dew-high-1 .vis {
-        background: #30a076 url("../img/scale/dew-high-1.svg") no-repeat center calc(50% - 1px);
+        background: #30a076 url("../static/img/scale/dew-high-1.svg") no-repeat center calc(50% - 1px);
       }
 
       .reading.dew-high-1 .value {
@@ -2002,7 +1999,7 @@ const Layouts = (props) => (
       }
 
       .reading.dew-mid .vis {
-        background: #4d9d2e url("../img/scale/dew-mid.svg") no-repeat center calc(50% - 1px);
+        background: #4d9d2e url("../static/img/scale/dew-mid.svg") no-repeat center calc(50% - 1px);
       }
 
       .reading.dew-mid .value {
@@ -2484,7 +2481,7 @@ const Layouts = (props) => (
       }
 
       .card.report .report-card.grade-high ul.check li.bullet {
-        background-image: url("../img/bullet-high.svg");
+        background-image: url("../static/img/bullet-high.svg");
       }
 
       .card.report .report-card.grade-mid {
@@ -2497,7 +2494,7 @@ const Layouts = (props) => (
       }
 
       .card.report .report-card.grade-mid ul.check li.bullet {
-        background-image: url("../img/bullet-mid.svg");
+        background-image: url("../static/img/bullet-mid.svg");
       }
 
       .card.report .report-card.grade-low {
@@ -2510,7 +2507,7 @@ const Layouts = (props) => (
       }
 
       .card.report .report-card.grade-low ul.check li.bullet {
-        background-image: url("../img/bullet-low.svg");
+        background-image: url("../static/img/bullet-low.svg");
       }
 
       .card.report .report-card.expired {
@@ -2644,7 +2641,7 @@ const Layouts = (props) => (
 
       .card.alert > header {
         padding-left: 54px;
-        background: transparent url("../img/icon/alert.svg") no-repeat 12px 24px;
+        background: transparent url("../static/img/icon/alert.svg") no-repeat 12px 24px;
       }
 
       .card.alert > header h2 {
@@ -2675,7 +2672,7 @@ const Layouts = (props) => (
       }
 
       .card.alert.health-alert > header {
-        background-image: url("../img/icon/health.svg");
+        background-image: url("../static/img/icon/health.svg");
       }
 
       @media (min-width: 1200px) and (max-width: 1365px) {
@@ -2996,7 +2993,7 @@ const Layouts = (props) => (
       }
 
       .icheckbox {
-        background: rgba(248, 247, 246, 0.5) url("../img/icon/input-checkbox.svg") no-repeat 6px -48px;
+        background: rgba(248, 247, 246, 0.5) url("../static/img/icon/input-checkbox.svg") no-repeat 6px -48px;
       }
 
       .icheckbox.hover {
@@ -3021,7 +3018,7 @@ const Layouts = (props) => (
       }
 
       .iradio {
-        background: rgba(248, 247, 246, 0.5) url("../img/icon/input-radio.svg") no-repeat 9px -47px;
+        background: rgba(248, 247, 246, 0.5) url("../static/img/icon/input-radio.svg") no-repeat 9px -47px;
       }
 
       .iradio.hover {
@@ -4473,7 +4470,7 @@ const Layouts = (props) => (
       ///////////////////////////////// */
       .modal.alert > header {
         padding-left: 54px;
-        background: transparent url("../img/icon/alert.svg") no-repeat 12px 24px;
+        background: transparent url("../static/img/icon/alert.svg") no-repeat 12px 24px;
       }
 
       .modal.alert > header h2 {

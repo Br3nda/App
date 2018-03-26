@@ -1,5 +1,7 @@
+import Layouts from './Layouts'
 
 const Login = (props) => (
+  <Layouts>
   <div className="content">
     <div className="center">
       <header className="header">
@@ -32,6 +34,7 @@ const Login = (props) => (
       </section>
     </div>
   </div>
+  </Layouts>
 )
 
 export default Login

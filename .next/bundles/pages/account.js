@@ -1,8 +1,1051 @@
 module.exports =
 
-        __NEXT_REGISTER_PAGE('/', function() {
+        __NEXT_REGISTER_PAGE('/account', function() {
           var comp = 
-      webpackJsonp([4],{
+      webpackJsonp([5],{
+
+/***/ "./components/Dashboard.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _jsxFileName = "/Users/janietito/Documents/workspace/App/components/Dashboard.js";
+
+
+(function () {
+  var enterModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").enterModule;
+
+  enterModule && enterModule(module);
+})();
+
+var Dashboard = function Dashboard(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    "div",
+    {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 3
+      }
+    },
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "header",
+      { className: "header", __source: {
+          fileName: _jsxFileName,
+          lineNumber: 4
+        }
+      },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "a",
+        { className: "logo-sm", href: "./", __source: {
+            fileName: _jsxFileName,
+            lineNumber: 5
+          }
+        },
+        "Whare Hauora"
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "a",
+        { className: "open-menu", href: "#", __source: {
+            fileName: _jsxFileName,
+            lineNumber: 6
+          }
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "span",
+          { className: "label", __source: {
+              fileName: _jsxFileName,
+              lineNumber: 6
+            }
+          },
+          "Menu"
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { className: "svg", src: "../static/img/icon/menu.svg", alt: "menu", __source: {
+            fileName: _jsxFileName,
+            lineNumber: 6
+          }
+        })
+      )
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "overlay", __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8
+      }
+    }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "nav",
+      { className: "menu", __source: {
+          fileName: _jsxFileName,
+          lineNumber: 9
+        }
+      },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "header",
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 10
+          }
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "a",
+          { className: "logo", href: "./", __source: {
+              fileName: _jsxFileName,
+              lineNumber: 11
+            }
+          },
+          "Whare Hauora"
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "h6",
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 12
+            }
+          },
+          "Menu"
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "a",
+          { className: "x", href: "#", __source: {
+              fileName: _jsxFileName,
+              lineNumber: 13
+            }
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { className: "svg", src: "../static/img/icon/x.svg", alt: "close", __source: {
+              fileName: _jsxFileName,
+              lineNumber: 13
+            }
+          })
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "div",
+        { className: "nav", __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15
+          }
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "ul",
+          { className: "nav-links", __source: {
+              fileName: _jsxFileName,
+              lineNumber: 16
+            }
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "li",
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 17
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "a",
+              { className: "current", href: "./dashboard.html", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 17
+                }
+              },
+              "Dashboard"
+            )
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "h6",
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 19
+            }
+          },
+          "Rooms"
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "ul",
+          { className: "nav-links", __source: {
+              fileName: _jsxFileName,
+              lineNumber: 20
+            }
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "li",
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 21
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "a",
+              { href: "./room-detail1.html", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 21
+                }
+              },
+              "Living Room"
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "li",
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 22
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "a",
+              { href: "./room-detail2.html", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 22
+                }
+              },
+              "Master Bedroom"
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "li",
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 23
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "a",
+              { href: "./room-detail3.html", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 23
+                }
+              },
+              "Kids Room"
+            )
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "h6",
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 25
+            }
+          },
+          "Setup"
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "ul",
+          { className: "nav-links", __source: {
+              fileName: _jsxFileName,
+              lineNumber: 26
+            }
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "li",
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 27
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "a",
+              { href: "./rooms.html", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 27
+                }
+              },
+              "Whare & Rooms"
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "li",
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 28
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "a",
+              { href: "./whanau.html", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 28
+                }
+              },
+              "Wh\u0101nau"
+            )
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "h6",
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 30
+            }
+          },
+          "Account"
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "ul",
+          { className: "nav-links", __source: {
+              fileName: _jsxFileName,
+              lineNumber: 31
+            }
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "li",
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 32
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "a",
+              { href: "./account.html", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 32
+                }
+              },
+              "My Account"
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "li",
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 33
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "a",
+              { href: "./help.html", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 33
+                }
+              },
+              "Help"
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "li",
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 34
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "a",
+              { href: "#", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 34
+                }
+              },
+              "Logout"
+            )
+          )
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "footer",
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37
+          }
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "select",
+          { className: "lang-picker", __source: {
+              fileName: _jsxFileName,
+              lineNumber: 38
+            }
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "option",
+            { value: "English", "data-iconurl": "/img/icon/lang-eng.svg", selected: true, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 39
+              }
+            },
+            "English"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "option",
+            { value: "Te Reo M\u0101ori", "data-iconurl": "/img/icon/lang-mri.svg", __source: {
+                fileName: _jsxFileName,
+                lineNumber: 40
+              }
+            },
+            "Te Reo M\u0101ori"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "option",
+            { value: "Samoan", "data-iconurl": "/img/icon/lang-smo.svg", __source: {
+                fileName: _jsxFileName,
+                lineNumber: 41
+              }
+            },
+            "Samoan"
+          )
+        )
+      )
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "div",
+      { className: "content", __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        }
+      },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "div",
+        { className: "center", __source: {
+            fileName: _jsxFileName,
+            lineNumber: 46
+          }
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "h1",
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 47
+            }
+          },
+          "Lisefski House"
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "div",
+          { className: "summary-grid", __source: {
+              fileName: _jsxFileName,
+              lineNumber: 48
+            }
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "section",
+            { className: "card summary", __source: {
+                fileName: _jsxFileName,
+                lineNumber: 49
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "header",
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 50
+                }
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "h2",
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 51
+                  }
+                },
+                "Living Room"
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "h4",
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 52
+                  }
+                },
+                "Living Space"
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "a",
+                { className: "head-action", href: "#", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 53
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { className: "svg", src: "../static/img/icon/edit.svg", alt: "edit", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 53
+                  }
+                })
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "div",
+              { className: "readings", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 55
+                }
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "reading temp-low-1a", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 56
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "vis", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 57
+                    }
+                  },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", { className: "loader", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 57
+                    }
+                  })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "value", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 58
+                    }
+                  },
+                  "17.3\xB0C"
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "label", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 59
+                    }
+                  },
+                  "Temperature"
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "time", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 60
+                    }
+                  },
+                  "5 minutes ago"
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "reading hum-mid-a", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 62
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "vis", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 63
+                    }
+                  },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", { className: "loader", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 63
+                    }
+                  })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "value", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 64
+                    }
+                  },
+                  "31.6%"
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "label", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 65
+                    }
+                  },
+                  "Humidity"
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "time", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 66
+                    }
+                  },
+                  "5 minutes ago"
+                )
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "footer",
+              { className: "grade-high", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 69
+                }
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "p",
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 70
+                  }
+                },
+                "Slightly too cool, but otherwise healthy."
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "a",
+                { className: "btn", href: "room-detail1.html", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 71
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { className: "svg", src: "../static/img/icon/btn-analyse.svg", alt: "icon", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 71
+                  }
+                }),
+                "Analyse"
+              )
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "section",
+            { className: "card summary", __source: {
+                fileName: _jsxFileName,
+                lineNumber: 74
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "header",
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 75
+                }
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "h2",
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 76
+                  }
+                },
+                "Master Bedroom"
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "h4",
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 77
+                  }
+                },
+                "Sleeping / Bedroom"
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "a",
+                { className: "head-action", href: "#", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 78
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { className: "svg", src: "../static/img/icon/edit.svg", alt: "edit", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 78
+                  }
+                })
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "div",
+              { className: "readings", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 80
+                }
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "reading temp-high-2a", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 81
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "vis", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 82
+                    }
+                  },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", { className: "loader", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 82
+                    }
+                  })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "value", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 83
+                    }
+                  },
+                  "27.0\xB0C"
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "label", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 84
+                    }
+                  },
+                  "Temperature"
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "time", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 85
+                    }
+                  },
+                  "5 minutes ago"
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "reading hum-high-2a", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 87
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "vis", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 88
+                    }
+                  },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", { className: "loader", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 88
+                    }
+                  })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "value", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 89
+                    }
+                  },
+                  "80.6%"
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "label", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 90
+                    }
+                  },
+                  "Humidity"
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "time", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 91
+                    }
+                  },
+                  "5 minutes ago"
+                )
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "footer",
+              { className: "grade-mid", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 94
+                }
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "p",
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 95
+                  }
+                },
+                "Too hot and humid for sleeping.",
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 96
+                  }
+                }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "a",
+                  { className: "underline", href: "#", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 96
+                    }
+                  },
+                  "Learn how to fix this"
+                ),
+                "."
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "a",
+                { className: "btn", href: "room-detail2.html", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 97
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { className: "svg", src: "../static/img/icon/btn-analyse.svg", alt: "icon", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 97
+                  }
+                }),
+                "Analyse"
+              )
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "section",
+            { className: "card summary", __source: {
+                fileName: _jsxFileName,
+                lineNumber: 100
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "header",
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 101
+                }
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "h2",
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 102
+                  }
+                },
+                "Kid\u2019s Room"
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "h4",
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 103
+                  }
+                },
+                "Sleeping / Bedroom"
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "a",
+                { className: "head-action", href: "#", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 104
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { className: "svg", src: "../static/img/icon/edit.svg", alt: "edit", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 104
+                  }
+                })
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "div",
+              { className: "readings", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 106
+                }
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "reading temp-low-2a", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 107
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "vis", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 108
+                    }
+                  },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", { className: "loader", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 108
+                    }
+                  })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "value", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 109
+                    }
+                  },
+                  "15.9\xB0C"
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "label", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 110
+                    }
+                  },
+                  "Temperature"
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "time", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 111
+                    }
+                  },
+                  "5 minutes ago"
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "reading hum-mid-a", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 113
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "vis", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 114
+                    }
+                  },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", { className: "loader", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 114
+                    }
+                  })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "value", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 115
+                    }
+                  },
+                  "34.5%"
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "label", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 116
+                    }
+                  },
+                  "Humidity"
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "span",
+                  { className: "time", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 117
+                    }
+                  },
+                  "5 minutes ago"
+                )
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "footer",
+              { className: "grade-low", __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 120
+                }
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "p",
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 121
+                  }
+                },
+                "Too cold for children to be sleeping.",
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 122
+                  }
+                }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  "a",
+                  { className: "underline", href: "#", __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 122
+                    }
+                  },
+                  "Learn how to fix this"
+                ),
+                "."
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "a",
+                { className: "btn", href: "room-detail3.html", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 123
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { className: "svg", src: "../static/img/icon/btn-analyse.svg", alt: "icon", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 123
+                  }
+                }),
+                "Analyse"
+              )
+            )
+          )
+        )
+      )
+    )
+  );
+};
+
+var _default = Dashboard;
+/* harmony default export */ __webpack_exports__["a"] = (_default);
+;
+
+(function () {
+  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/patch.js").default;
+
+  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").leaveModule;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(Dashboard, "Dashboard", "/Users/janietito/Documents/workspace/App/components/Dashboard.js");
+  reactHotLoader.register(_default, "default", "/Users/janietito/Documents/workspace/App/components/Dashboard.js");
+  leaveModule(module);
+})();
+
+;
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
 
 /***/ "./components/Header.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -154,258 +1197,6 @@ var _default = Layouts;
 
   reactHotLoader.register(Layouts, 'Layouts', '/Users/janietito/Documents/workspace/App/components/Layouts.js');
   reactHotLoader.register(_default, 'default', '/Users/janietito/Documents/workspace/App/components/Layouts.js');
-  leaveModule(module);
-})();
-
-;
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
-
-/***/ }),
-
-/***/ "./components/Login.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Layouts__ = __webpack_require__("./components/Layouts.js");
-var _jsxFileName = "/Users/janietito/Documents/workspace/App/components/Login.js";
-
-
-(function () {
-  var enterModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").enterModule;
-
-  enterModule && enterModule(module);
-})();
-
-
-
-var Login = function Login(props) {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    __WEBPACK_IMPORTED_MODULE_1__Layouts__["a" /* default */],
-    {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 4
-      }
-    },
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      "div",
-      { className: "content", __source: {
-          fileName: _jsxFileName,
-          lineNumber: 5
-        }
-      },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "div",
-        { className: "center", __source: {
-            fileName: _jsxFileName,
-            lineNumber: 6
-          }
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "header",
-          { className: "header", __source: {
-              fileName: _jsxFileName,
-              lineNumber: 7
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "a",
-            { className: "logo", href: "./", __source: {
-                fileName: _jsxFileName,
-                lineNumber: 8
-              }
-            },
-            "Whare Hauora"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "h1",
-            { className: "lg", __source: {
-                fileName: _jsxFileName,
-                lineNumber: 9
-              }
-            },
-            "Kia ora"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "h4",
-            { className: "lg", __source: {
-                fileName: _jsxFileName,
-                lineNumber: 10
-              }
-            },
-            "Login to start using Whare Hauora"
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "section",
-          { className: "card pre-log", __source: {
-              fileName: _jsxFileName,
-              lineNumber: 12
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "img", __source: {
-              fileName: _jsxFileName,
-              lineNumber: 13
-            }
-          }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "div",
-            { className: "text", __source: {
-                fileName: _jsxFileName,
-                lineNumber: 14
-              }
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "h2",
-              { className: "secondary", __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 15
-                }
-              },
-              "Login"
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "ul",
-              { className: "form-row", __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 16
-                }
-              },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "li",
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 17
-                  }
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  "label",
-                  {
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 18
-                    }
-                  },
-                  "Email Address"
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "text", __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 19
-                  }
-                })
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "li",
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 21
-                  }
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  "label",
-                  {
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 22
-                    }
-                  },
-                  "Password"
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "password", __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 23
-                  }
-                })
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "li",
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 25
-                  }
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  "a",
-                  { className: "btn submit", href: "#", __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 26
-                    }
-                  },
-                  "Login"
-                )
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "footer",
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 29
-                }
-              },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "p",
-                { className: "left", __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 30
-                  }
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  "a",
-                  { href: "./forgot-password.html", className: "underline", __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 30
-                    }
-                  },
-                  "Forgot password?"
-                )
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "p",
-                { className: "right", __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 31
-                  }
-                },
-                "Don\u2019t have an account? ",
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  "a",
-                  { href: "./sign-up.html", className: "underline", __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 31
-                    }
-                  },
-                  "Sign up"
-                )
-              )
-            )
-          )
-        )
-      )
-    )
-  );
-};
-
-var _default = Login;
-/* harmony default export */ __webpack_exports__["a"] = (_default);
-;
-
-(function () {
-  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/patch.js").default;
-
-  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").leaveModule;
-
-  if (!reactHotLoader) {
-    return;
-  }
-
-  reactHotLoader.register(Login, "Login", "/Users/janietito/Documents/workspace/App/components/Login.js");
-  reactHotLoader.register(_default, "default", "/Users/janietito/Documents/workspace/App/components/Login.js");
   leaveModule(module);
 })();
 
@@ -11985,7 +12776,7 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/index.js":
+/***/ "./pages/account.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11993,10 +12784,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Layouts__ = __webpack_require__("./components/Layouts.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Login__ = __webpack_require__("./components/Login.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Dashboard__ = __webpack_require__("./components/Dashboard.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_head__ = __webpack_require__("./node_modules/next/head.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_head__);
-var _jsxFileName = '/Users/janietito/Documents/workspace/App/pages/index.js';
+var _jsxFileName = '/Users/janietito/Documents/workspace/App/pages/account.js';
 
 
 (function () {
@@ -12009,7 +12800,7 @@ var _jsxFileName = '/Users/janietito/Documents/workspace/App/pages/index.js';
 
 
 
-var Index = function Index() {
+var Account = function Account() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'div',
     {
@@ -12040,7 +12831,7 @@ var Index = function Index() {
           lineNumber: 10
         }
       },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_Login__["a" /* default */], {
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_Dashboard__["a" /* default */], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 11
@@ -12050,7 +12841,7 @@ var Index = function Index() {
   );
 };
 
-var _default = Index;
+var _default = Account;
 /* harmony default export */ __webpack_exports__["default"] = (_default);
 ;
 
@@ -12063,8 +12854,8 @@ var _default = Index;
     return;
   }
 
-  reactHotLoader.register(Index, 'Index', '/Users/janietito/Documents/workspace/App/pages/index.js');
-  reactHotLoader.register(_default, 'default', '/Users/janietito/Documents/workspace/App/pages/index.js');
+  reactHotLoader.register(Account, 'Account', '/Users/janietito/Documents/workspace/App/pages/account.js');
+  reactHotLoader.register(_default, 'default', '/Users/janietito/Documents/workspace/App/pages/account.js');
   leaveModule(module);
 })();
 
@@ -12085,22 +12876,22 @@ var _default = Index;
           next.router.update(r, Component)
         }
       }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/")
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/account")
   
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./pages/index.js");
+module.exports = __webpack_require__("./pages/account.js");
 
 
 /***/ })
 
-},[2])
+},[3])
           return { page: comp.default }
         })
       ;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=account.js.map
