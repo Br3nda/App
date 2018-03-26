@@ -1,4 +1,3 @@
-import Header from './Header'
 
 class Layouts extends React.Component {
   componentDidMount () {
@@ -19,7 +18,6 @@ class Layouts extends React.Component {
   render () {
     return (
       <div>
-        <Header />
         {this.props.children}
         <style jsx global>{`
           /* /////////////////////////////////
@@ -5128,3 +5126,5 @@ class Layouts extends React.Component {
     )
   }
 }
+
+export default Layouts

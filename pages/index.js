@@ -2,7 +2,7 @@ import Layouts from '../components/Layouts'
 import Login from '../components/Login'
 import Head from 'next/head'
 
-const Index = () => (
+const Index = (props) => (
   <div>
     <Head>
       <link rel='manifest' href='static/manifest.json' />
