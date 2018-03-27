@@ -19,11 +19,11 @@ const port = process.env.PORT || 3000
 
 const URL_MAP = {
   '/index': '/index'
-};
+}
 
 const testData = {
-  title: "Testing",
-  body: "It's a success!"
+  title: 'Testing',
+  body: 'Its a success!'
 }
 
 app.prepare().then(() => {
@@ -36,33 +36,32 @@ app.prepare().then(() => {
 
 // give all Nextjs's request to Nextjs before anything else
   server.get('/_next/*', (req, res) => {
-    handle(req, res);
-  });
+    handle(req, res)
+  })
 
   server.get('/static/*', (req, res) => {
     handle(req, res)
-  });
+  })
 
   server.get('*', (req, res) => {
-    const url = URL_MAP[req.path];
+    const url = URL_MAP[req.path]
     if (url) {
-      app.render(req, res, url);
+      app.render(req, res, url)
     } else {
-      handle(req, res);
+      handle(req, res)
     }
-  });
-
+  })
 
   webpush.setVapidDetails(
-  "mailto:meghan@manu.net.nz",
+  'mailto:meghan@manu.net.nz',
   process.env.PUBLIC_VAPID_KEY,
   process.env.PRIVATE_VAPID_KEY
-  )
+)
 
   let subscription
   let pushIntervalID
 
-  router.post('/index', (req, res, next) => {
+  router.post('/register', (req, res, next) => {
     subscription = req.body
     console.log(subscription)
     res.sendStatus(201)
@@ -71,15 +70,15 @@ app.prepare().then(() => {
       webpush.sendNotification(subscription, JSON.stringify(testData))
         .catch(() => clearInterval(pushIntervalID))
     }, 30000)
-  }),
+  })
 
   router.delete('/unregister', (req, res, next) => {
     subscription = null
     clearInterval(pushIntervalID)
     res.sendStatus(200)
-  }),
+  })
 
-  server.use(bodyParser.json()),
+  server.use(bodyParser.json())
 
   server.listen(port)
 })
