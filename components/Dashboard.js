@@ -1,3 +1,13 @@
+const styles = {
+  button: {
+    width: '200px',
+    height: '50px',
+    backgroundColor: 'grey',
+    color: 'white',
+    marginBottom: '2em',
+    fontSize: '1em',
+  }
+}
 
 const Dashboard = (props) => (
   <div>
@@ -45,6 +55,7 @@ const Dashboard = (props) => (
   <div className="content">
     <div className="center">
       <h1>Lisefski House</h1>
+      <button style={styles.button}>Enable Push Notifications</button>
       <div className="summary-grid">
         <section className="card summary">
           <header>
