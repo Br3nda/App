@@ -2,16 +2,18 @@
 You can see console.logs inside a service worker by opening chrome://serviceworker-internals/ (if using Chrome)
 */
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', event => {
   console.log('sw installed')
   console.log('event', event)
 })
 
-self.addEventListener('push', function(event) {
-  if (!(self.Notification && self.Notification.permission === 'granted')) {
-    return
+self.addEventListener('push', event => {
+  const data = event.data.json()
+  const { title } = data
+
+  const body = {
+    body: data.body
   }
 
-  var data = event.data.text()
-  event.waitUntil(self.registration.showNotification(data))
-});
+  event.waitUntil(self.registration.showNotification(title, body))
+})
