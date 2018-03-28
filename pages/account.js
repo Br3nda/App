@@ -1,7 +1,6 @@
 import Layouts from '../components/Layouts'
 import Dashboard from '../components/Dashboard'
 
-
 class Account extends React.Component {
 
   constructor (props) {
@@ -55,7 +54,7 @@ class Account extends React.Component {
     return (
       <div>
         <Layouts>
-          <Dashboard registration = {this.state.registration} convertedVapidKey = {this.state.convertedVapidKey}/>
+          <Dashboard registration={this.state.registration} convertedVapidKey={this.state.convertedVapidKey} />
         </Layouts>
       </div>
     )
