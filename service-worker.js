@@ -1,19 +1,27 @@
-/*
-You can see console.logs inside a service worker by opening chrome://serviceworker-internals/ (if using Chrome)
-*/
+"use strict";
 
-self.addEventListener('install', event => {
-  console.log('sw installed')
-  console.log('event', event)
-})
+self.addEventListener("push", function(event) {
+  console.log("[Service Worker] Push Received.");
+  console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
 
-self.addEventListener('push', event => {
-  const data = event.data.json()
-  const { title } = data
+  const title = "Main Bedroom is too cold";
+  const options = {
+    body:
+      "Try closing any windows or turn on heating. \nUse a dehumidifier if you have one.",
+    icon: "/static/img/icon/alert.svg"
+  };
 
-  const body = {
-    body: data.body
-  }
+  const notificationPromise = self.registration.showNotification(
+    title,
+    options
+  );
+  event.waitUntil(notificationPromise);
+});
 
-  event.waitUntil(self.registration.showNotification(title, body))
-})
+self.addEventListener("notificationclick", function(event) {
+  console.log("[Service Worker] Notification click Received.");
+
+  event.notification.close();
+
+  event.waitUntil(clients.openWindow("localhost:3000/account"));
+});
