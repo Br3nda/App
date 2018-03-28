@@ -8,7 +8,8 @@ self.addEventListener("push", function(event) {
   const options = {
     body:
       "Try closing any windows or turn on heating. \nUse a dehumidifier if you have one.",
-    icon: "/static/img/icon/alert.svg"
+    icon: "./static/img/icon/house.png",
+    badge: "./static/img/icon/house.png"
   };
 
   const notificationPromise = self.registration.showNotification(
