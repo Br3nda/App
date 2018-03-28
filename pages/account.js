@@ -4,7 +4,7 @@ import Dashboard from '../components/Dashboard'
 const Account = (props) => (
   <div>
     <Layouts>
-    
+      <Dashboard />
     </Layouts>
   </div>
 )

@@ -1,6 +1,6 @@
 import React from 'react'
-import Dashboard from './Dashboard'
-import style from "./styles/style"
+// import Dashboard from './Dashboard'
+import style from './styles/style'
 
 class Layouts extends React.Component {
   constructor (props) {
@@ -20,7 +20,7 @@ class Layouts extends React.Component {
             console.log(result)
             navigator.serviceWorker.ready.then(function (registration) {
               if (!registration.pushManager) {
-                alert("Push Unsupported")
+                alert('Push Unsupported')
                 return
               }
               const vapidPublicKey = 'BPCnADjDVFsexLnj6ESRHuu9YlDwg7P8b8k4_mi48LB8UDAYvTpAWYfBofUD8F9LWkh6U0dJqX0kCoF-yWb-tbM'
@@ -48,7 +48,7 @@ class Layouts extends React.Component {
       })
     }
   }
-  render() {
+  render () {
     return (
       <div>
         {this.props.children}
@@ -56,8 +56,8 @@ class Layouts extends React.Component {
           {style}
         </style>
       </div>
-    );
+    )
   }
 }
 
-export default Layouts;
+export default Layouts
