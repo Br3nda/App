@@ -10,7 +10,6 @@ const styles = {
     fontSize: '1em'
   }
 }
-// should have this.state.regi.... available to pass into the onClick function
 
 class Dashboard extends React.Component {
   constructor (props) {
