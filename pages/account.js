@@ -18,7 +18,6 @@ class Account extends React.Component {
         navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
           console.log('SW registered: ', registration)
           Notification.requestPermission().then(function (result) {
-            console.log(result)
             navigator.serviceWorker.ready.then(function (registration) {
               if (!registration.pushManager) {
                 alert('Push Unsupported')
@@ -36,7 +35,6 @@ class Account extends React.Component {
                 }
                 return outputArray
               }
-              console.log('converted vapid key', convertedVapidKey);
               self.setState({
                 registration: registration,
                 convertedVapidKey: convertedVapidKey
