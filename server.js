@@ -28,6 +28,7 @@ const testData = {
 
 app.prepare().then(() => {
   const server = express()
+  server.use(bodyParser.json())
 
   server.get('/service-worker.js', (req, res) => {
     res.setHeader('content-type', 'text/javascript')
@@ -43,15 +44,6 @@ app.prepare().then(() => {
     handle(req, res)
   })
 
-  server.get('*', (req, res) => {
-    const url = URL_MAP[req.path]
-    if (url) {
-      app.render(req, res, url)
-    } else {
-      handle(req, res)
-    }
-  })
-
   webpush.setVapidDetails(
   'mailto:meghan@manu.net.nz',
   process.env.PUBLIC_VAPID_KEY,
@@ -61,7 +53,7 @@ app.prepare().then(() => {
   let subscription
   let pushIntervalID
 
-  router.post('/register', (req, res, next) => {
+  server.post('/register', (req, res) => {
     subscription = req.body
     console.log(subscription)
     res.sendStatus(201)
@@ -72,13 +64,21 @@ app.prepare().then(() => {
     }, 30000)
   })
 
-  router.delete('/unregister', (req, res, next) => {
+  server.delete('/unregister', (req, res, next) => {
     subscription = null
     clearInterval(pushIntervalID)
     res.sendStatus(200)
   })
 
-  server.use(bodyParser.json())
+  server.get('*', (req, res) => {
+    const url = URL_MAP[req.path]
+    if (url) {
+      app.render(req, res, url)
+    } else {
+      handle(req, res)
+    }
+  })
+
 
   server.listen(port)
 })

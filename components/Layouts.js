@@ -1,12 +1,23 @@
+import React from 'react'
+import Dashboard from './Dashboard'
+
 class Layouts extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      registration: undefined,
+      convertedVapidKey: null
+    }
+  }
   componentDidMount () {
+    var self = this
     if ('serviceWorker' in navigator && 'PushManager' in window) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js').then(registration => {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
           console.log('SW registered: ', registration)
           Notification.requestPermission().then(function (result) {
             console.log(result)
-            navigator.serviceWorker.ready.then(registration => {
+            navigator.serviceWorker.ready.then(function (registration) {
               if (!registration.pushManager) {
                 alert("Push Unsupported")
                 return
@@ -23,18 +34,11 @@ class Layouts extends React.Component {
                 }
                 return outputArray
               }
-              registration.pushManager
-                .subscribe({
-                  userVisibleOnly: true, // Always display notifications
-                  applicationServerKey: convertedVapidKey
-                })
-                .then(subscription =>
-                  fetch('/register', {
-                    body: subscription,
-                    method: 'POST'
-                  })
-                )
-                .catch(err => console.error('Push subscription error: ', err))
+              console.log('converted vapid key', convertedVapidKey);
+              self.setState({
+                registration: registration,
+                convertedVapidKey: convertedVapidKey
+              })
             })
           }).catch(registrationError => {
             console.log('SW registration failed: ', registrationError)
@@ -47,6 +51,8 @@ class Layouts extends React.Component {
     return (
       <div>
         {this.props.children}
+        <Dashboard registration={this.state.registration} convertedVapidKey={this.state.convertedVapidKey} />
+
         <style jsx global>{`
           /* /////////////////////////////////
           Whare Hauora Web App CSS (SCSS)
