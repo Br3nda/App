@@ -1,21 +1,33 @@
 'use strict'
-// self.addEventListener('install', function(event) {
-//   var CACHE_NAME = 'Whare Hauora App'
-//   var urlsToCache = [
-//     '/',
-//     '/pages/index.js',
-//     '/pages/account.js',
-//     '/components/Dashboard.js',
-//     '/components/Layouts.js'
-//   ]
-//   event.waitUntil(
-//     caches.open(CACHE_NAME)
-//       .then(function (cache) {
-//         console.log('Opened cache')
-//         return cache.addAll(urlsToCache)
-//       })
-//     )
-// })
+
+self.addEventListener('install', function(event) {
+  var CACHE_NAME = 'Whare Hauora App'
+  var urlsToCache = [
+    '/',
+    '/account'
+  ]
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+    .then(function (cache) {
+      console.log('Opened cache')
+      return cache.addAll(urlsToCache)
+    })
+  )
+})
+
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(response) {
+        // Cache hit - return response
+        if (response) {
+          return response
+        }
+        return fetch(event.request)
+      }
+    )
+  )
+})
 
 self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.')

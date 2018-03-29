@@ -5,7 +5,7 @@ const { join } = require('path')
 const { parse } = require('url')
 const next = require('next')
 const dotenv = require('dotenv').config()
-const workboxBuild = require('workbox-build')
+// const workboxBuild = require('workbox-build')
 
 
 const router = require('express').Router()
@@ -81,17 +81,17 @@ app.prepare().then(() => {
     }
   })
 
-  // NOTE: This should be run *AFTER* all your assets are built
-  const buildSW = () => {
-    // This will return a Promise
-    return workboxBuild.generateSW({
-      globDirectory: 'build',
-      globPatterns: [
-        '**\/*.{html,json,js,css}'
-      ],
-      swDest: 'build/service-worker.js'
-    })
-  }
+  // // NOTE: This should be run *AFTER* all your assets are built
+  // const buildSW = () => {
+  //   // This will return a Promise
+  //   return workboxBuild.generateSW({
+  //     globDirectory: 'build',
+  //     globPatterns: [
+  //       '**\/*.{html,json,js,css}'
+  //     ],
+  //     swDest: 'build/service-worker.js'
+  //   })
+  // }
 
   server.listen(port)
 })
