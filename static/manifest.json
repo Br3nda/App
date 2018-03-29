@@ -1,6 +1,23 @@
 {
   "short_name" : "App",
   "name" : "Whare Hauora App",
-  "start_url" : "/",
-  "gcm_sender_id": "103953800507"
+  "start_url": "pages/account.js",
+  "icons": [{
+    "src": "./img/icon/icon.png",
+    "type": "image/png",
+    "sizes": "128x128"
+  }, {
+    "src": "./img/icon/icon.png",
+    "type": "image/png",
+    "sizes": "152x152"
+  }, {
+    "src": "./img/icon/icon.png",
+    "type": "image/png",
+    "sizes": "144x144"
+  }, {
+    "src": "./img/icon/icon.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "display": "standalone"
 }
