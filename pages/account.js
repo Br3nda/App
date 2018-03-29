@@ -2,7 +2,6 @@ import Layouts from '../components/Layouts'
 import Dashboard from '../components/Dashboard'
 
 class Account extends React.Component {
-
   constructor (props) {
     super(props)
     this.state = {
@@ -15,7 +14,8 @@ class Account extends React.Component {
     var self = this
     if ('serviceWorker' in navigator && 'PushManager' in window) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+        navigator.serviceWorker.register('/service-worker.js')
+        .then(function (registration) {
           console.log('SW registered: ', registration)
           Notification.requestPermission().then(function (result) {
             navigator.serviceWorker.ready.then(function (registration) {
