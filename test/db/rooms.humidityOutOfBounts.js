@@ -48,12 +48,12 @@ test(`test 1: if any room humidity is out of range,
     { 'id': '1',
       'name': `Sandra's desk`,
       'sensorType': 'humidity',
-      'errorMsg': 'the sensor reading is malfunctioning'
+      'errorMsg': `The humidity sensor reading in Sandra's desk is malfunctioning`
     },
     { 'id': '2',
       'name': `Janie's room`,
       'sensorType': 'humidity',
-      'errorMsg': 'the sensor reading is malfunctioning'
+      'errorMsg': `The humidity sensor reading in Janie's room is malfunctioning`
     }
   ]
 
