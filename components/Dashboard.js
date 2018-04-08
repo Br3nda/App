@@ -1,4 +1,13 @@
 import React from 'react'
+import Link from 'next/link'
+
+const PostLink = (props) => (
+  <li>
+    <Link href={`/post?title=${props.title}`}>
+      <a>{props.title}</a>
+    </Link>
+  </li>
+)
 
 const styles = {
   button: {
@@ -105,9 +114,10 @@ updateBtn() {
             </ul>
             <h6>Rooms</h6>
             <ul className='nav-links'>
-              <li><a href='./room-detail1.html'>Living Room</a></li>
-              <li><a href='./room-detail2.html'>Master Bedroom</a></li>
-              <li><a href='./room-detail3.html'>Kids Room</a></li>
+              <PostLink title='Living Room' />
+              <PostLink title='Master Bedroom' />
+              <PostLink title='Kids Bedroom' />
+
             </ul>
             <h6>Setup</h6>
             <ul className='nav-links'>
