@@ -1,4 +1,4 @@
-const AddWhareModal = () => (
+const EditWhareModal = () => (
   <div id='edit-whare' class='modal mfp-hide'>
     <header>
       <h2>Edit Whare</h2>
@@ -26,4 +26,4 @@ const AddWhareModal = () => (
   </div>
 )
 
-export default AddWhareModal
+export default EditWhareModal
