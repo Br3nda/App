@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const Login = (props) => (
     <div className='content'>
     <div className='center'>
@@ -20,7 +22,10 @@ const Login = (props) => (
               <input type='password' />
             </li>
             <li>
-              <a className='btn submit' href='#'>Login</a>
+              Click{' '}
+              <Link href='/account'>
+                <a className='btn submit'>Login</a>
+              </Link>{' '}
             </li>
           </ul>
           <footer>
