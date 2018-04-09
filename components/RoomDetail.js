@@ -1,12 +1,9 @@
 import Menu from './Menu'
+import Header from './Header'
 
 export default (props) => (
   <div>
-    <header className='header'>
-      <a className='logo-sm' href='./'>Whare Hauora</a>
-      <a className='open-menu' href='#'><span className='label'>Menu</span><img className='svg' src='../static/img/icon/menu.svg' alt='menu' /></a>
-    </header>
-    <div className='overlay'></div>
+    <Header />
     <Menu />
     <div className='content'>
       <div className='center'>
