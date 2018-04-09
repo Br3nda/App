@@ -1,13 +1,7 @@
 import React from 'react'
-import Link from 'next/link'
-
-const PostLink = (props) => (
-  <li>
-    <Link href={`/post?title=${props.title}`}>
-      <a>{props.title}</a>
-    </Link>
-  </li>
-)
+import Menu from './Menu'
+import Header from './Header'
+import CardSummary from './CardSummary'
 
 const styles = {
   button: {
@@ -84,7 +78,6 @@ class Dashboard extends React.Component {
   })
 }
 
-
 updateBtn() {
     if (this.state.isRegistered){
       return  <button style={styles.button} className="js-push-btn" onClick={this.unsubscribeUser}>Disable Push Notifications</button>
@@ -93,82 +86,18 @@ updateBtn() {
     }
 }
 
-
   render () {
     return (
       <div>
-        <header className='header'>
-          <a className='logo-sm' href='./'>Whare Hauora</a>
-          <a className='open-menu' href='#'><span className='label'>Menu</span><img className='svg' src='../static/img/icon/menu.svg' alt='menu' /></a>
-        </header>
+        <Header />
       <div className='overlay'></div>
-        <nav className='menu'>
-          <header>
-            <a className='logo' href='./'>Whare Hauora</a>
-            <h6>Menu</h6>
-            <a className='x' href='#'><img className='svg' src='../static/img/icon/x.svg' alt='close' /></a>
-          </header>
-          <div className='nav'>
-            <ul className='nav-links'>
-              <li><a className='current' href='./dashboard.html'>Dashboard</a></li>
-            </ul>
-            <h6>Rooms</h6>
-            <ul className='nav-links'>
-              <PostLink title='Living Room' />
-              <PostLink title='Master Bedroom' />
-              <PostLink title='Kids Bedroom' />
-
-            </ul>
-            <h6>Setup</h6>
-            <ul className='nav-links'>
-              <li><a href='./rooms.html'>Whare & Rooms</a></li>
-              <li><a href='./whanau.html'>Whānau</a></li>
-            </ul>
-            <h6>Account</h6>
-            <ul className='nav-links'>
-              <li><a href='./account.html'>My Account</a></li>
-              <li><a href='./help.html'>Help</a></li>
-              <li><a href='#'>Logout</a></li>
-            </ul>
-          </div>
-          <footer>
-            <select className='lang-picker'>
-              <option value='English' data-iconurl='/img/icon/lang-eng.svg' selected>English</option>
-              <option value='Te Reo Māori' data-iconurl='/img/icon/lang-mri.svg'>Te Reo Māori</option>
-              <option value='Samoan' data-iconurl='/img/icon/lang-smo.svg'>Samoan</option>
-            </select>
-          </footer>
-        </nav>
+        <Menu />
         <div className='content'>
           <div className='center'>
             <h1>Lisefski House</h1>
             {this.updateBtn()}
             <div className='summary-grid'>
-              <section className='card summary'>
-                <header>
-                  <h2>Living Room</h2>
-                  <h4>Living Space</h4>
-                  <a className='head-action' href='#'><img className='svg' src='../static/img/icon/edit.svg' alt='edit' /></a>
-                </header>
-                <div className='readings'>
-                  <div className='reading temp-low-1a'>
-                    <span className='vis'><span className='loader'></span></span>
-                    <span className='value'>17.3°C</span>
-                    <span className='label'>Temperature</span>
-                    <span className='time'>5 minutes ago</span>
-                  </div>
-                  <div className='reading hum-mid-a'>
-                    <span className='vis'><span className='loader'></span></span>
-                    <span className='value'>31.6%</span>
-                    <span className='label'>Humidity</span>
-                    <span className='time'>5 minutes ago</span>
-                  </div>
-                </div>
-                <footer className='grade-high'>
-                  <p>Slightly too cool, but otherwise healthy.</p>
-                  <a className='btn' href='room-detail1.html'><img className='svg' src='../static/img/icon/btn-analyse.svg' alt='icon' />Analyse</a>
-                </footer>
-              </section>
+              <CardSummary />
               <section className='card summary'>
                 <header>
                   <h2>Master Bedroom</h2>
