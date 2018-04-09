@@ -1,6 +1,6 @@
 import React from 'react'
-import Menu from './Menu'
-import Header from './Header'
+import Menu from './genApp/Menu'
+import Header from './genApp/Header'
 import CardSummary from './CardSummary'
 
 const styles = {
@@ -90,7 +90,7 @@ updateBtn() {
     return (
       <div>
         <Header />
-      <div className='overlay'></div>
+        <div className='overlay'></div>
         <Menu />
         <div className='content'>
           <div className='center'>
