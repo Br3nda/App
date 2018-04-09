@@ -1,12 +1,4 @@
-import Link from 'next/link'
-
-const PostLink = (props) => (
-  <li>
-    <Link href={`/room-profile?title=${props.title}`}>
-      <a>{props.title}</a>
-    </Link>
-  </li>
-)
+import Menu from './Menu'
 
 export default (props) => (
   <div>
@@ -15,72 +7,37 @@ export default (props) => (
       <a className='open-menu' href='#'><span className='label'>Menu</span><img className='svg' src='../static/img/icon/menu.svg' alt='menu' /></a>
     </header>
     <div className='overlay'></div>
-      <nav className='menu'>
-        <header>
-          <a className='logo' href='./'>Whare Hauora</a>
-          <h6>Menu</h6>
-          <a className='x' href='#'><img className='svg' src='../static/img/icon/x.svg' alt='close' /></a>
-        </header>
-        <div className='nav'>
-          <ul className='nav-links'>
-            <li><a className='current' href='./dashboard.html'>Dashboard</a></li>
-          </ul>
-          <h6>Rooms</h6>
-          <ul className='nav-links'>
-            <PostLink title='Living Room' />
-            <PostLink title='Master Bedroom' />
-            <PostLink title='Kids Bedroom' />
-          </ul>
-          <h6>Setup</h6>
-          <ul className='nav-links'>
-            <li><a href='./rooms.html'>Whare & Rooms</a></li>
-            <li><a href='./whanau.html'>Whānau</a></li>
-          </ul>
-          <h6>Account</h6>
-          <ul className='nav-links'>
-            <li><a href='./account.html'>My Account</a></li>
-            <li><a href='./help.html'>Help</a></li>
-            <li><a href='#'>Logout</a></li>
-          </ul>
-        </div>
-        <footer>
-          <select className='lang-picker'>
-            <option value='English' data-iconurl='/img/icon/lang-eng.svg' selected>English</option>
-            <option value='Te Reo Māori' data-iconurl='/img/icon/lang-mri.svg'>Te Reo Māori</option>
-            <option value='Samoan' data-iconurl='/img/icon/lang-smo.svg'>Samoan</option>
-          </select>
-        </footer>
-      </nav>
-      <div className='content'>
-       <div className='center'>
-         <h1 className='sm narrow-down-only'><a className='back' href='#'><img className='svg' src='./img/icon/back.svg' alt='back' /></a>Lisefski House</h1>
-         <section className='card report'>
-           <header>
-             <h2>Kid&rsquo;s Room</h2>
-             <h4>Sleeping / Bedroom</h4>
-             <a className='head-action' href='#'><img className='svg' src='./img/icon/edit.svg' alt='edit' /></a>
-           </header>
-           <div className='readings'>
-             <div className='reading temp-low-2a'>
-               <span className='vis'><span className='loader'></span></span>
-               <span className='value'>15.9°C</span>
-               <span className='label'>Temperature</span>
-               <span className='time'>5 minutes ago</span>
-             </div>
-             <div className='reading hum-high-2a'>
-               <span className='vis'><span className='loader'></span></span>
-               <span className='value'>80.6%</span>
-               <span className='label'>Humidity</span>
-               <span className='time'>5 minutes ago</span>
-             </div>
-             <div className='reading dew-mid'>
-               <span className='vis'><span className='loader'></span></span>
-               <span className='value'>11.9°C</span>
-               <span className='label'>Dewpoint</span>
-               <span className='time'>5 minutes ago</span>
-             </div>
+    <Menu />
+    <div className='content'>
+      <div className='center'>
+        <h1 className='sm narrow-down-only'><a className='back' href='#'><img className='svg' src='./img/icon/back.svg' alt='back' /></a>Lisefski House</h1>
+        <section className='card report'>
+          <header>
+          <h2>Kid&rsquo;s Room</h2>
+          <h4>Sleeping / Bedroom</h4>
+          <a className='head-action' href='#'><img className='svg' src='./img/icon/edit.svg' alt='edit' /></a>
+          </header>
+          <div className='readings'>
+           <div className='reading temp-low-2a'>
+             <span className='vis'><span className='loader'></span></span>
+             <span className='value'>15.9°C</span>
+             <span className='label'>Temperature</span>
+             <span className='time'>5 minutes ago</span>
            </div>
-           <div className='report-card grade-low'>
+           <div className='reading hum-high-2a'>
+             <span className='vis'><span className='loader'></span></span>
+             <span className='value'>80.6%</span>
+             <span className='label'>Humidity</span>
+             <span className='time'>5 minutes ago</span>
+           </div>
+           <div className='reading dew-mid'>
+             <span className='vis'><span className='loader'></span></span>
+             <span className='value'>11.9°C</span>
+             <span className='label'>Dewpoint</span>
+             <span className='time'>5 minutes ago</span>
+           </div>
+          </div>
+          <div className='report-card grade-low'>
              <div className='rating'>
                <span className='grade'>F</span>
                <span className='value'>Very Poor</span>
@@ -93,54 +50,54 @@ export default (props) => (
                <li className='bullet'>Risk for cold, damp, and mould<a className='i tooltip' href='#' title='Tooltip content'><img className='svg' src='./img/icon/i.svg' alt='info' /></a></li>
                <li className='none'><a className='underline' href='#'>Learn how to fix this</a></li>
              </ul>
-           </div>
-         </section>
-         <section className='card alert health-alert with-image'>
+          </div>
+        </section>
+        <section className='card alert health-alert with-image'>
 
-           <header>
-             <h2 className='secondary'>Health Warning</h2>
-             <a className='head-action' href='#'><img className='svg' src='./img/icon/x.svg' alt='close' /></a>
-           </header>
-           <p>The World Health Organisation recommends temperatures above 20 degrees for children. Allowing children to continue to sleep in this room without adequate heating may result in increased risk of respiratory illness. </p>
-           <a className='btn' href='#'><img className='svg' src='./img/icon/btn-i.svg' alt='icon' />Learn how to fix this</a>
-           <footer>
-             <p><a className='underline' href='#'>Dismiss alert</a> – I’m happy with the temperature of this room</p>
-           </footer>
-         </section>
-         <section className='card'>
-           <header className='condensed'>
-             <h2>Readings</h2>
-             <h4>Past 30 days</h4>
-             <ul className='legend'>
-               <li><span className='temp'></span>Temperature</li>
-               <li><span className='hum'></span>Humidity</li>
-             </ul>
-           </header>
-           <div className='graph'>
-             <div className='scroller'>
-               <img className='placeholder' src='./img/placeholder-graph.png' />
-             </div>
-           </div>
-         </section>
-         <section className='card'>
-           <header>
-             <h2>Sensor<span className='sensor'>146</span></h2>
-           </header>
-           <dl className='col4 restrict-width'>
-             <dt>First Detected</dt>
-             <dd>04 Jul, 2017</dd>
-             <dt>Last reading</dt>
-             <dd>5 minutes ago</dd>
-             <dt>Battery</dt>
-             <dd>76%</dd>
-             <dt>Software</dt>
-             <dd>v2.1</dd>
-           </dl>
-           <div className='right-action'>
-             <a className='btn small' href='#'>Disconnect from room</a>
-           </div>
-         </section>
-       </div>
-     </div>
+          <header>
+          <h2 className='secondary'>Health Warning</h2>
+          <a className='head-action' href='#'><img className='svg' src='./img/icon/x.svg' alt='close' /></a>
+          </header>
+          <p>The World Health Organisation recommends temperatures above 20 degrees for children. Allowing children to continue to sleep in this room without adequate heating may result in increased risk of respiratory illness. </p>
+          <a className='btn' href='#'><img className='svg' src='./img/icon/btn-i.svg' alt='icon' />Learn how to fix this</a>
+          <footer>
+            <p><a className='underline' href='#'>Dismiss alert</a> – I’m happy with the temperature of this room</p>
+          </footer>
+        </section>
+        <section className='card'>
+          <header className='condensed'>
+            <h2>Readings</h2>
+            <h4>Past 30 days</h4>
+            <ul className='legend'>
+              <li><span className='temp'></span>Temperature</li>
+              <li><span className='hum'></span>Humidity</li>
+            </ul>
+          </header>
+          <div className='graph'>
+            <div className='scroller'>
+              <img className='placeholder' src='./img/placeholder-graph.png' />
+            </div>
+          </div>
+        </section>
+        <section className='card'>
+          <header>
+            <h2>Sensor<span className='sensor'>146</span></h2>
+          </header>
+          <dl className='col4 restrict-width'>
+            <dt>First Detected</dt>
+            <dd>04 Jul, 2017</dd>
+            <dt>Last reading</dt>
+            <dd>5 minutes ago</dd>
+            <dt>Battery</dt>
+            <dd>76%</dd>
+            <dt>Software</dt>
+            <dd>v2.1</dd>
+          </dl>
+          <div className='right-action'>
+            <a className='btn small' href='#'>Disconnect from room</a>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
 )
