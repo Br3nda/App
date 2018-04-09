@@ -6,7 +6,7 @@ const RoomsList = () => (
         <header className='condensed'>
           <h2>Lisefski House</h2>
           <h4>Owner Occupier</h4>
-          <a className='head-action open-modal' href='#' data-mfp-src='#edit-whare'><img className='svg' src='./img/icon/edit.svg' alt='edit' /></a>
+          <a className='head-action open-modal' href='#' data-mfp-src='#edit-whare'><img className='svg' src='../../../static/img/icon/edit.svg' alt='edit' /></a>
         </header>
         <table className='mob-break'>
           <tbody>
@@ -25,7 +25,7 @@ const RoomsList = () => (
                 </div>
               </td>
               <td className='actions'>
-                <a className='btn open-modal' href='#' data-mfp-src='#edit-room'><img className='svg' src='./img/icon/edit.svg' alt='icon' />Edit</a>
+                <a className='btn open-modal' href='#' data-mfp-src='#edit-room'><img className='svg' src='../../../static/img/icon/edit.svg' alt='icon' />Edit</a>
               </td>
             </tr>
             <tr className='spacer'><td colspan='100'></td></tr>
@@ -44,7 +44,7 @@ const RoomsList = () => (
                 </div>
               </td>
               <td className='actions'>
-                <a className='btn' href='#'><img className='svg' src='./img/icon/edit.svg' alt='icon' />Edit</a>
+                <a className='btn' href='#'><img className='svg' src='../../../static/img/icon/edit.svg' alt='icon' />Edit</a>
               </td>
             </tr>
             <tr className='spacer'><td colspan='100'></td></tr>
@@ -63,13 +63,13 @@ const RoomsList = () => (
                 </div>
               </td>
               <td className='actions'>
-                <a className='btn' href='#'><img className='svg' src='./img/icon/edit.svg' alt='icon' />Edit</a>
+                <a className='btn' href='#'><img className='svg' src='../../../static/img/icon/edit.svg' alt='icon' />Edit</a>
               </td>
             </tr>
             <tr className='spacer'><td colspan='100'></td></tr>
           </tbody>
         </table>
-        <a className='btn-add append-table open-modal' href='#' data-mfp-src='#new-room'><img className='svg' src='./img/icon/btn-add.svg' alt='icon' />Add room</a>
+        <a className='btn-add append-table open-modal' href='#' data-mfp-src='#new-room'><img className='svg' src='../../../static/img/icon/btn-add.svg' alt='icon' />Add room</a>
       </section>
     </div>
   </div>
