@@ -1,15 +1,9 @@
-import Link from 'next/link'
-
 
 const Header = () => (
-  <div>
-    <Link href='/'>
-      <a>Home</a>
-    </Link>
-    <Link href='/about'>
-      <a>About</a>
-    </Link>
-  </div>
+  <header className='header'>
+    <a className='logo-sm' href='./'>Whare Hauora</a>
+    <a className='open-menu' href='#'><span className='label'>Menu</span><img className='svg' src='../static/img/icon/menu.svg' alt='menu' /></a>
+  </header>
 )
 
 export default Header
