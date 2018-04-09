@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const PostLink = (props) => (
   <li>
-    <Link href={`/room-profile?title=${props.title}`}>
+    <Link href={`/room?title=${props.title}`}>
       <a>{props.title}</a>
     </Link>
   </li>
@@ -27,7 +27,7 @@ const Menu = () => (
       </ul>
       <h6>Setup</h6>
       <ul className='nav-links'>
-        <li><a href='./rooms.html'>Whare & Rooms</a></li>
+        <li><Link href='/setup/rooms'><a>Whare & Rooms</a></Link></li>
         <li><a href='./whanau.html'>Whānau</a></li>
       </ul>
       <h6>Account</h6>

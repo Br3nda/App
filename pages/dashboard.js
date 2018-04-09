@@ -1,5 +1,5 @@
-import Layouts from '../components/Layouts'
-import Dashboard from '../components/Dashboard'
+import Layouts from '../components/genApp/Layouts'
+import Dashboard from '../components/profile/Dashboard'
 
 class Account extends React.Component {
   constructor (props) {

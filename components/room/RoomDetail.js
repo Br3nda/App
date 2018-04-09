@@ -1,9 +1,9 @@
-import Menu from './Menu'
-import Header from './Header'
-import ReportCard from './ReportCard'
-import HealthAlert from './HealthAlert'
-import Readings from './Readings'
-import SensorInfo from './SensorInfo'
+import Menu from '../genApp/Menu'
+import Header from '../genApp/Header'
+import ReportCard from './roomDetail/ReportCard'
+import Readings from './roomDetail/Readings'
+import SensorInfo from './roomDetail/SensorInfo'
+import HealthAlert from './roomDetail/HealthAlert'
 
 export default (props) => (
   <div>
