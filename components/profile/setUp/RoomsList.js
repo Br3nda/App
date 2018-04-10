@@ -1,3 +1,5 @@
+import AddRoomModal from './AddRoomModal'
+
 const RoomsList = () => (
   <div>
     <h1 className='sm narrow-down-only'>Whare & Rooms</h1>
@@ -68,6 +70,7 @@ const RoomsList = () => (
           <tr className='spacer'><td colspan='100'></td></tr>
         </tbody>
       </table>
+      <AddRoomModal />
       <a className='btn-add append-table open-modal' href='#' data-mfp-src='#new-room'><img className='svg' src='../../../static/img/icon/btn-add.svg' alt='icon' />Add room</a>
     </section>
   </div>
