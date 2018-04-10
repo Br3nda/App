@@ -1,6 +1,6 @@
 # Whare Hauora App
 
-User app for the Whare Hauora sensor system. See [Whare Hauora website](http://www.wharehauora.nz/)for more information.
+User app for the Whare Hauora sensor system. See [Whare Hauora website](http://www.wharehauora.nz/) for more information.
 
 ## Kaupapa
 
@@ -25,6 +25,11 @@ git clone https://github.com/WhareHauora/App.git
 ```
 ```
 npm i
+```
+### Run 
+
+```
+npm run dev
 ```
 
 ## Running the tests
