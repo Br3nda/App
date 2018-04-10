@@ -1,4 +1,3 @@
-
 const Header = () => (
   <header className='header'>
     <a className='logo-sm' href='./'>Whare Hauora</a>
