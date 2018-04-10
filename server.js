@@ -7,7 +7,6 @@ const next = require('next')
 const dotenv = require('dotenv').config()
 // const workboxBuild = require('workbox-build')
 
-
 const router = require('express').Router()
 module.exports = router
 const webpush = require('web-push')

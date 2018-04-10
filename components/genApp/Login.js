@@ -1,5 +1,7 @@
-const Login = (props) => (
-    <div className='content'>
+import Link from 'next/link'
+
+const Login = () => (
+  <div className='content'>
     <div className='center'>
       <header className='header'>
         <a className='logo' href='./'>Whare Hauora</a>
@@ -20,7 +22,10 @@ const Login = (props) => (
               <input type='password' />
             </li>
             <li>
-              <a className='btn submit' href='#'>Login</a>
+              {' '}
+              <Link href='/dashboard' replace>
+                <a className='btn submit'>Login</a>
+              </Link>{' '}
             </li>
           </ul>
           <footer>

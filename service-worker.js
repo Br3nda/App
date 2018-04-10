@@ -4,7 +4,7 @@ self.addEventListener('install', function(event) {
   var CACHE_NAME = 'Whare Hauora App'
   var urlsToCache = [
     '/',
-    '/account'
+    '/dashboard'
   ]
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -15,10 +15,10 @@ self.addEventListener('install', function(event) {
   )
 })
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function (event) {
   event.respondWith(
     caches.match(event.request)
-      .then(function(response) {
+      .then(function (response) {
         // Cache hit - return response
         if (response) {
           return response
@@ -29,7 +29,7 @@ self.addEventListener('fetch', function(event) {
   )
 })
 
-self.addEventListener('push', function(event) {
+self.addEventListener('push', function (event) {
   console.log('[Service Worker] Push Received.')
   console.log(`[Service Worker] Push had this data: '${event.data.text()}'`)
 
