@@ -9,6 +9,7 @@ class Layouts extends React.Component {
       <div>
         <Head>
           <link rel='manifest' href='static/manifest.json' />
+          <link href="https://fonts.googleapis.com/css?family=Merriweather:700|Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet" />
         </Head>
         {this.props.children}
         <style jsx global>
