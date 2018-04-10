@@ -12,7 +12,7 @@ const styles = {
     marginBottom: "2em",
     fontSize: "1em"
   }
-};
+}
 
 class Dashboard extends React.Component {
   constructor (props) {

@@ -14,7 +14,7 @@ class Account extends React.Component {
     var self = this
     if ('serviceWorker' in navigator && 'PushManager' in window) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('../service-worker.js')
         .then(function (registration) {
           console.log('SW registered: ', registration)
           Notification.requestPermission().then(function (result) {

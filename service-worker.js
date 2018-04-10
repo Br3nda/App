@@ -4,7 +4,7 @@ self.addEventListener('install', function(event) {
   var CACHE_NAME = 'Whare Hauora App'
   var urlsToCache = [
     '/',
-    '/account'
+    '/dashboard'
   ]
   event.waitUntil(
     caches.open(CACHE_NAME)
