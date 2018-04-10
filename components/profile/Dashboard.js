@@ -95,6 +95,7 @@ updateBtn() {
         <div className='content'>
           <div className='center'>
             <h1>Lisefski House</h1>
+            {this.updateBtn()}
             <div className='summary-grid'>
               <CardSummary />
             </div>
@@ -106,4 +107,3 @@ updateBtn() {
 }
 
 export default Dashboard
-// {this.updateBtn()}
