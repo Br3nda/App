@@ -80,9 +80,9 @@ class Dashboard extends React.Component {
 
 updateBtn() {
     if (this.state.isRegistered){
-      return  <button style={styles.button} className="js-push-btn" onClick={this.unsubscribeUser}>Disable Push Notifications</button>
+      return <button style={styles.button} className="js-push-btn" onClick={this.unsubscribeUser}>Disable Push Notifications</button>
     } else {
-      return  <button style={styles.button} className="js-push-btn" onClick={this.subscribeUser}>Enable Push Notifications</button>
+      return <button style={styles.button} className="js-push-btn" onClick={this.subscribeUser}>Enable Push Notifications</button>
     }
 }
 

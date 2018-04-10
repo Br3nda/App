@@ -1,7 +1,7 @@
 import Layouts from '../components/genApp/Layouts'
 import Dashboard from '../components/profile/Dashboard'
 
-class Account extends React.Component {
+class dashboard extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -59,4 +59,4 @@ class Account extends React.Component {
   }
 }
 
-export default Account
+export default dashboard
