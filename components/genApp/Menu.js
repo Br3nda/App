@@ -17,7 +17,7 @@ const Menu = () => (
     </header>
     <div className='nav'>
       <ul className='nav-links'>
-        <li><a className='current' href='./dashboard.html'>Dashboard</a></li>
+        <li><Link href='/dashboard'><a className='current'>Dashboard</a></Link></li>
       </ul>
       <h6>Rooms</h6>
       <ul className='nav-links'>

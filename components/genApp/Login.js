@@ -9,7 +9,6 @@ const Login = () => (
         <h4 className='lg'>Login to start using Whare Hauora</h4>
       </header>
       <section className='card pre-log'>
-        <div className='img'></div>
         <div className='text'>
           <h2 className='secondary'>Login</h2>
           <ul className='form-row'>
