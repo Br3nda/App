@@ -19,6 +19,8 @@
 PreCommit:
   ALL:
     quiet: false
+    exclude: &default_excludes
+      - 'node_modules/**/*'
   TrailingWhitespace:
     enabled: true
   HardTabs:
