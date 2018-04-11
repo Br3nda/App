@@ -4,8 +4,8 @@ import AccountProfile from './AccountProfile'
 import Preferences from './Preferences'
 
 const Account = () => (
-  <div class='content'>
-    <div class='center'>
+  <div className='content'>
+    <div className='center'>
       <Header />
       <Menu />
       <AccountProfile />
