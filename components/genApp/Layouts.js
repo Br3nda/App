@@ -8,8 +8,8 @@ class Layouts extends React.Component {
       <div>
         <Head>
           <link rel='manifest' href='static/manifest.json' />
-          <link href="https://fonts.googleapis.com/css?family=Merriweather:700|Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet" />
-          <link rel="shortcut icon" href="./favicon.ico" />
+          <link href='https://fonts.googleapis.com/css?family=Merriweather:700|Roboto:300,400,700&amp;subset=latin-ext' rel='stylesheet' />
+          <link rel='shortcut icon' href='./favicon.ico' />
           <meta name='mobile-web-app-capable' content='yes' key='viewport' />
           <meta name='apple-mobile-web-app-capable' content='yes' key='viewport' />
           <meta name='msapplication-starturl' content='/' key='viewport' />
