@@ -37,6 +37,7 @@
     ]
   },
   "globals": {
-    "document": false
+    "document": false,
+    "React": false
   }
 }
