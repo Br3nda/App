@@ -28,7 +28,7 @@ const Menu = () => (
       <h6>Setup</h6>
       <ul className='nav-links'>
         <li><Link href='/setup/rooms'><a>Whare & Rooms</a></Link></li>
-        <li><Link href='/setup/whānau'><a>Whānau</a></Link></li>
+        <li><Link href='/setup/whanau'><a>Whānau</a></Link></li>
       </ul>
       <h6>Account</h6>
       <ul className='nav-links'>
