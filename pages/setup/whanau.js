@@ -1,7 +1,7 @@
 import Layout from '../../components/genApp/Layouts'
 import WhanauList from '../../components/profile/setUp/WhanauList'
 
-const WhānauProfile = (props) => (
+const WhanauProfile = (props) => (
   <div>
     <Layout>
       <WhanauList />
@@ -9,4 +9,4 @@ const WhānauProfile = (props) => (
   </div>
 )
 
-export default WhānauProfile
+export default WhanauProfile
