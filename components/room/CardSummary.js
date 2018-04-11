@@ -13,7 +13,7 @@ const CardSummary = () => (
     <header>
       <h2>Kid&rsquo;s Room</h2>
       <h4>Sleeping / Bedroom</h4>
-      <a className='head-action' href='#'><img className='svg' src='../../static/img/icon/edit.svg' alt='edit' /></a>
+      <a className='head-action' href='#'><img className='svg' src='../../../static/img/icon/edit.svg' alt='edit' /></a>
     </header>
     <div className='readings'>
       <div className='reading temp-low-2a'>
@@ -32,7 +32,7 @@ const CardSummary = () => (
     <footer className='grade-low'>
       <p>Too cold for children to be sleeping.
         <br /><a className='underline' href='#'>Learn how to fix this</a>.</p>
-      <a className='btn' href='room-detail3.html'><img className='svg' src='../../static/img/icon/btn-analyse.svg' alt='icon' />Analyse</a>
+      <a className='btn' href='room-detail3.html'><img className='svg' src='../../../static/img/icon/btn-analyse.svg' alt='icon' />Analyse</a>
     </footer>
   </section>
 )

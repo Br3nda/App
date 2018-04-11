@@ -10,7 +10,7 @@ const Readings = () => (
     </header>
     <div className='graph'>
       <div className='scroller'>
-        <img className='placeholder' src='../static/img/placeholder-graph.png' />
+        <img className='placeholder' src='../../../static/img/placeholder-graph.png' />
       </div>
     </div>
   </section>

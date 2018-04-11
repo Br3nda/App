@@ -3,7 +3,7 @@ const ReportCard = () => (
     <header>
       <h2>Kid&rsquo;s Room</h2>
       <h4>Sleeping / Bedroom</h4>
-      <a className='head-action' href='#'><img className='svg' src='./img/icon/edit.svg' alt='edit' /></a>
+      <a className='head-action' href='#'><img className='svg' src='.../../../img/icon/edit.svg' alt='edit' /></a>
     </header>
     <div className='readings'>
      <div className='reading temp-low-2a'>
@@ -32,10 +32,10 @@ const ReportCard = () => (
          <span className='label'>Rating</span>
        </div>
        <ul className='check'>
-         <li className='bullet'>Way too cold for children sleeping<a className='i tooltip' href='#' title='Tooltip content'><img className='svg' src='./img/icon/i.svg' alt='info' /></a></li>
+         <li className='bullet'>Way too cold for children sleeping<a className='i tooltip' href='#' title='Tooltip content'><img className='svg' src='../../../static/img/icon/i.svg' alt='info' /></a></li>
          <li className='bullet'>High relative humidity</li>
          <li>Acceptable dewpoint</li>
-         <li className='bullet'>Risk for cold, damp, and mould<a className='i tooltip' href='#' title='Tooltip content'><img className='svg' src='./img/icon/i.svg' alt='info' /></a></li>
+         <li className='bullet'>Risk for cold, damp, and mould<a className='i tooltip' href='#' title='Tooltip content'><img className='svg' src='../../../static/img/icon/i.svg' alt='info' /></a></li>
          <li className='none'><a className='underline' href='#'>Learn how to fix this</a></li>
        </ul>
     </div>
