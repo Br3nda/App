@@ -12,7 +12,7 @@ const styles = {
     marginBottom: "2em",
     fontSize: "1em"
   }
-};
+}
 
 class Dashboard extends React.Component {
   constructor (props) {
@@ -80,9 +80,9 @@ class Dashboard extends React.Component {
 
 updateBtn() {
     if (this.state.isRegistered){
-      return  <button style={styles.button} className="js-push-btn" onClick={this.unsubscribeUser}>Disable Push Notifications</button>
+      return <button style={styles.button} className="js-push-btn" onClick={this.unsubscribeUser}>Disable Push Notifications</button>
     } else {
-      return  <button style={styles.button} className="js-push-btn" onClick={this.subscribeUser}>Enable Push Notifications</button>
+      return <button style={styles.button} className="js-push-btn" onClick={this.subscribeUser}>Enable Push Notifications</button>
     }
 }
 
@@ -95,6 +95,7 @@ updateBtn() {
         <div className='content'>
           <div className='center'>
             <h1>Lisefski House</h1>
+            {this.updateBtn()}
             <div className='summary-grid'>
               <CardSummary />
             </div>
@@ -106,4 +107,3 @@ updateBtn() {
 }
 
 export default Dashboard
-// {this.updateBtn()}

@@ -1,7 +1,7 @@
 import Layouts from '../components/genApp/Layouts'
 import Dashboard from '../components/profile/Dashboard'
 
-class Account extends React.Component {
+class dashboard extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -14,7 +14,7 @@ class Account extends React.Component {
     var self = this
     if ('serviceWorker' in navigator && 'PushManager' in window) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('../service-worker.js')
         .then(function (registration) {
           console.log('SW registered: ', registration)
           Notification.requestPermission().then(function (result) {
@@ -59,4 +59,4 @@ class Account extends React.Component {
   }
 }
 
-export default Account
+export default dashboard
