@@ -61,6 +61,7 @@ export default css`
 
         img, a img {
           border: 0;
+          color: white;
           -ms-interpolation-mode: bicubic;
         }
 
@@ -219,7 +220,7 @@ export default css`
         }
 
         .content {
-          margin-left: 280px;
+          margin: auto;
           padding: 60px 60px 30px;
         }
 
@@ -233,7 +234,7 @@ export default css`
 
         @media (max-width: 699px) {
           .content {
-            margin-top: 44px;
+            margin-top: 150px;
             padding: 16px 16px 0;
           }
         }
@@ -709,8 +710,9 @@ export default css`
 
         @media (max-width: 699px) {
           .header {
+            margin-top: 0em;
             height: 44px;
-            padding: 13px 24px 0;
+            padding: 1em 24px 0;
           }
         }
 
@@ -2724,10 +2726,10 @@ export default css`
           left: 0;
           bottom: 0;
           width: 50%;
-          background-color: #333;
+          background-image: url("../../static/img/logo.svg");
           background-repeat: no-repeat;
           background-position: center center;
-          background-size: cover;
+          background-size: 100%;
           border-radius: 4px 0 0 4px;
         }
 
