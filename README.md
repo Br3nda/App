@@ -1,6 +1,6 @@
 # Whare Hauora App
 
-User app for the Whare Hauora sensor system. See [Whare Hauora website](http://www.wharehauora.nz/) for more information.
+User PWA for the Whare Hauora sensor system. See [Whare Hauora website](http://www.wharehauora.nz/) for more information. NOTE: the service workers and push manager registration are set up and working, but they have been commented out during the development phase.
 
 ## Kaupapa
 
