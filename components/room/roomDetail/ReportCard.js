@@ -3,7 +3,7 @@ const ReportCard = () => (
     <header>
       <h2>Kid&rsquo;s Room</h2>
       <h4>Sleeping / Bedroom</h4>
-      <a className='head-action' href='#'><img className='svg' src='.../../../img/icon/edit.svg' alt='edit' /></a>
+      <a className='head-action' href='#'><img className='svg' src='../../../static/img/icon/edit.svg' alt='edit' /></a>
     </header>
     <div className='readings'>
      <div className='reading temp-low-2a'>
