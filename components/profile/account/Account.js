@@ -1,17 +1,17 @@
 import Header from '../../genApp/Header'
 import Menu from '../../genApp/Menu'
-import RoomsList from './RoomsList'
-import WhareList from './WhareList'
+import AccountProfile from './AccountProfile'
+import Preferences from './Preferences'
 
-const Rooms = () => (
+const Account = () => (
   <div className='content'>
     <div className='center'>
       <Header />
       <Menu />
-      <RoomsList />
-      <WhareList />
+      <AccountProfile />
+      <Preferences />
     </div>
   </div>
 )
 
-export default Rooms
+export default Account

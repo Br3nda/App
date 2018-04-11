@@ -28,11 +28,11 @@ const Menu = () => (
       <h6>Setup</h6>
       <ul className='nav-links'>
         <li><Link href='/setup/rooms'><a>Whare & Rooms</a></Link></li>
-        <li><a href='./whanau.html'>Whānau</a></li>
+        <li><Link href='/setup/whānau'><a>Whānau</a></Link></li>
       </ul>
       <h6>Account</h6>
       <ul className='nav-links'>
-        <li><a href='./account.html'>My Account</a></li>
+        <li><Link href='/account'><a>My Account</a></Link></li>
         <li><a href='./help.html'>Help</a></li>
         <li><a href='#'>Logout</a></li>
       </ul>
