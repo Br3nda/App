@@ -33,7 +33,7 @@ const AccountProfile = () => (
       </ul>
       <footer>
         <a className='btn submit' href='#'>Save Changes</a>
-        <a className='del' href='#'><img className='svg' src='./img/icon/del.svg' alt='icon' />Cancel Account</a>
+        <a className='del' href='#'><img className='svg' src='../../../static/img/icon/del.svg' alt='icon' />Cancel Account</a>
       </footer>
     </section>
   </div>
