@@ -39,9 +39,9 @@ const Menu = () => (
     </div>
     <footer>
       <select className='lang-picker'>
-        <option value='English' data-iconurl='/img/icon/lang-eng.svg' selected>English</option>
-        <option value='Te Reo Māori' data-iconurl='/img/icon/lang-mri.svg'>Te Reo Māori</option>
-        <option value='Samoan' data-iconurl='/img/icon/lang-smo.svg'>Samoan</option>
+        <option value='English' data-iconurl='../static/img/icon/lang-eng.svg' selected>English</option>
+        <option value='Te Reo Māori' data-iconurl='../static/img/icon/lang-mri.svg'>Te Reo Māori</option>
+        <option value='Samoan' data-iconurl='../static/img/icon/lang-smo.svg'>Samoan</option>
       </select>
     </footer>
   </nav>
