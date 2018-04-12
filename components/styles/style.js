@@ -241,7 +241,7 @@ export default css`
 
         .center {
           margin: 0 auto;
-          max-width: 1280px;
+          max-width: 1000px;
         }
 
         body.pre-log .content {
