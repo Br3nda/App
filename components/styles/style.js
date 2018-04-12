@@ -710,9 +710,9 @@ export default css`
 
         @media (max-width: 699px) {
           .header {
-            margin-top: 0em;
-            height: 44px;
+            height: 80px;
             padding: 1em 24px 0;
+            margin-bottom: 2em;
           }
         }
 
@@ -2204,6 +2204,7 @@ export default css`
         @media (max-width: 699px) {
           .card {
             padding: 0 26px 20px 26px;
+            margin-top: 100px;
             margin-bottom: 16px;
           }
           .card > header {
