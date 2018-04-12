@@ -220,8 +220,8 @@ export default css`
         }
 
         .content {
-          margin: auto;
-          padding: 60px 60px 30px;
+          margin: 0 0 0 10%;
+          padding: 60px 0px 30px;
         }
 
         @media (max-width: 1199px) {
