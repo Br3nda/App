@@ -220,8 +220,8 @@ export default css`
         }
 
         .content {
-          margin: auto;
-          padding: 60px 60px 30px;
+          margin: 0 0 0 20%;
+          padding: 60px 0px 30px;
         }
 
         @media (max-width: 1199px) {
@@ -234,14 +234,14 @@ export default css`
 
         @media (max-width: 699px) {
           .content {
-            margin-top: 150px;
+            margin-top: 50px;
             padding: 16px 16px 0;
           }
         }
 
         .center {
           margin: 0 auto;
-          max-width: 1280px;
+          max-width: 1000px;
         }
 
         body.pre-log .content {
