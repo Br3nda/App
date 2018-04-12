@@ -220,7 +220,7 @@ export default css`
         }
 
         .content {
-          margin: 0 0 0 10%;
+          margin: 0 0 0 20%;
           padding: 60px 0px 30px;
         }
 
@@ -234,7 +234,7 @@ export default css`
 
         @media (max-width: 699px) {
           .content {
-            margin-top: 150px;
+            margin-top: 50px;
             padding: 16px 16px 0;
           }
         }
