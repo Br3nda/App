@@ -82,7 +82,6 @@ class Dashboard extends React.Component {
 // }
 
   render () {
-    console.log('this is roomsData', this.props)
     return (
       <div>
         <Header />
