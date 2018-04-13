@@ -1,13 +1,3 @@
-// import Link from 'next/link'
-
-// const PostLink = (props) => (
-//   <li>
-//     <Link href={`/room-profile?title=${props.title}`}>
-//       <a>{props.title}</a>
-//     </Link>
-//   </li>
-// )
-
 const CardSummary = () => (
   <section className='card summary'>
     <header>
@@ -38,5 +28,3 @@ const CardSummary = () => (
 )
 
 export default CardSummary
-
-// <PostLink className='btn' title='Analyse' />

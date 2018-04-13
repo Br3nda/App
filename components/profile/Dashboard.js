@@ -1,9 +1,13 @@
 // NOTE: service worker and push manager commented out. To reinstate, uncomment and pull update button (currently commented out and below the export) back into return - but actually this is not where it is going to live anyway.
-
-import React from 'react'
+import { mapObjIndexed, values, pipe, isEmpty } from 'ramda'
 import Menu from '../genApp/Menu'
 import Header from '../genApp/Header'
 import CardSummary from '../room/CardSummary'
+
+const mapRooms = mapObjIndexed((room, key) => (
+    <CardSummary room={room}/>
+))
+const mapRoomsToValues = pipe(mapRooms, values)
 
 class Dashboard extends React.Component {
 //   constructor (props) {
@@ -88,7 +92,7 @@ class Dashboard extends React.Component {
           <div className='center'>
             <h1>Lisefski House</h1>
             <div className='summary-grid'>
-              <CardSummary />
+            {mapRoomsToValues(this.roomsData)}
             </div>
           </div>
         </div>
