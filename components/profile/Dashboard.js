@@ -92,7 +92,7 @@ class Dashboard extends React.Component {
           <div className='center'>
             <h1>Lisefski House</h1>
             <div className='summary-grid'>
-            {mapRoomsToValues(this.roomsData)}
+            {mapRoomsToValues(this.props.roomsData)}
             </div>
           </div>
         </div>
