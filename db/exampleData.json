@@ -12,7 +12,7 @@
       "timestamp": "2018-04-06 02:04:45 UTC",
       "errorMsg": "",
       "checklistMsg": "the temperature is good",
-      "tooLow": true,
+      "tooLow": false,
       "tooHigh": false
     },
     "humidity": {
@@ -29,6 +29,39 @@
       "timestamp": "2018-04-06 02:04:45 UTC",
       "errorMsg": "",
       "checklistMsg": "the dewpoint is acceptable",
+      "tooHigh": false
+    }
+  },
+  "7": {
+    "name": "Janie's Room",
+    "roomUse": "Adult bedroom",
+    "updated-at": "2018-04-06T02:04:45.394Z",
+    "grade": "F",
+    "generalMsg": "temperature is too low",
+    "alertMsg": "Janie's Room temperature is TOO LOW",
+    "temperature": {
+      "value": 14.0,
+      "unit": "°C",
+      "timestamp": "2018-03-06 02:04:45 UTC",
+      "errorMsg": "",
+      "checklistMsg": "the temperature is too low",
+      "tooLow": true,
+      "tooHigh": false
+    },
+    "humidity": {
+      "value": 80.0,
+      "unit": "%",
+      "timestamp": "2018-03-06 02:04:45 UTC",
+      "errorMsg": "",
+      "checklistMsg": "humidity too high",
+      "tooHigh": true
+    },
+    "dewpoint": {
+      "value": -700,
+      "unit": "°C",
+      "timestamp": "2018-04-06 02:04:45 UTC",
+      "errorMsg": "There is something wrong with the dewpoint sensor",
+      "checklistMsg": "",
       "tooHigh": false
     }
   }
