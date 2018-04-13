@@ -1,0 +1,35 @@
+{
+  "6": {
+    "name": "Sandra's desk",
+    "roomUse": "office",
+    "updated-at": "2018-04-06T02:04:45.394Z",
+    "grade": "B",
+    "generalMsg": "the humidity is slightly high",
+    "alertMsg": "",
+    "temperature": {
+      "value": 23.5,
+      "unit": "°C",
+      "timestamp": "2018-04-06 02:04:45 UTC",
+      "errorMsg": "",
+      "checklistMsg": "the temperature is good",
+      "tooLow": true,
+      "tooHigh": false
+    },
+    "humidity": {
+      "value": 63.0,
+      "unit": "%",
+      "timestamp": "2018-04-06 02:04:45 UTC",
+      "errorMsg": "",
+      "checklistMsg": "humidity too high",
+      "tooHigh": true
+    },
+    "dewpoint": {
+      "value": 12.5,
+      "unit": "°C",
+      "timestamp": "2018-04-06 02:04:45 UTC",
+      "errorMsg": "",
+      "checklistMsg": "the dewpoint is acceptable",
+      "tooHigh": false
+    }
+  }
+}
