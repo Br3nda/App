@@ -1,0 +1,416 @@
+{
+  "data": [
+    {
+      "id": "5",
+      "type": "rooms",
+      "links": {
+        "self": "https://app.wharehauora.nz/api/v1/rooms/5"
+      },
+      "attributes": {
+        "name": "Sandra's desk",
+        "updated-at": "2018-04-06T02:04:45.394Z",
+        "ratings": {
+          "good": true,
+          "min_temperature": 18.0,
+          "max_temperature": 30.0,
+          "too_cold": false,
+          "too_hot": false,
+          "too_damp": false,
+          "bit_damp": false
+        },
+        "readings": {
+          "temperature": {
+            "value": 23.5,
+            "unit": "°C",
+            "timestamp": "2018-04-06 02:04:45 UTC",
+            "current": true
+          },
+          "humidity": {
+            "value": 50.0,
+            "unit": "%",
+            "timestamp": "2018-04-06 02:04:45 UTC",
+            "current": true
+          },
+          "dewpoint": {
+            "value": 12.5,
+            "unit": "°C",
+            "timestamp": "2018-04-06 02:04:45 UTC",
+            "current": true
+          }
+        },
+        "sensor-count": 2
+      },
+      "relationships": {
+        "home": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/5/relationships/home",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/5/home"
+          }
+        },
+        "sensors": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/5/relationships/sensors",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/5/sensors"
+          }
+        },
+        "readings": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/5/relationships/readings",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/5/readings"
+          }
+        }
+      }
+    },
+    {
+      "id": "6",
+      "type": "rooms",
+      "links": {
+        "self": "https://app.wharehauora.nz/api/v1/rooms/6"
+      },
+      "attributes": {
+        "name": "Josh's office",
+        "updated-at": "2018-03-28T03:02:38.184Z",
+        "ratings": {
+          "good": false,
+          "min_temperature": 21.0,
+          "max_temperature": 30.0,
+          "too_cold": null,
+          "too_hot": null,
+          "too_damp": false,
+          "bit_damp": false
+        },
+        "readings": {
+          "temperature": {
+            "value": 21.4,
+            "unit": "°C",
+            "timestamp": "2018-03-28 03:02:38 UTC",
+            "current": false
+          },
+          "humidity": {
+            "value": 63.0,
+            "unit": "%",
+            "timestamp": "2018-03-22 21:53:03 UTC",
+            "current": false
+          },
+          "dewpoint": {
+            "value": 14.1,
+            "unit": "°C",
+            "timestamp": "2018-03-28 03:02:38 UTC",
+            "current": false
+          }
+        },
+        "sensor-count": 2
+      },
+      "relationships": {
+        "home": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/6/relationships/home",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/6/home"
+          }
+        },
+        "sensors": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/6/relationships/sensors",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/6/sensors"
+          }
+        },
+        "readings": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/6/relationships/readings",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/6/readings"
+          }
+        }
+      }
+    },
+    {
+      "id": "7",
+      "type": "rooms",
+      "links": {
+        "self": "https://app.wharehauora.nz/api/v1/rooms/7"
+      },
+      "attributes": {
+        "name": "Amy's desk",
+        "updated-at": "2017-12-20T01:29:01.351Z",
+        "ratings": {
+          "good": false,
+          "min_temperature": 18.0,
+          "max_temperature": 30.0,
+          "too_cold": null,
+          "too_hot": null,
+          "too_damp": false,
+          "bit_damp": false
+        },
+        "readings": {
+          "temperature": {
+            "value": 25.4,
+            "unit": "°C",
+            "timestamp": "2017-12-20 01:29:01 UTC",
+            "current": false
+          },
+          "humidity": {
+            "value": -7122.0,
+            "unit": "%",
+            "timestamp": "2017-12-20 01:29:01 UTC",
+            "current": false
+          },
+          "dewpoint": {
+            "value": 10.8,
+            "unit": "°C",
+            "timestamp": "2017-12-20 01:29:01 UTC",
+            "current": false
+          }
+        },
+        "sensor-count": 2
+      },
+      "relationships": {
+        "home": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/7/relationships/home",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/7/home"
+          }
+        },
+        "sensors": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/7/relationships/sensors",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/7/sensors"
+          }
+        },
+        "readings": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/7/relationships/readings",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/7/readings"
+          }
+        }
+      }
+    },
+    {
+      "id": "8",
+      "type": "rooms",
+      "links": {
+        "self": "https://app.wharehauora.nz/api/v1/rooms/8"
+      },
+      "attributes": {
+        "name": "Marian's desk",
+        "updated-at": "2018-04-06T02:16:24.920Z",
+        "ratings": {
+          "good": true,
+          "min_temperature": 18.0,
+          "max_temperature": 30.0,
+          "too_cold": false,
+          "too_hot": false,
+          "too_damp": false,
+          "bit_damp": false
+        },
+        "readings": {
+          "temperature": {
+            "value": 21.1,
+            "unit": "°C",
+            "timestamp": "2018-04-06 02:16:24 UTC",
+            "current": true
+          },
+          "humidity": {
+            "value": 64.0,
+            "unit": "%",
+            "timestamp": "2018-04-06 02:16:24 UTC",
+            "current": true
+          },
+          "dewpoint": {
+            "value": 14.0,
+            "unit": "°C",
+            "timestamp": "2018-04-06 02:16:24 UTC",
+            "current": true
+          }
+        },
+        "sensor-count": 2
+      },
+      "relationships": {
+        "home": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/8/relationships/home",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/8/home"
+          }
+        },
+        "sensors": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/8/relationships/sensors",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/8/sensors"
+          }
+        },
+        "readings": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/8/relationships/readings",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/8/readings"
+          }
+        }
+      }
+    },
+    {
+      "id": "9",
+      "type": "rooms",
+      "links": {
+        "self": "https://app.wharehauora.nz/api/v1/rooms/9"
+      },
+      "attributes": {
+        "name": "zGateway",
+        "updated-at": "2018-04-05T08:41:01.759Z",
+        "ratings": {
+          "good": false,
+          "min_temperature": null,
+          "max_temperature": null,
+          "too_cold": null,
+          "too_hot": null,
+          "too_damp": false,
+          "bit_damp": false
+        },
+        "readings": {
+          "temperature": null,
+          "humidity": null,
+          "dewpoint": null
+        },
+        "sensor-count": 2
+      },
+      "relationships": {
+        "home": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/9/relationships/home",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/9/home"
+          }
+        },
+        "sensors": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/9/relationships/sensors",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/9/sensors"
+          }
+        },
+        "readings": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/9/relationships/readings",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/9/readings"
+          }
+        }
+      }
+    },
+    {
+      "id": "10",
+      "type": "rooms",
+      "links": {
+        "self": "https://app.wharehauora.nz/api/v1/rooms/10"
+      },
+      "attributes": {
+        "name": "The Kitchen",
+        "updated-at": "2017-09-15T05:32:36.330Z",
+        "ratings": {
+          "good": false,
+          "min_temperature": 18.0,
+          "max_temperature": 30.0,
+          "too_cold": null,
+          "too_hot": null,
+          "too_damp": false,
+          "bit_damp": false
+        },
+        "readings": {
+          "temperature": {
+            "value": 24.1,
+            "unit": "°C",
+            "timestamp": "2017-09-15 04:30:24 UTC",
+            "current": false
+          },
+          "humidity": {
+            "value": 50.0,
+            "unit": "%",
+            "timestamp": "2017-09-15 04:30:24 UTC",
+            "current": false
+          },
+          "dewpoint": {
+            "value": 13.3,
+            "unit": "°C",
+            "timestamp": "2017-09-15 04:30:24 UTC",
+            "current": false
+          }
+        },
+        "sensor-count": 1
+      },
+      "relationships": {
+        "home": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/10/relationships/home",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/10/home"
+          }
+        },
+        "sensors": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/10/relationships/sensors",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/10/sensors"
+          }
+        },
+        "readings": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/10/relationships/readings",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/10/readings"
+          }
+        }
+      }
+    },
+    {
+      "id": "11",
+      "type": "rooms",
+      "links": {
+        "self": "https://app.wharehauora.nz/api/v1/rooms/11"
+      },
+      "attributes": {
+        "name": "Near Ben",
+        "updated-at": "2018-04-06T02:12:10.019Z",
+        "ratings": {
+          "good": true,
+          "min_temperature": 21.0,
+          "max_temperature": 30.0,
+          "too_cold": false,
+          "too_hot": false,
+          "too_damp": false,
+          "bit_damp": false
+        },
+        "readings": {
+          "temperature": {
+            "value": 28.7,
+            "unit": "°C",
+            "timestamp": "2018-04-06 02:12:10 UTC",
+            "current": true
+          },
+          "humidity": {
+            "value": 43.0,
+            "unit": "%",
+            "timestamp": "2018-04-06 02:11:09 UTC",
+            "current": true
+          },
+          "dewpoint": {
+            "value": 14.9,
+            "unit": "°C",
+            "timestamp": "2018-04-06 02:12:10 UTC",
+            "current": true
+          }
+        },
+        "sensor-count": 1
+      },
+      "relationships": {
+        "home": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/11/relationships/home",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/11/home"
+          }
+        },
+        "sensors": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/11/relationships/sensors",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/11/sensors"
+          }
+        },
+        "readings": {
+          "links": {
+            "self": "https://app.wharehauora.nz/api/v1/rooms/11/relationships/readings",
+            "related": "https://app.wharehauora.nz/api/v1/rooms/11/readings"
+          }
+        }
+      }
+    }
+  ]
+}
