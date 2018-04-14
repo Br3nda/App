@@ -7,7 +7,7 @@ test(`test 1: if any room humidity is out of range,
     'data': [
       {
         'id': '1',
-        'type': 'rooms',
+        'type': 'Office',
         'attributes': {
           'name': `Sandra's desk`
         },
@@ -19,7 +19,7 @@ test(`test 1: if any room humidity is out of range,
       },
       {
         'id': '2',
-        'type': 'rooms',
+        'type': 'Adult bedroom',
         'attributes': {
           'name': `Janie's room`
         },
@@ -31,9 +31,9 @@ test(`test 1: if any room humidity is out of range,
       },
       {
         'id': '3',
-        'type': 'rooms',
+        'type': 'Child bedroom',
         'attributes': {
-          'name': `Meghan's room`
+          'name': `Zoe's room`
         },
         'readings': {
           'humidity': {
@@ -44,20 +44,57 @@ test(`test 1: if any room humidity is out of range,
     ]
   }
 
-  const expected = [
-    { 'id': '1',
+  const expected = {
+    '1': {
       'name': `Sandra's desk`,
-      'sensorType': 'humidity',
-      'errorMsg': `The humidity sensor reading in Sandra's desk is malfunctioning`
+      'roomUse': 'Office',
+      'humidity': {
+        'value': -7122.0,
+        'errorMsg': `There is something wrong with the humidity sensor in Sandra's desk`,
+        'tooHigh': false
+      }
     },
-    { 'id': '2',
+    '2': {
       'name': `Janie's room`,
-      'sensorType': 'humidity',
-      'errorMsg': `The humidity sensor reading in Janie's room is malfunctioning`
+      'roomUse': 'Adult bedroom',
+      'humidity': {
+        'value': 101.0,
+        'errorMsg': `There is something wrong with the humidity sensor in Janie's room`,
+        'tooHigh': true
+      }
+    },
+    '3': {
+      'name': `Zoe's room`,
+      'roomUse': 'Child bedroom',
+      'humidity': {
+        'value': 50.0,
+        'errorMsg': ``,
+        'tooHigh': false
+      }
     }
-  ]
+  }
 
   const value = rooms.humudityOutOfBounds(testData)
-  // rooms.checkHumidity()
-  t.deepEqual(value, expected, 'return an array of rooms with humidity errors')
+  // find the keys of the expected object
+  const expectedKeys = Object.keys(expected)
+  // map through the keys
+  expectedKeys.map(id => {
+    // find the keys of the 2nd nested objects
+    const idKeys = Object.keys(expected[id])
+    // map through these keys
+    idKeys.map(key => {
+      // if there is another object nested, map through that
+      if (typeof expected[id][key] === 'object') {
+        const readings = Object.keys(expected[id][key])
+        readings.map(reading => {
+          // console.log(value[id][key][reading], ' = ', expected[id][key][reading])
+          t.is(value[id][key][reading], expected[id][key][reading], 'returns ' + reading)
+        })
+        // else test the values
+      } else {
+        // console.log(value[id][key], ' = ', expected[id][key])
+        t.is(value[id][key], expected[id][key], 'returns ' + key)
+      }
+    })
+  })
 })
