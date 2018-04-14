@@ -28,7 +28,7 @@ function humudityOutOfBounds (data) {
         'value': defined(room, 'readings', 'humidity', 'value'),
         'unit': defined(room, 'readings', 'humidity', 'unit'),
         'timestamp': defined(room, 'readings', 'humidity', 'timestamp'),
-        'errorMsg': checkValue(room, 'readings', 'humidity', 'value'),
+        'errorMsg': checkValue(room, 'readings', 'humidity', 'value', 0, 100),
         'checklistMsg': '',
         'tooHigh': valueTooHigh(room, 'readings', 'humidity', 'value', 70)
       },
@@ -36,9 +36,9 @@ function humudityOutOfBounds (data) {
         'value': defined(room, 'readings', 'dewpoint', 'value'),
         'unit': defined(room, 'readings', 'dewpoint', 'unit'),
         'timestamp': defined(room, 'readings', 'dewpoint', 'timestamp'),
-        'errorMsg': '',
+        'errorMsg': checkValue(room, 'readings', 'dewpoint', 'value', -20, 30),
         'checklistMsg': '',
-        'tooHigh': ''
+        'tooHigh': dewPointTooHigh(room, 'readings', 'dewpoint', 'value')
       }
     }
   })
@@ -46,6 +46,8 @@ function humudityOutOfBounds (data) {
 }
 
 function defined (room, att1, att2, att3) {
+  // checks is the object keys are valid and if it exists in the objects
+  // return '' if it doesnt exist in the object.
   if (att1 && att2 && att3) {
     if (room.hasOwnProperty(att1)) {
       if (room[att1].hasOwnProperty(att2)) {
@@ -69,12 +71,14 @@ function defined (room, att1, att2, att3) {
   }
 }
 
-function checkValue (room, att1, att2, att3) {
+function checkValue (room, att1, att2, att3, lowerLimit, upperLimit) {
+  // checks if a value is within the lower and upperLimit
+  // return a message if its out of bounds and '' if not.
   const value = defined(room, att1, att2, att3)
   if (typeof value === 'string') {
     return ''
   } else {
-    if (value >= 0 && value <= 100) {
+    if (value >= lowerLimit && value <= upperLimit) {
       return ''
     } else {
       return `There is something wrong with the ${att2} sensor in ${room.attributes.name}`
@@ -89,6 +93,24 @@ function valueTooHigh (room, att1, att2, att3, limit) {
   } else if (value >= limit) {
     return true
   } else return false
+}
+
+function dewPointTooHigh (room, att1, att2, att3) {
+  const temp = defined(room, att1, 'temperature', att3)
+  const dewpoint = defined(room, att1, att2, att3)
+
+  // const humidity = defined(room, att1, 'humidity', att3)
+  // const l = humidity / 100
+  // const m = 17.27 * temp
+  // const n = 237.3 + temp
+  // const b = (l + (m / n)) / 17.27
+  // const result = (237.3 * b) / (1 - b)
+
+  if (temp < dewpoint) {
+    return true
+  } else if (temp - 2 < dewpoint) {
+    return true
+  } else { return false }
 }
 
 
