@@ -14,6 +14,12 @@ test(`test 2: if any room dewpoint is out of range,
         'readings': {
           'dewpoint': {
             'value': -22.0
+          },
+          'temperature': {
+            'value': 23.5
+          },
+          'humidity': {
+            'value': 20.0
           }
         }
       },
@@ -26,6 +32,12 @@ test(`test 2: if any room dewpoint is out of range,
         'readings': {
           'dewpoint': {
             'value': 31.0
+          },
+          'temperature': {
+            'value': 23.5
+          },
+          'humidity': {
+            'value': 80.0
           }
         }
       },
@@ -38,6 +50,12 @@ test(`test 2: if any room dewpoint is out of range,
         'readings': {
           'dewpoint': {
             'value': 12.0
+          },
+          'temperature': {
+            'value': 14.0
+          },
+          'humidity': {
+            'value': 70
           }
         }
       }
@@ -87,12 +105,12 @@ test(`test 2: if any room dewpoint is out of range,
       if (typeof expected[id][key] === 'object') {
         const readings = Object.keys(expected[id][key])
         readings.map(reading => {
-          // console.log(value[id][key][reading], ' = ', expected[id][key][reading])
+          console.log(value[id][key][reading], ' = ', expected[id][key][reading])
           t.is(value[id][key][reading], expected[id][key][reading], 'returns ' + reading)
         })
         // else test the values
       } else {
-        // console.log(value[id][key], ' = ', expected[id][key])
+        console.log(value[id][key], ' = ', expected[id][key])
         t.is(value[id][key], expected[id][key], 'returns ' + key)
       }
     })
