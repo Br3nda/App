@@ -5,7 +5,6 @@ import Dashboard from '../components/profile/Dashboard'
 const exampleData = require('../db/exampleData.json')
 
 class dashboard extends React.Component {
-
   static async getInitialProps() {
     const roomsData = exampleData
     return { roomsData }

@@ -1,17 +1,22 @@
-import Layout from '../components/genApp/Layouts'
+import Layouts from '../components/genApp/Layouts'
 import RoomDetail from '../components/room/RoomDetail'
+const exampleData = require('../db/exampleData.json')
 
-const Content = (props) => (
-  <div>
-    <h1>{props.url.query.title}</h1>
-    <RoomDetail />
-  </div>
-)
+class room extends React.Component {
+  static async getInitialProps() {
+    const roomData = exampleData
+    return { roomData }
+}
 
-export default (props) => (
-  <div>
-    <Layout>
-      <Content url={props.url} />
-    </Layout>
-  </div>
-)
+render () {
+  return (
+    <div>
+      <Layouts>
+        <RoomDetail roomData={this.props.roomData} />
+      </Layouts>
+    </div>
+  )
+}
+}
+
+export default room

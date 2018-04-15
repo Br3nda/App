@@ -5,9 +5,13 @@ import Header from '../genApp/Header'
 import CardSummary from '../room/CardSummary'
 
 const mapRooms = mapObjIndexed((room, key) => (
-    <CardSummary room={room}/>
+    <CardSummary room={room} />
+))
+const mapRoom = mapObjIndexed((room, key) => (
+    <Menu room={room} />
 ))
 const mapRoomsToValues = pipe(mapRooms, values)
+const mapRoomToValues = pipe(mapRoom, values)
 
 class Dashboard extends React.Component {
 //   constructor (props) {
@@ -86,7 +90,7 @@ class Dashboard extends React.Component {
       <div>
         <Header />
         <div className='overlay'></div>
-        <Menu />
+        {mapRoomToValues(this.props.roomsData)}
         <div className='content'>
           <div className='center'>
             <h1>Lisefski House</h1>
