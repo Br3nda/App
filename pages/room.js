@@ -12,7 +12,7 @@ render () {
   return (
     <div>
       <Layouts>
-        <RoomDetail roomData={this.props.roomData} />
+       <RoomDetail roomData={this.props.roomData} />
       </Layouts>
     </div>
   )

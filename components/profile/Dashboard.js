@@ -90,12 +90,12 @@ class Dashboard extends React.Component {
       <div>
         <Header />
         <div className='overlay'></div>
-        {mapRoomToValues(this.props.roomsData)}
+          {mapRoomToValues(this.props.roomsData)}
         <div className='content'>
           <div className='center'>
             <h1>Lisefski House</h1>
             <div className='summary-grid'>
-            {mapRoomsToValues(this.props.roomsData)}
+              {mapRoomsToValues(this.props.roomsData)}
             </div>
           </div>
         </div>

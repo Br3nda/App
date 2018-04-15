@@ -7,7 +7,6 @@ const Rooms = () => (
   <div className='content'>
     <div className='center'>
       <Header />
-      <Menu />
       <RoomsList />
       <WhareList />
     </div>
@@ -15,3 +14,4 @@ const Rooms = () => (
 )
 
 export default Rooms
+// <Menu />
