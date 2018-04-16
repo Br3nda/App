@@ -1,7 +1,7 @@
 import test from 'ava'
 import rooms from '../../db/rooms'
 
-test(`test 2: if any room dewpoint is out of range,
+test(`test 2: if any room wetbulb temp is out of range,
   it returns a message to check the sensor in a room`, t => {
   const testData = {
     'data': [
@@ -31,13 +31,13 @@ test(`test 2: if any room dewpoint is out of range,
         },
         'readings': {
           'dewpoint': {
-            'value': 31.0
+            'value': 45.0
           },
           'temperature': {
-            'value': 23.5
+            'value': 40.0
           },
           'humidity': {
-            'value': 80.0
+            'value': 50.0
           }
         }
       },
@@ -49,13 +49,13 @@ test(`test 2: if any room dewpoint is out of range,
         },
         'readings': {
           'dewpoint': {
-            'value': 12.0
+            'value': 22.0
           },
           'temperature': {
-            'value': 14.0
+            'value': 40.0
           },
           'humidity': {
-            'value': 70
+            'value': 50.0
           }
         }
       }
@@ -68,7 +68,7 @@ test(`test 2: if any room dewpoint is out of range,
       'roomUse': 'Office',
       'dewpoint': {
         'value': -22.0,
-        'errorMsg': `There is something wrong with the dewpoint sensor in Sandra's desk`,
+        'errorMsg': `There is something wrong with the wet bulb sensor in Sandra's desk`,
         'tooHigh': false
       }
     },
@@ -76,8 +76,8 @@ test(`test 2: if any room dewpoint is out of range,
       'name': `Janie's room`,
       'roomUse': 'Adult bedroom',
       'dewpoint': {
-        'value': 31.0,
-        'errorMsg': `There is something wrong with the dewpoint sensor in Janie's room`,
+        'value': 45.0,
+        'errorMsg': `There is something wrong with the wet bulb sensor in Janie's room`,
         'tooHigh': true
       }
     },
@@ -85,7 +85,7 @@ test(`test 2: if any room dewpoint is out of range,
       'name': `Zoe's room`,
       'roomUse': 'Child bedroom',
       'dewpoint': {
-        'value': 12.0,
+        'value': 22.0,
         'errorMsg': ``,
         'tooHigh': false
       }
