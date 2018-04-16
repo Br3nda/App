@@ -74,7 +74,7 @@ test(`test 1: if any room humidity is out of range,
     }
   }
 
-  const value = rooms.humudityOutOfBounds(testData)
+  const value = rooms.reformatData(testData)
   // find the keys of the expected object
   const expectedKeys = Object.keys(expected)
   // map through the keys

@@ -92,7 +92,7 @@ test(`test 2: if any room wetbulb temp is out of range,
     }
   }
 
-  const value = rooms.humudityOutOfBounds(testData)
+  const value = rooms.reformatData(testData)
   // find the keys of the expected object
   const expectedKeys = Object.keys(expected)
   // map through the keys
