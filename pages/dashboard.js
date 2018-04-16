@@ -3,6 +3,8 @@
 import Layouts from '../components/genApp/Layouts'
 import Dashboard from '../components/profile/Dashboard'
 const exampleData = require('../db/exampleData.json')
+import Link from 'next/link'
+
 
 class dashboard extends React.Component {
   static async getInitialProps() {

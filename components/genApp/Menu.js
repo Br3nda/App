@@ -1,7 +1,16 @@
 import Link from 'next/link'
 
+const PostLink = (props) => (
+  <li>
+  <Link href={`/room?title=${props.title}`}>
+  <a>{props.title}</a>
+  </Link>
+  </li>
+)
+
 const Menu = (props) => {
-  const roomNames = props.room.name
+  const room = props.room
+  const name = room.name
 
   return (
     <div>
@@ -17,7 +26,7 @@ const Menu = (props) => {
           </ul>
           <h6>Rooms</h6>
           <ul className="nav-links">
-            <li><Link href=''><a>{roomNames}</a></Link></li>
+            <li><PostLink title={name} /></li>
           </ul>
           <h6>Setup</h6>
           <ul className='nav-links'>

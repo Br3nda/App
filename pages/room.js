@@ -4,15 +4,15 @@ const exampleData = require('../db/exampleData.json')
 
 class room extends React.Component {
   static async getInitialProps() {
-    const roomData = exampleData
-    return { roomData }
+    const roomsData = exampleData
+    return { roomsData }
 }
 
 render () {
   return (
     <div>
       <Layouts>
-       <RoomDetail roomData={this.props.roomData} />
+       <RoomDetail roomsData={this.props.roomsData} />
       </Layouts>
     </div>
   )
