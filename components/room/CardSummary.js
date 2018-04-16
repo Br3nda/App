@@ -1,6 +1,5 @@
-
 const CardSummary = (props) => {
-  console.log('this is CardSummary name', props.room.name);
+  console.log('this is CardSummary name', props.room);
   const room = props.room
   const name = room.name
   const type = room.roomUse
