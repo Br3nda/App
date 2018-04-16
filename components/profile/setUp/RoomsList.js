@@ -1,11 +1,11 @@
 // import AddRoomModal from './AddRoomModal'
 
 const RoomsList = (props) => {
-console.log('this is roomsList name', props.room);
-const room = props.room
-const name = room.name
-const type = room.roomUse
-const time = room.temperature.timestamp
+  const room = props.room
+  const name = room.name
+  const type = room.roomUse
+  const time = room.temperature.timestamp
+  const use = room.roomUse
 
    return(
     <div>
