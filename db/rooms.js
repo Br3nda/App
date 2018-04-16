@@ -5,7 +5,7 @@ function checkHumidity (data) {
   return data
 }
 
-function humudityOutOfBounds (data) {
+function reformatData (data) {
   const newFormat = {}
   data.data.map(room => {
     newFormat[room.id] = {
@@ -36,7 +36,7 @@ function humudityOutOfBounds (data) {
         'value': defined(room, 'readings', 'dewpoint', 'value'),
         'unit': defined(room, 'readings', 'dewpoint', 'unit'),
         'timestamp': defined(room, 'readings', 'dewpoint', 'timestamp'),
-        'errorMsg': checkValue(room, 'readings', 'dewpoint', 'value', -20, 30),
+        'errorMsg': checkValue(room, 'readings', 'dewpoint', 'value', -20, 40),
         'checklistMsg': '',
         'tooHigh': dewPointTooHigh(room, 'readings', 'dewpoint', 'value')
       }
@@ -81,6 +81,9 @@ function checkValue (room, att1, att2, att3, lowerLimit, upperLimit) {
     if (value >= lowerLimit && value <= upperLimit) {
       return ''
     } else {
+      if (att2 === 'dewpoint') {
+        return `There is something wrong with the wet bulb sensor in ${room.attributes.name}`
+      }
       return `There is something wrong with the ${att2} sensor in ${room.attributes.name}`
     }
   }
@@ -96,19 +99,25 @@ function valueTooHigh (room, att1, att2, att3, limit) {
 }
 
 function dewPointTooHigh (room, att1, att2, att3) {
-  const temp = defined(room, att1, 'temperature', att3)
-  const dewpoint = defined(room, att1, att2, att3)
+  const dryBulb = defined(room, att1, 'temperature', att3)
+  const wetBulb = defined(room, att1, att2, att3)
+  const humidity = defined(room, att1, 'humidity', att3)
 
-  // const humidity = defined(room, att1, 'humidity', att3)
-  // const l = humidity / 100
-  // const m = 17.27 * temp
-  // const n = 237.3 + temp
-  // const b = (l + (m / n)) / 17.27
-  // const result = (237.3 * b) / (1 - b)
+  const L = Math.log(humidity / 100)
+  const M = 17.27 * dryBulb
+  const N = 237.3 + dryBulb
+  const B = (L + (M / N)) / 17.27
+  const dewpoint = (237.3 * B) / (1 - B)
 
-  if (temp < dewpoint) {
-    return true
-  } else if (temp - 2 < dewpoint) {
+  // B = (ln(RH / 100) + ((17.27 * T) / (237.3 + T))) / 17.27
+  // D = (237.3 * B) / (1 - B)
+  // where:
+  // T = Air Temperature (Dry Bulb) in Centigrade (C) degrees
+  // RH = Relative Humidity in percent (%)
+  // B = intermediate value (no units)
+  // D = Dewpoint in Centigrade (C) degrees
+
+  if (dewpoint < wetBulb || dewpoint - 2 < wetBulb) {
     return true
   } else { return false }
 }
@@ -116,6 +125,5 @@ function dewPointTooHigh (room, att1, att2, att3) {
 
 
 module.exports = {
-  checkHumidity,
-  humudityOutOfBounds
+  reformatData
 }
