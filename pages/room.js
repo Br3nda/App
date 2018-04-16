@@ -12,7 +12,7 @@ render () {
   return (
     <div>
       <Layouts>
-       <RoomDetail roomsData={this.props.roomsData} />
+       <RoomDetail roomsData={this.props.roomsData} url={this.props.url}/>
       </Layouts>
     </div>
   )
