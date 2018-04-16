@@ -1,11 +1,17 @@
+// <h2>{props.url.query.title}</h2> this should go into the header and render the name of the room but it throws an error message that 'cannot read property query of undefined'
+
 const ReportCard = (props) => {
-  
+console.log('this is report card', this)
+  const room = props.room
+  const name = room.name
+  const type = room.roomUse
+
   return(
     <div>
       <section className='card report'>
         <header>
-          <h2>Kid&rsquo;s Room</h2>
-          <h4>Sleeping / Bedroom</h4>
+          <h2>{name}</h2>
+          <h4>{type}</h4>
           <a className='head-action' href='#'><img className='svg' src='../../../static/img/icon/edit.svg' alt='edit' /></a>
         </header>
         <div className='readings'>
