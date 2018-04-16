@@ -19,10 +19,11 @@ function reformatData (data) {
         'value': defined(room, 'readings', 'temperature', 'value'),
         'unit': defined(room, 'readings', 'temperature', 'unit'),
         'timestamp': defined(room, 'readings', 'temperature', 'timestamp'),
-        'errorMsg': checkValue(room, 'readings', 'temperature', 'value'),
+        'errorMsg': checkValue(room, 'readings', 'temperature', 'value', -50, 100),
         'checklistMsg': '',
         'tooLow': '',
-        'tooHigh': ''
+        'tooHigh': valueTooHigh(room, 'readings', 'humidity', 'value',
+          defined(room, 'ratings', 'max_temperature'))
       },
       'humidity': {
         'value': defined(room, 'readings', 'humidity', 'value'),
@@ -74,6 +75,7 @@ function defined (room, att1, att2, att3) {
 function checkValue (room, att1, att2, att3, lowerLimit, upperLimit) {
   // checks if a value is within the lower and upperLimit
   // return a message if its out of bounds and '' if not.
+  // console.log('upperlimit', upperLimit)
   const value = defined(room, att1, att2, att3)
   if (typeof value === 'string') {
     return ''
@@ -91,6 +93,7 @@ function checkValue (room, att1, att2, att3, lowerLimit, upperLimit) {
 
 function valueTooHigh (room, att1, att2, att3, limit) {
   const value = defined(room, att1, att2, att3)
+  console.log('maxtemp :', limit)
   if (typeof value === 'string') {
     return ''
   } else if (value >= limit) {
@@ -117,7 +120,7 @@ function dewPointTooHigh (room, att1, att2, att3) {
   // B = intermediate value (no units)
   // D = Dewpoint in Centigrade (C) degrees
 
-  if (dewpoint < wetBulb || dewpoint - 2 < wetBulb) {
+  if (dewpoint < wetBulb || (dewpoint - 2) < wetBulb) {
     return true
   } else { return false }
 }

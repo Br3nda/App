@@ -1,7 +1,7 @@
 import test from 'ava'
 import rooms from '../../db/rooms'
 
-test(`test 2: if any room wetbulb temp is out of range,
+test.only(`test 3: if any room temperature is out of range,
   it returns a message to check the sensor in a room`, t => {
   const testData = {
     'data': [
@@ -11,12 +11,16 @@ test(`test 2: if any room wetbulb temp is out of range,
         'attributes': {
           'name': `Sandra's desk`
         },
+        'ratings': {
+          'min_temperature': 18.0,
+          'max_temperature': 30.0
+        },
         'readings': {
           'dewpoint': {
             'value': -22.0
           },
           'temperature': {
-            'value': 23.5
+            'value': -100.0
           },
           'humidity': {
             'value': 20.0
@@ -29,12 +33,16 @@ test(`test 2: if any room wetbulb temp is out of range,
         'attributes': {
           'name': `Janie's room`
         },
+        'ratings': {
+          'min_temperature': 18.0,
+          'max_temperature': 30.0
+        },
         'readings': {
           'dewpoint': {
             'value': 45.0
           },
           'temperature': {
-            'value': 40.0
+            'value': 101
           },
           'humidity': {
             'value': 50.0
@@ -47,12 +55,16 @@ test(`test 2: if any room wetbulb temp is out of range,
         'attributes': {
           'name': `Zoe's room`
         },
+        'ratings': {
+          'min_temperature': 21.0,
+          'max_temperature': 30.0
+        },
         'readings': {
           'dewpoint': {
-            'value': 22.0
+            'value': 18.0
           },
           'temperature': {
-            'value': 40.0
+            'value': 22.0
           },
           'humidity': {
             'value': 50.0
@@ -66,25 +78,25 @@ test(`test 2: if any room wetbulb temp is out of range,
     '1': {
       'name': `Sandra's desk`,
       'roomUse': 'Office',
-      'dewpoint': {
-        'value': -22.0,
-        'errorMsg': `There is something wrong with the wet bulb sensor in Sandra's desk`,
+      'temperature': {
+        'value': -100.0,
+        'errorMsg': `There is something wrong with the temperature sensor in Sandra's desk`,
         'tooHigh': false
       }
     },
     '2': {
       'name': `Janie's room`,
       'roomUse': 'Adult bedroom',
-      'dewpoint': {
-        'value': 45.0,
-        'errorMsg': `There is something wrong with the wet bulb sensor in Janie's room`,
+      'temperature': {
+        'value': 101,
+        'errorMsg': `There is something wrong with the temperature sensor in Janie's room`,
         'tooHigh': true
       }
     },
     '3': {
       'name': `Zoe's room`,
       'roomUse': 'Child bedroom',
-      'dewpoint': {
+      'temperature': {
         'value': 22.0,
         'errorMsg': ``,
         'tooHigh': false
@@ -105,12 +117,12 @@ test(`test 2: if any room wetbulb temp is out of range,
       if (typeof expected[id][key] === 'object') {
         const readings = Object.keys(expected[id][key])
         readings.map(reading => {
-          // console.log(value[id][key][reading], ' = ', expected[id][key][reading])
+          console.log(value[id][key][reading], ' = ', expected[id][key][reading])
           t.is(value[id][key][reading], expected[id][key][reading], 'returns ' + reading)
         })
         // else test the values
       } else {
-        // console.log(value[id][key], ' = ', expected[id][key])
+        console.log(value[id][key], ' = ', expected[id][key])
         t.is(value[id][key], expected[id][key], 'returns ' + key)
       }
     })
