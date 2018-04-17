@@ -1,18 +1,25 @@
+import { mapObjIndexed, values, pipe, isEmpty } from 'ramda'
 import Layouts from '../components/genApp/Layouts'
 import RoomDetail from '../components/room/RoomDetail'
 const exampleData = require('../db/exampleData.json')
 
+const mapDetails = mapObjIndexed((room, key) => (
+    <RoomDetail room={room} />
+))
+
+const mapDetailsToValues = pipe(mapDetails, values)
+
 class room extends React.Component {
   static async getInitialProps() {
-    const roomsData = exampleData
-    return { roomsData }
+    const detailData = exampleData
+    return { detailData }
 }
 
 render () {
   return (
     <div>
       <Layouts>
-       <RoomDetail roomsData={this.props.roomsData} url={this.props.url}/>
+      {mapDetailsToValues(this.props.detailData)}
       </Layouts>
     </div>
   )
@@ -20,3 +27,4 @@ render () {
 }
 
 export default room
+// <RoomDetail detailData={this.props.detailData} url={this.props.url}/>

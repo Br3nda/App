@@ -1,11 +1,12 @@
-// console.log('this is report card', this)
+// once I get down to this level, I only want the roomsData that relates to this id available in props.
+
+// <h2>{props.url.query.title}</h2>
 const ReportCard = (props) => {
 
   return(
     <div>
       <section className='card report'>
         <header>
-          <h2>{props.url.query.title}</h2>
           <h4></h4>
           <a className='head-action' href='#'><img className='svg' src='../../../static/img/icon/edit.svg' alt='edit' /></a>
         </header>

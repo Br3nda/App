@@ -1,4 +1,3 @@
-import { mapObjIndexed, values, pipe, isEmpty } from 'ramda'
 import Menu from '../genApp/Menu'
 import Header from '../genApp/Header'
 import ReportCard from './roomDetail/ReportCard'
@@ -15,7 +14,7 @@ class RoomDetail extends React.Component {
         <div className='content'>
           <div className='center'>
             <h1 className='sm narrow-down-only'><a className='back' href='#'><img className='svg' src='../../../static/img/icon/back.svg' alt='back' /></a>Lisefski House</h1>
-            <ReportCard url={this.props.url}/>
+            <ReportCard />
             <HealthAlert />
             <Readings />
             <SensorInfo />
