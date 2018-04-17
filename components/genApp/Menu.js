@@ -1,9 +1,6 @@
 import Link from 'next/link'
 
-const mapRoomNames = mapObjIndexed((roomName, key) => (
 
-))
-const mapRoomNamesToValues = pipe(mapRoomNames, values)
 
 const PostLink = (props) => (
   <li>
