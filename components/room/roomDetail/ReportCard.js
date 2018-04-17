@@ -14,27 +14,27 @@ const ReportCard = (props) => {
         <div className='readings'>
          <div className='reading temp-low-2a'>
            <span className='vis'><span className='loader'></span></span>
-           <span className='value'>15.9°C</span>
+           <span className='value'>{props.detailData.temperature.value}{props.detailData.temperature.unit}</span>
            <span className='label'>Temperature</span>
-           <span className='time'>5 minutes ago</span>
+           <span className='time'>{props.detailData.temperature.timestamp}</span>
          </div>
          <div className='reading hum-high-2a'>
            <span className='vis'><span className='loader'></span></span>
-           <span className='value'>80.6%</span>
+           <span className='value'>{props.detailData.humidity.value}{props.detailData.humidity.unit}</span>
            <span className='label'>Humidity</span>
-           <span className='time'>5 minutes ago</span>
+           <span className='time'>{props.detailData.humidity.timestamp}</span>
          </div>
          <div className='reading dew-mid'>
            <span className='vis'><span className='loader'></span></span>
-           <span className='value'>11.9°C</span>
+           <span className='value'>{props.detailData.dewpoint.value}{props.detailData.dewpoint.unit}</span>
            <span className='label'>Dewpoint</span>
-           <span className='time'>5 minutes ago</span>
+           <span className='time'>{props.detailData.dewpoint.timestamp}</span>
          </div>
         </div>
         <div className='report-card grade-low'>
            <div className='rating'>
-             <span className='grade'>F</span>
-             <span className='value'>Very Poor</span>
+             <span className='grade'>{props.detailData.grade}</span>
+             <span className='value'>!!</span>
              <span className='label'>Rating</span>
            </div>
            <ul className='check'>
