@@ -38,10 +38,10 @@ const ReportCard = (props) => {
              <span className='label'>Rating</span>
            </div>
            <ul className='check'>
-             <li className='bullet'>Way too cold for children sleeping<a className='i tooltip' href='#' title='Tooltip content'><img className='svg' src='../../../static/img/icon/i.svg' alt='info' /></a></li>
-             <li className='bullet'>High relative humidity</li>
-             <li>Acceptable dewpoint</li>
-             <li className='bullet'>Risk for cold, damp, and mould<a className='i tooltip' href='#' title='Tooltip content'><img className='svg' src='../../../static/img/icon/i.svg' alt='info' /></a></li>
+             <li className='bullet'>{props.detailData.temperature.checklistMsg}<a className='i tooltip' href='#' title='Tooltip content'><img className='svg' src='../../../static/img/icon/i.svg' alt='info' /></a></li>
+             <li className='bullet'>{props.detailData.humidity.checklistMsg}</li>
+             <li>{props.detailData.dewpoint.checklistMsg}</li>
+             <li className='bullet'>{props.detailData.alertMsg}<a className='i tooltip' href='#' title='Tooltip content'><img className='svg' src='../../../static/img/icon/i.svg' alt='info' /></a></li>
              <li className='none'><a className='underline' href='#'>Learn how to fix this</a></li>
            </ul>
         </div>
