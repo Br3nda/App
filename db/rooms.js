@@ -149,6 +149,17 @@ function dewPointTooHigh (room, att1, att2, att3) {
   } else { return false }
 }
 
+// notification messages
+// Comfortable temperature
+// Comfortable humidity
+// Acceptable dewpoint
+// Temp is well above dewpoint
+// Room appears healthy, warm, & dry
+// Temperature too high
+// Humidity too high
+// Way too cold for children sleeping
+// High relative humidity
+// Risk for cold, damp, and mould
 
 
 module.exports = {

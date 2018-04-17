@@ -69,7 +69,8 @@ test(`test 2: if any room wetbulb temp is out of range,
       'dewpoint': {
         'value': -22.0,
         'errorMsg': `There is something wrong with the wet bulb sensor in Sandra's desk`,
-        'tooHigh': false
+        'tooHigh': false,
+        'checklistMsg': ''
       }
     },
     '2': {
@@ -78,7 +79,8 @@ test(`test 2: if any room wetbulb temp is out of range,
       'dewpoint': {
         'value': 45.0,
         'errorMsg': `There is something wrong with the wet bulb sensor in Janie's room`,
-        'tooHigh': true
+        'tooHigh': true,
+        'checklistMsg': 'Humidity too high'
       }
     },
     '3': {
@@ -87,7 +89,8 @@ test(`test 2: if any room wetbulb temp is out of range,
       'dewpoint': {
         'value': 22.0,
         'errorMsg': ``,
-        'tooHigh': false
+        'tooHigh': false,
+        'checklistMsg': 'Acceptable dewpoint'
       }
     }
   }
