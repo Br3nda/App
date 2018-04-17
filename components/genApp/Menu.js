@@ -1,7 +1,5 @@
 import Link from 'next/link'
 
-
-
 const PostLink = (props) => (
   <li>
     <Link href={`/room?title=${props.title}`}>
