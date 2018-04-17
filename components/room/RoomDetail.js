@@ -14,7 +14,7 @@ class RoomDetail extends React.Component {
         <div className='content'>
           <div className='center'>
             <h1 className='sm narrow-down-only'><a className='back' href='#'><img className='svg' src='../../../static/img/icon/back.svg' alt='back' /></a>Lisefski House</h1>
-            <ReportCard />
+            <ReportCard detailData={this.props.room} />
             <HealthAlert />
             <Readings />
             <SensorInfo />

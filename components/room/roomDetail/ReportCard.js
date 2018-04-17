@@ -7,7 +7,8 @@ const ReportCard = (props) => {
     <div>
       <section className='card report'>
         <header>
-          <h4></h4>
+          <h2>{props.detailData.name}</h2>
+          <h4>{props.detailData.roomUse}</h4>
           <a className='head-action' href='#'><img className='svg' src='../../../static/img/icon/edit.svg' alt='edit' /></a>
         </header>
         <div className='readings'>
