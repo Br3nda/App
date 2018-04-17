@@ -220,7 +220,12 @@ export default css`
         }
 
         .content {
-          margin: 0 0 0 20%;
+          margin: 0 0 0 10%;
+          padding: 60px 0px 30px;
+        }
+
+        .content-login {
+          margin: auto;
           padding: 60px 0px 30px;
         }
 
@@ -242,6 +247,13 @@ export default css`
         .center {
           margin: 0 auto;
           max-width: 1000px;
+        }
+
+        @media (max-width: 699px) {
+          .center {
+            margin: 2em auto;
+            max-width:1000px;
+          }
         }
 
         body.pre-log .content {
@@ -674,6 +686,7 @@ export default css`
         .logo {
           width: 117px;
           height: 60px;
+          margin-bottom: 2em;
           background: transparent url("../static/img/logo.svg") no-repeat left top;
         }
 
@@ -710,9 +723,9 @@ export default css`
 
         @media (max-width: 699px) {
           .header {
-            margin-top: 0em;
-            height: 44px;
+            height: 80px;
             padding: 1em 24px 0;
+            margin-bottom: 2em;
           }
         }
 
@@ -2204,6 +2217,7 @@ export default css`
         @media (max-width: 699px) {
           .card {
             padding: 0 26px 20px 26px;
+            margin-top: 100px;
             margin-bottom: 16px;
           }
           .card > header {
