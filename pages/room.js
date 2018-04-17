@@ -1,6 +1,8 @@
 import { mapObjIndexed, values, pipe, isEmpty } from 'ramda'
 import Layouts from '../components/genApp/Layouts'
+import Menu from '../components/genApp/Menu'
 import RoomDetail from '../components/room/RoomDetail'
+
 const exampleData = require('../db/exampleData.json')
 
 const mapDetails = mapObjIndexed((room, key) => (
@@ -19,6 +21,7 @@ render () {
   return (
     <div>
       <Layouts>
+      <Menu />
       {mapDetailsToValues(this.props.detailData)}
       </Layouts>
     </div>

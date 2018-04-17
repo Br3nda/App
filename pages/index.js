@@ -12,7 +12,7 @@ class Index extends React.Component {
   render () {
     return (
       <div>
-        <Layouts>
+        <Layouts >
           <Login />
         </Layouts>
       </div>

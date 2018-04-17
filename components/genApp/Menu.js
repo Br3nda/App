@@ -1,4 +1,10 @@
+import { mapObjIndexed, values, pipe, isEmpty } from 'ramda'
 import Link from 'next/link'
+
+const mapRoomNames = mapObjIndexed((room, key) => (
+  <li>{room.name}</li>
+))
+const mapRoomNamesToValues = pipe(mapRoomNames, values)
 
 const PostLink = (props) => (
   <li>
@@ -24,7 +30,7 @@ const Menu = (props) => {
           </ul>
           <h6>Rooms</h6>
           <ul className="nav-links">
-            <li></li>
+            {mapRoomNamesToValues(this.props.roomsData)}
           </ul>
           <h6>Setup</h6>
           <ul className='nav-links'>

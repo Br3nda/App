@@ -2,6 +2,7 @@
 
 import Layouts from '../components/genApp/Layouts'
 import Dashboard from '../components/profile/Dashboard'
+import Menu from '../components/genApp/Menu'
 const exampleData = require('../db/exampleData.json')
 import Link from 'next/link'
 import Header from '../components/genApp/Header'
@@ -20,7 +21,7 @@ class dashboard extends React.Component {
       <div>
         <Layouts>
           <Header />
-
+          <Menu roomsData={this.props.roomsData}/>
           <Dashboard roomsData={this.props.roomsData} />
         </Layouts>
       </div>

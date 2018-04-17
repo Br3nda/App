@@ -1,4 +1,3 @@
-import Menu from '../genApp/Menu'
 import Header from '../genApp/Header'
 import ReportCard from './roomDetail/ReportCard'
 import Readings from './roomDetail/Readings'
