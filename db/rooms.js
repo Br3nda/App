@@ -21,8 +21,9 @@ function reformatData (data) {
         'timestamp': defined(room, 'readings', 'temperature', 'timestamp'),
         'errorMsg': checkValue(room, 'readings', 'temperature', 'value', -50, 100),
         'checklistMsg': '',
-        'tooLow': '',
-        'tooHigh': valueTooHigh(room, 'readings', 'humidity', 'value',
+        'tooLow': valueTooLow(room, 'readings', 'temperature', 'value',
+          defined(room, 'ratings', 'min_temperature')),
+        'tooHigh': valueTooHigh(room, 'readings', 'temperature', 'value',
           defined(room, 'ratings', 'max_temperature'))
       },
       'humidity': {
@@ -93,10 +94,18 @@ function checkValue (room, att1, att2, att3, lowerLimit, upperLimit) {
 
 function valueTooHigh (room, att1, att2, att3, limit) {
   const value = defined(room, att1, att2, att3)
-  console.log('maxtemp :', limit)
   if (typeof value === 'string') {
     return ''
   } else if (value >= limit) {
+    return true
+  } else return false
+}
+
+function valueTooLow (room, att1, att2, att3, limit) {
+  const value = defined(room, att1, att2, att3)
+  if (typeof value === 'string') {
+    return ''
+  } else if (value <= limit) {
     return true
   } else return false
 }
