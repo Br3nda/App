@@ -1,10 +1,5 @@
 // const seed = require('./seed.json')
 
-function checkHumidity (data) {
-  // console.log(data)
-  return data
-}
-
 function reformatData (data) {
   const newFormat = {}
   data.data.map(room => {
@@ -108,6 +103,26 @@ function valueTooLow (room, att1, att2, att3, limit) {
   } else if (value <= limit) {
     return true
   } else return false
+}
+
+function ratings () {
+  // number = 100
+  // return '?' unless enough_info_to_perform_rating?
+  // number -= 15 if too_cold?
+  // number -= 40 if below_dewpoint?
+  // rating_letter(number)
+
+//   def rating_letter(number)
+//   return 'A' if number > 95
+//   return 'B' if number > 75
+//   return 'C' if number > 50
+//   return 'D' if number > 25
+//   'F'
+// end
+
+// def enough_info_to_perform_rating?
+//   room_type && current?('temperature') && room_type.min_temperature.present? && room_type.max_temperature.present?
+// end
 }
 
 function dewPointTooHigh (room, att1, att2, att3) {
