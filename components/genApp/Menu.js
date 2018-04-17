@@ -1,5 +1,10 @@
 import Link from 'next/link'
 
+const mapRoomNames = mapObjIndexed((roomName, key) => (
+
+))
+const mapRoomNamesToValues = pipe(mapRoomNames, values)
+
 const PostLink = (props) => (
   <li>
     <Link href={`/room?title=${props.title}`}>
@@ -9,8 +14,6 @@ const PostLink = (props) => (
 )
 
 const Menu = (props) => {
-  const room = props.room
-  const name = room.name
 
   return (
     <div>
@@ -26,7 +29,7 @@ const Menu = (props) => {
           </ul>
           <h6>Rooms</h6>
           <ul className="nav-links">
-            <li><PostLink title={name} /></li>
+            <li></li>
           </ul>
           <h6>Setup</h6>
           <ul className='nav-links'>
