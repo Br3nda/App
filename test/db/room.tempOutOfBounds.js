@@ -81,7 +81,8 @@ test.only(`test 3: if any room temperature is out of range,
       'temperature': {
         'value': -100.0,
         'errorMsg': `There is something wrong with the temperature sensor in Sandra's desk`,
-        'tooHigh': false
+        'tooHigh': false,
+        'tooLow': true
       }
     },
     '2': {
@@ -90,7 +91,8 @@ test.only(`test 3: if any room temperature is out of range,
       'temperature': {
         'value': 101,
         'errorMsg': `There is something wrong with the temperature sensor in Janie's room`,
-        'tooHigh': true
+        'tooHigh': true,
+        'tooLow': false
       }
     },
     '3': {
@@ -99,7 +101,8 @@ test.only(`test 3: if any room temperature is out of range,
       'temperature': {
         'value': 22.0,
         'errorMsg': ``,
-        'tooHigh': false
+        'tooHigh': false,
+        'tooLow': false
       }
     }
   }
