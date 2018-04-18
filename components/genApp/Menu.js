@@ -7,11 +7,9 @@ const mapRoomNames = mapObjIndexed((room, key) => (
 const mapRoomNamesToValues = pipe(mapRoomNames, values)
 
 const PostLink = (props) => (
-  <li>
-    <Link href={`/room?title=${props.title}`}>
-      <a>{props.title}</a>
-    </Link>
-  </li>
+  <Link href={`/room?title=${props.title}`}>
+    <a>{props.title}</a>
+  </Link>
 )
 
 const Menu = (props) => {

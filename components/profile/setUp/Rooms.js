@@ -1,6 +1,4 @@
 import { mapObjIndexed, values, pipe, isEmpty } from 'ramda'
-import Header from '../../genApp/Header'
-import Menu from '../../genApp/Menu'
 import RoomsList from './RoomsList'
 import WhareList from './WhareList'
 
@@ -26,4 +24,3 @@ class Rooms extends React.Component {
 }
 
 export default Rooms
-// <Menu />

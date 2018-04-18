@@ -8,8 +8,6 @@ import Link from 'next/link'
 import Header from '../components/genApp/Header'
 // import Menu from '../components/genApp/Menu'
 
-
-
 class dashboard extends React.Component {
   static async getInitialProps() {
     const roomsData = exampleData

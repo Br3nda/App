@@ -17,11 +17,12 @@ class room extends React.Component {
     return { detailData }
 }
 
+
 render () {
   return (
     <div>
       <Layouts>
-      <Menu />
+      <Menu roomsData={this.props.detailData}/>
       {mapDetailsToValues(this.props.detailData)}
       </Layouts>
     </div>

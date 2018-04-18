@@ -1,12 +1,24 @@
-import Layout from '../../components/genApp/Layouts'
+import Layouts from '../../components/genApp/Layouts'
 import WhanauList from '../../components/profile/setUp/WhanauList'
+import Menu from '../../components/genApp/Menu'
+const exampleData = require('../../db/exampleData.json')
 
-const WhanauProfile = (props) => (
-  <div>
-    <Layout>
-      <WhanauList />
-    </Layout>
-  </div>
-)
+class whanau extends React.Component {
+  static async getInitialProps() {
+    const roomsData = exampleData
+    return { roomsData }
+}
 
-export default WhanauProfile
+  render () {
+    return (
+      <div>
+        <Layouts>
+          <Menu roomsData={this.props.roomsData} />
+          <WhanauList />
+        </Layouts>
+      </div>
+    )
+  }
+}
+
+export default whanau
