@@ -44,7 +44,7 @@ function reformatData (data) {
 
 function defined (room, att1, att2, att3) {
   // checks is the object keys are valid and if it exists in the objects
-  // return '' if it doesnt exist in the object.
+  // return '' if it doesnt.
   if (att1 && att2 && att3) {
     if (room.hasOwnProperty(att1)) {
       if (room[att1].hasOwnProperty(att2)) {
@@ -88,6 +88,7 @@ function checkValue (room, att1, att2, att3, lowerLimit, upperLimit) {
 }
 
 function valueTooHigh (room, att1, att2, att3, limit) {
+  // checks if a value exceeds the upper limit
   const value = defined(room, att1, att2, att3)
   if (typeof value === 'string') {
     return ''
@@ -97,6 +98,7 @@ function valueTooHigh (room, att1, att2, att3, limit) {
 }
 
 function valueTooLow (room, att1, att2, att3, limit) {
+  // checks if a value exceeds the lower limit
   const value = defined(room, att1, att2, att3)
   if (typeof value === 'string') {
     return ''
