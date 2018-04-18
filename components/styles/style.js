@@ -2983,17 +2983,11 @@ export default css`
         }
 
         /* /////////////////////////////////
-        iCheck - checkbox and radio button
+       checkbox and radio button
         ///////////////////////////////// */
-        input[type=checkbox],
-        input[type=radio] {
-          width: 28px;
-          height: 28px;
-          vertical-align: middle;
-          opacity: 0;
-        }
+       
 
-        .icheckbox,
+        input,
         .iradio {
           -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -3005,7 +2999,6 @@ export default css`
           height: 28px;
           background: rgba(248, 247, 246, 0.5);
           border: solid 1px rgba(0, 0, 0, 0.08);
-          border-radius: 50%;
           cursor: pointer;
           -webkit-transition: background-color ease .2s, border-color ease .2s;
           -o-transition: background-color ease .2s, border-color ease .2s;
@@ -3014,26 +3007,26 @@ export default css`
           top: -1px;
         }
 
-        .icheckbox {
+        input {
           background: rgba(248, 247, 246, 0.5) url("../static/img/icon/input-checkbox.svg") no-repeat 6px -48px;
         }
 
-        .icheckbox.hover {
-          border: solid 1px rgba(0, 0, 0, 0.16);
+        input.hover {
+          border: solid 1px red;
           background-position: 6px -20px;
         }
 
-        .icheckbox.checked {
+        input.checked {
           background-color: #abcc75;
           background-position: 6px 8px;
           border-color: #95B463;
         }
 
-        .icheckbox.disabled {
+        input.disabled {
           background-color: #fff;
         }
 
-        .icheckbox.checked.disabled {
+        input.checked.disabled {
           background-color: rgba(0, 0, 0, 0.16);
           background-position: 6px 8px;
           border: solid 1px rgba(0, 0, 0, 0.06);
