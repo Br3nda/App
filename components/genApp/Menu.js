@@ -30,7 +30,7 @@ const Menu = (props) => {
           </ul>
           <h6>Rooms</h6>
           <ul className="nav-links">
-            {mapRoomNamesToValues(this.props.roomsData)}
+
           </ul>
           <h6>Setup</h6>
           <ul className='nav-links'>
