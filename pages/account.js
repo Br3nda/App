@@ -13,7 +13,7 @@ class account extends React.Component {
     return (
       <div>
         <Layout>
-          <Menu  roomsData={this.props.roomsData}/>
+          <Menu roomsData={this.props.roomsData}/>
           <Account />
         </Layout>
       </div>

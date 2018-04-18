@@ -5,16 +5,10 @@ import RoomDetail from '../components/room/RoomDetail'
 
 const exampleData = require('../db/exampleData.json')
 
-const mapDetails = mapObjIndexed((room, key) => (
-    <RoomDetail room={room} />
-))
-
-const mapDetailsToValues = pipe(mapDetails, values)
-
 class room extends React.Component {
   static async getInitialProps() {
-    const detailData = exampleData
-    return { detailData }
+    const roomsData = exampleData
+    return { roomsData }
 }
 
 
@@ -22,8 +16,8 @@ render () {
   return (
     <div>
       <Layouts>
-      <Menu roomsData={this.props.detailData}/>
-      {mapDetailsToValues(this.props.detailData)}
+      <Menu roomsData={this.props.roomsData}/>
+      <RoomDetail roomsData={this.props.roomsData} />
       </Layouts>
     </div>
   )
@@ -31,4 +25,5 @@ render () {
 }
 
 export default room
-// <RoomDetail detailData={this.props.detailData} url={this.props.url}/>
+
+// <RoomDetail /> url={this.props.url}
