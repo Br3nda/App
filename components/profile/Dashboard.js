@@ -4,7 +4,7 @@ import Header from '../genApp/Header'
 import CardSummary from '../room/CardSummary'
 
 const mapRooms = mapObjIndexed((room, key) => (
-    <CardSummary room={room} />
+    <CardSummary room={room} key={key}/>
 ))
 const mapRoomsToValues = pipe(mapRooms, values)
 
