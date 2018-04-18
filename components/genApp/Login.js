@@ -7,12 +7,11 @@ const Login = () => (
         <a className="logo" href="./">
           Whare Hauora
         </a>
-        <h1 className="lg">Kia ora</h1>
-        <h4 className="lg">Login to start using Whare Hauora</h4>
       </header>
       <section className="card pre-log">
         <div className="img" />
         <div className="text">
+          <h1>Kia ora - login to start using Whare Hauora</h1>
           <h2 className="secondary">Login</h2>
           <ul className="form-row">
             <li>
