@@ -26,7 +26,7 @@ function reformatData (data) {
         'unit': defined(room, 'readings', 'humidity', 'unit'),
         'timestamp': defined(room, 'readings', 'humidity', 'timestamp'),
         'errorMsg': checkValue(room, 'readings', 'humidity', 'value', 0, 100),
-        'checklistMsg': '',
+        'checklistMsg': humidityChecklistMsg(room),
         'tooHigh': valueTooHigh(room, 'readings', 'humidity', 'value', 70)
       },
       'dewpoint': {
@@ -154,6 +154,10 @@ function dewPointCalc (room) {
   // D = Dewpoint in Centigrade (C) degrees
 }
 function dewPointChecklistMsg (room) {
+  // Dewpoint checklistMsg
+  // Acceptable dewpoint
+  // 'Temperature is too close to the dewPoint!'
+  // Temperature near the dew point
   const wetBulb = defined(room, 'readings', 'dewpoint', 'value')
   const dewpoint = dewPointCalc(room)
   const value = checkValue(room, 'readings', 'dewpoint', 'value', -20, 40)
@@ -165,11 +169,15 @@ function dewPointChecklistMsg (room) {
     return 'Temperature near the dew point'
   } else { return 'Acceptable dew point' }
 }
-
-// Dewpoint checklistMsg
-  // Acceptable dewpoint
-  // 'Temperature is too close to the dewPoint!'
-  // Temperature near the dew point
+function humidityChecklistMsg (room) {
+  const errorMsg = checkValue(room, 'readings', 'humidity', 'value', 0, 100)
+  const value = valueTooHigh(room, 'readings', 'humidity', 'value', 70)
+  if (errorMsg !== '') {
+    return ''
+  } else if (value) {
+    return 'Room humidity is too high'
+  } else return 'Comfortable humidity'
+}
 // notification messages
 // Comfortable temperature
 // Comfortable humidity
