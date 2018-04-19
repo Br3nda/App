@@ -17,7 +17,7 @@ render () {
     <div>
       <Layouts>
       <Menu roomsData={this.props.roomsData}/>
-      <RoomDetail roomsData={this.props.roomsData} />
+      <RoomDetail room={this.props.roomsData[this.props.url.query.id]} />
       </Layouts>
     </div>
   )
