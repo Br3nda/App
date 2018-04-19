@@ -70,6 +70,72 @@ test.only(`test 3: if any room temperature is out of range,
             'value': 50.0
           }
         }
+      },
+      {
+        'id': '4',
+        'type': 'Adult bedroom',
+        'attributes': {
+          'name': `Anna's room`
+        },
+        'ratings': {
+          'min_temperature': 18.0,
+          'max_temperature': 30.0
+        },
+        'readings': {
+          'dewpoint': {
+            'value': 14.8
+          },
+          'temperature': {
+            'value': 15.0
+          },
+          'humidity': {
+            'value': 99.0
+          }
+        }
+      },
+      {
+        'id': '5',
+        'type': 'Adult bedroom',
+        'attributes': {
+          'name': `Snoetshy's room`
+        },
+        'ratings': {
+          'min_temperature': 18.0,
+          'max_temperature': 30.0
+        },
+        'readings': {
+          'dewpoint': {
+            'value': 11.0
+          },
+          'temperature': {
+            'value': 33.0
+          },
+          'humidity': {
+            'value': 60.0
+          }
+        }
+      },
+      {
+        'id': '6',
+        'type': 'Child bedroom',
+        'attributes': {
+          'name': `Elmo's room`
+        },
+        'ratings': {
+          'min_temperature': 21.0,
+          'max_temperature': 30.0
+        },
+        'readings': {
+          'dewpoint': {
+            'value': 11.0
+          },
+          'temperature': {
+            'value': 19.0
+          },
+          'humidity': {
+            'value': 60.0
+          }
+        }
       }
     ]
   }
@@ -82,7 +148,8 @@ test.only(`test 3: if any room temperature is out of range,
         'value': -100.0,
         'errorMsg': `There is something wrong with the temperature sensor in Sandra's desk`,
         'tooHigh': false,
-        'tooLow': true
+        'tooLow': true,
+        'checklistMsg': ''
       }
     },
     '2': {
@@ -92,7 +159,8 @@ test.only(`test 3: if any room temperature is out of range,
         'value': 101,
         'errorMsg': `There is something wrong with the temperature sensor in Janie's room`,
         'tooHigh': true,
-        'tooLow': false
+        'tooLow': false,
+        'checklistMsg': ''
       }
     },
     '3': {
@@ -102,7 +170,41 @@ test.only(`test 3: if any room temperature is out of range,
         'value': 22.0,
         'errorMsg': ``,
         'tooHigh': false,
-        'tooLow': false
+        'tooLow': false,
+        'checklistMsg': 'Comfortable room temperature'
+      }
+    },
+    '4': {
+      'name': `Anna's room`,
+      'roomUse': 'Adult bedroom',
+      'temperature': {
+        'value': 15.0,
+        'errorMsg': ``,
+        'tooHigh': false,
+        'tooLow': true,
+        'checklistMsg': 'Room is too cold'
+      }
+    },
+    '5': {
+      'name': `Snoetshy's room`,
+      'roomUse': 'Adult bedroom',
+      'temperature': {
+        'value': 33.0,
+        'errorMsg': ``,
+        'tooHigh': true,
+        'tooLow': false,
+        'checklistMsg': 'Temperature too high'
+      }
+    },
+    '6': {
+      'name': `Elmo's room`,
+      'roomUse': 'Child bedroom',
+      'temperature': {
+        'value': 19.0,
+        'errorMsg': ``,
+        'tooHigh': false,
+        'tooLow': true,
+        'checklistMsg': 'Way too cold for children sleeping'
       }
     }
   }
