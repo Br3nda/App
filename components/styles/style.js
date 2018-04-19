@@ -220,8 +220,20 @@ export default css`
         }
 
         .content {
-          margin: 0 0 0 20%;
+          margin: 0 0 0 10%;
           padding: 60px 0px 30px;
+        }
+
+        .content-login {
+          margin: auto;
+          padding: 60px 0px 30px;
+        }
+
+        @media (max-width: 1400px) {
+          .content {
+            margin: 0 0 0 40%;
+            
+          }
         }
 
         @media (max-width: 1199px) {
@@ -242,6 +254,13 @@ export default css`
         .center {
           margin: 0 auto;
           max-width: 1000px;
+        }
+
+        @media (max-width: 699px) {
+          .center {
+            margin: 2em auto;
+            max-width:1000px;
+          }
         }
 
         body.pre-log .content {
@@ -398,6 +417,7 @@ export default css`
           color: #777;
           font: 300 36px/42px "Roboto", sans-serif;
           margin: 0 0 48px 0;
+
         }
 
         h1.lg {
@@ -428,6 +448,7 @@ export default css`
             line-height: 22px;
             margin-bottom: 16px;
             padding-left: 8px;
+            text-align: center;
           }
           h1.lg {
             font-size: 24px;
@@ -674,6 +695,7 @@ export default css`
         .logo {
           width: 117px;
           height: 60px;
+          margin-bottom: 2em;
           background: transparent url("../static/img/logo.svg") no-repeat left top;
         }
 
@@ -710,9 +732,9 @@ export default css`
 
         @media (max-width: 699px) {
           .header {
-            margin-top: 0em;
-            height: 44px;
+            height: 80px;
             padding: 1em 24px 0;
+            margin-bottom: 2em;
           }
         }
 
@@ -2204,6 +2226,7 @@ export default css`
         @media (max-width: 699px) {
           .card {
             padding: 0 26px 20px 26px;
+            margin-top: 10px;
             margin-bottom: 16px;
           }
           .card > header {
@@ -2738,7 +2761,7 @@ export default css`
           -webkit-box-sizing: border-box;
           box-sizing: border-box;
           width: calc(50% + 30px);
-          min-height: 444px;
+          min-height: 600px;
           float: right;
           margin: 0 -30px -24px;
           padding: 48px 60px;
@@ -2787,6 +2810,7 @@ export default css`
             width: calc((100% + 60px) * .64);
             padding-left: 48px;
             padding-right: 48px;
+            min-height: 600px;
           }
           .card.pre-log .text > footer {
             padding-left: 48px;
@@ -2800,7 +2824,7 @@ export default css`
           }
           .card.pre-log .text {
             width: auto;
-            min-height: 364px;
+            min-height: 500px;
             float: none;
             margin: 0;
             padding: 25.6px 0;
