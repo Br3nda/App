@@ -1,12 +1,6 @@
-import { mapObjIndexed, values, pipe, isEmpty } from 'ramda'
 import RoomsList from './RoomsList'
 import WhareList from './WhareList'
 
-const mapRooms = mapObjIndexed((room, key) => (
-    <RoomsList room={room} />
-))
-
-const mapRoomsToValues = pipe(mapRooms, values)
 
 class Rooms extends React.Component {
 
@@ -14,8 +8,7 @@ class Rooms extends React.Component {
     return (
       <div className='content'>
         <div className='center'>
-          <Header />
-          {mapRoomsToValues(this.props.roomsData)}
+          <RoomsList roomsData={this.props.roomsData} />
           <WhareList />
         </div>
       </div>

@@ -13,7 +13,7 @@ class RoomProfile extends React.Component {
     return (
       <div>
         <Layouts>
-        <Menu roomsData={this.props.roomsData} />
+          <Menu roomsData={this.props.roomsData} />
           <Rooms roomsData={this.props.roomsData} />
         </Layouts>
       </div>
