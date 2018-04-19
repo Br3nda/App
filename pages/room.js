@@ -1,17 +1,29 @@
-import Layout from '../components/genApp/Layouts'
+import { mapObjIndexed, values, pipe, isEmpty } from 'ramda'
+import Layouts from '../components/genApp/Layouts'
+import Menu from '../components/genApp/Menu'
 import RoomDetail from '../components/room/RoomDetail'
 
-const Content = (props) => (
-  <div>
-    <h1>{props.url.query.title}</h1>
-    <RoomDetail />
-  </div>
-)
+const exampleData = require('../db/exampleData.json')
 
-export default (props) => (
-  <div>
-    <Layout>
-      <Content url={props.url} />
-    </Layout>
-  </div>
-)
+class room extends React.Component {
+  static async getInitialProps() {
+    const roomsData = exampleData
+    return { roomsData }
+}
+
+
+render () {
+  return (
+    <div>
+      <Layouts>
+      <Menu roomsData={this.props.roomsData}/>
+      <RoomDetail room={this.props.roomsData[this.props.url.query.id]} />
+      </Layouts>
+    </div>
+  )
+}
+}
+
+export default room
+
+// <RoomDetail /> url={this.props.url}

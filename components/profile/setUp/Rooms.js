@@ -1,17 +1,19 @@
-import Header from '../../genApp/Header'
-import Menu from '../../genApp/Menu'
 import RoomsList from './RoomsList'
 import WhareList from './WhareList'
 
-const Rooms = () => (
-  <div className='content'>
-    <div className='center'>
-      <Header />
-      <Menu />
-      <RoomsList />
-      <WhareList />
-    </div>
-  </div>
-)
+
+class Rooms extends React.Component {
+
+  render () {
+    return (
+      <div className='content'>
+        <div className='center'>
+          <RoomsList roomsData={this.props.roomsData} />
+          <WhareList />
+        </div>
+      </div>
+    )
+  }
+}
 
 export default Rooms

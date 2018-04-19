@@ -1,11 +1,6 @@
-import Header from '../../genApp/Header'
-import Menu from '../../genApp/Menu'
-
 const WhanauList = () => (
   <div className='content'>
     <div className='center'>
-      <Header />
-      <Menu />
       <h1 className='sm narrow-down-only'>Whānau</h1>
       <section className='card'>
         <header className='condensed'>
