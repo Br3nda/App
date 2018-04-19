@@ -1,5 +1,6 @@
-// import AddRoomModal from './AddRoomModal'
+import AddRoomModal from './AddRoomModal'
 import { mapObjIndexed, values, pipe, isEmpty } from 'ramda'
+
 
 const mapRooms = mapObjIndexed((room, key) => (
   <tbody>
@@ -27,6 +28,9 @@ const mapRooms = mapObjIndexed((room, key) => (
 const mapRoomsToValues = pipe(mapRooms, values)
 
 const RoomsList = (props) => {
+  function addRoom(props) {
+    return <AddRoomModal />
+  }
 
    return(
     <div>
@@ -40,7 +44,7 @@ const RoomsList = (props) => {
         <table className='mob-break'>
           {mapRoomsToValues(props.roomsData)}
         </table>
-        <a className='btn-add append-table open-modal' href='#' data-mfp-src='#new-room'><img className='svg' src='../../../static/img/icon/btn-add.svg' alt='icon' />Add room</a>
+        <button className='btn-add append-table open-modal' onClick={addRoom()} data-mfp-src='#new-room'><img className='svg' src='../../../static/img/icon/btn-add.svg' alt='icon' />Add room</button>
       </section>
     </div>
   )

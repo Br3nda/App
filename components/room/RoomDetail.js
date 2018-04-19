@@ -4,14 +4,6 @@ import Readings from './roomDetail/Readings'
 import SensorInfo from './roomDetail/SensorInfo'
 import HealthAlert from './roomDetail/HealthAlert'
 
-import { mapObjIndexed, values, pipe, isEmpty } from 'ramda'
-
-const mapDetails = mapObjIndexed((room, values) => (
-    <ReportCard room={room} />
-))
-
-const mapDetailsToValues = pipe(mapDetails, values)
-
 class RoomDetail extends React.Component {
 
   render () {
@@ -22,7 +14,7 @@ class RoomDetail extends React.Component {
         <div className='content'>
           <div className='center'>
             <h1 className='sm narrow-down-only'><a className='back' href='#'><img className='svg' src='../../../static/img/icon/back.svg' alt='back' /></a>Lisefski House</h1>
-            {mapDetailsToValues(this.props.roomsData)}
+            <ReportCard room={this.props.room}/>
             <HealthAlert />
             <Readings />
             <SensorInfo />
