@@ -2,13 +2,13 @@ import { mapObjIndexed, values, pipe, isEmpty } from 'ramda'
 import Link from 'next/link'
 
 const mapRoomNames = mapObjIndexed((room, key) => (
-  <li key={key}> <PostLink title ={room.name}/></li>
+  <li key={key}> <PostLink id={key} title={room.name}/></li>
 ))
 const mapRoomNamesToValues = pipe(mapRoomNames, values)
 
-const PostLink = (props) => (
-  <Link href={`/room?title=${props.title}`}>
-    <a>{props.title}</a>
+const PostLink = (room) => (
+  <Link href={`/room?id=${room.id}`}>
+    <a>{room.title}</a>
   </Link>
 )
 
