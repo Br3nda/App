@@ -79,7 +79,6 @@ function defined (room, att1, att2, att3) {
 function checkValue (room, att1, att2, att3, lowerLimit, upperLimit) {
   // checks if a value is within the lower and upperLimit
   // return a message if its out of bounds and '' if not.
-  // console.log('upperlimit', upperLimit)
   const value = defined(room, att1, att2, att3)
   if (typeof value === 'string') {
     return ''
@@ -116,40 +115,62 @@ function valueTooLow (room, att1, att2, att3, limit) {
 }
 
 function rating (room) {
-  const totalRating = 100
-  const checkTemperature = checkValue(room, 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp)
-  const checkHumidity = checkValue(room, 'readings', 'humidity', 'value', minSensorHum, maxSensorHum)
-  const checkDewpoint = checkValue(room, 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew)
+  let totalRating = 100
+  const checkTemp = checkValue(room, 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp)
+  const checkHum = checkValue(room, 'readings', 'humidity', 'value', minSensorHum, maxSensorHum)
+  const checkDew = checkValue(room, 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew)
   const tempIsTooHigh = valueTooHigh(room, 'readings', 'temperature', 'value',
     defined(room, 'ratings', 'max_temperature'))
   const tempIsTooLow = valueTooLow(room, 'readings', 'temperature', 'value',
     defined(room, 'ratings', 'min_temperature'))
   const humidityIsTooHigh = valueTooHigh(room, 'readings', 'humidity', 'value', humidityLimit)
   const dewPointIsTooHigh = dewPointTooHigh(room, 'readings', 'dewpoint', 'value')
+  console.log('tempIsTooLow:', tempIsTooLow, 'tempIsTooHigh:', tempIsTooHigh,
+    'dewPointIsTooHigh:', dewPointIsTooHigh, 'humidityIsTooHigh:', humidityIsTooHigh)
+  if (!isEnoughToPerformRating(checkTemp, checkHum, checkDew)) {
+    return ''
+  } else {
+    if (tempIsTooLow) {
+      totalRating -= 15
+    }
+    if (tempIsTooHigh) {
+      totalRating -= 15
+    }
+    if (dewPointIsTooHigh) {
+      totalRating -= 40
+    }
+    if (humidityIsTooHigh) {
+      totalRating -= 40
+    }
+  }
+  return grade(totalRating)
+}
 
-  // number = 100
-  // return '?' unless enough_info_to_perform_rating?
-  // number -= 15 if too_cold?
-  // number -= 40 if below_dewpoint?
-  // rating_letter(number)
+function grade (totalRating) {
+  console.log(totalRating)
+  if (totalRating > 95) {
+    return 'A'
+  } else if (totalRating >= 75) {
+    return 'B'
+  } else if (totalRating >= 50) {
+    return 'C'
+  } else if (totalRating >= 25) {
+    return 'D'
+  } else if (totalRating <= 25) {
+    return 'F'
+  }
+}
 
-//   def rating_letter(number)
-//   return 'A' if number > 95
-//   return 'B' if number > 75
-//   return 'C' if number > 50
-//   return 'D' if number > 25
-//   'F'
-// end
-
-// def enough_info_to_perform_rating?
-//   room_type && current?('temperature') && room_type.min_temperature.present? && room_type.max_temperature.present?
-// end
+function isEnoughToPerformRating (temp, hum, dew) {
+  if (temp !== '' || hum !== '' || dew !== '') {
+    return false
+  } else return true
 }
 
 function dewPointTooHigh (room, att1, att2, att3) {
   const wetBulb = defined(room, att1, att2, att3)
   const dewpoint = dewPointCalc(room)
-
+  console.log('dewpoint:', dewpoint, 'wetBulb:', wetBulb)
   if (dewpoint < wetBulb || (dewpoint - 2) < wetBulb) {
     return true
   } else { return false }
@@ -219,12 +240,24 @@ function childsRoom (room, att1, att2) {
     return true
   } else return false
 }
-// notification messages
-// Comfortable humidity
-// Room appears healthy, warm, & dry
-// Humidity too high
-// High relative humidity
-// Risk for cold, damp, and mould
+
+// number = 100
+// return '?' unless enough_info_to_perform_rating?
+// number -= 15 if too_cold?
+// number -= 40 if below_dewpoint?
+// rating_letter(number)
+
+//   def rating_letter(number)
+//   return 'A' if number > 95
+//   return 'B' if number > 75
+//   return 'C' if number > 50
+//   return 'D' if number > 25
+//   'F'
+// end
+
+// def enough_info_to_perform_rating?
+//   room_type && current?('temperature') && room_type.min_temperature.present? && room_type.max_temperature.present?
+// end
 
 
 module.exports = {
