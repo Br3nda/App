@@ -40,6 +40,30 @@ test(`test 1: if any room humidity is out of range,
             'value': 50.0
           }
         }
+      },
+      {
+        'id': '4',
+        'type': 'Adult bedroom',
+        'attributes': {
+          'name': `Anna's room`
+        },
+        'readings': {
+          'humidity': {
+            'value': 80.0
+          }
+        }
+      },
+      {
+        'id': '5',
+        'type': 'Adult bedroom',
+        'attributes': {
+          'name': `Jema's room`
+        },
+        'readings': {
+          'humidity': {
+            'value': 40.0
+          }
+        }
       }
     ]
   }
@@ -51,6 +75,7 @@ test(`test 1: if any room humidity is out of range,
       'humidity': {
         'value': -7122.0,
         'errorMsg': `There is something wrong with the humidity sensor in Sandra's desk`,
+        'checklistMsg': '',
         'tooHigh': false
       }
     },
@@ -60,6 +85,7 @@ test(`test 1: if any room humidity is out of range,
       'humidity': {
         'value': 101.0,
         'errorMsg': `There is something wrong with the humidity sensor in Janie's room`,
+        'checklistMsg': '',
         'tooHigh': true
       }
     },
@@ -69,6 +95,27 @@ test(`test 1: if any room humidity is out of range,
       'humidity': {
         'value': 50.0,
         'errorMsg': ``,
+        'checklistMsg': 'Comfortable humidity',
+        'tooHigh': false
+      }
+    },
+    '4': {
+      'name': `Anna's room`,
+      'roomUse': 'Adult bedroom',
+      'humidity': {
+        'value': 80.0,
+        'errorMsg': ``,
+        'checklistMsg': 'Room humidity is too high',
+        'tooHigh': true
+      }
+    },
+    '5': {
+      'name': `Jema's room`,
+      'roomUse': 'Adult bedroom',
+      'humidity': {
+        'value': 40.0,
+        'errorMsg': ``,
+        'checklistMsg': 'Comfortable humidity',
         'tooHigh': false
       }
     }
