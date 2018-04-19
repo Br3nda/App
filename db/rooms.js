@@ -15,7 +15,7 @@ function reformatData (data) {
         'unit': defined(room, 'readings', 'temperature', 'unit'),
         'timestamp': defined(room, 'readings', 'temperature', 'timestamp'),
         'errorMsg': checkValue(room, 'readings', 'temperature', 'value', -50, 100),
-        'checklistMsg': '',
+        'checklistMsg': tempChecklistMsg(room),
         'tooLow': valueTooLow(room, 'readings', 'temperature', 'value',
           defined(room, 'ratings', 'min_temperature')),
         'tooHigh': valueTooHigh(room, 'readings', 'temperature', 'value',
@@ -154,14 +154,10 @@ function dewPointCalc (room) {
   // D = Dewpoint in Centigrade (C) degrees
 }
 function dewPointChecklistMsg (room) {
-  // Dewpoint checklistMsg
-  // Acceptable dewpoint
-  // 'Temperature is too close to the dewPoint!'
-  // Temperature near the dew point
   const wetBulb = defined(room, 'readings', 'dewpoint', 'value')
   const dewpoint = dewPointCalc(room)
-  const value = checkValue(room, 'readings', 'dewpoint', 'value', -20, 40)
-  if (value !== '') {
+  const check = checkValue(room, 'readings', 'dewpoint', 'value', -20, 40)
+  if (check !== '') {
     return ''
   } else if (dewpoint < wetBulb) {
     return 'Temperature is too close to the dew point!'
@@ -171,21 +167,46 @@ function dewPointChecklistMsg (room) {
 }
 function humidityChecklistMsg (room) {
   const errorMsg = checkValue(room, 'readings', 'humidity', 'value', 0, 100)
-  const value = valueTooHigh(room, 'readings', 'humidity', 'value', 70)
+  const check = valueTooHigh(room, 'readings', 'humidity', 'value', 70)
   if (errorMsg !== '') {
     return ''
-  } else if (value) {
+  } else if (check) {
     return 'Room humidity is too high'
   } else return 'Comfortable humidity'
 }
+function tempChecklistMsg (room) {
+  const check = checkValue(room, 'readings', 'temperature', 'value', -50, 100)
+  const valueIsTooLow = valueTooLow(room, 'readings', 'temperature', 'value',
+    defined(room, 'ratings', 'min_temperature'))
+  const valueIsTooHigh = valueTooHigh(room, 'readings', 'temperature', 'value',
+    defined(room, 'ratings', 'max_temperature'))
+  const isChildsRoom = childsRoom(room, 'ratings', 'min_temperature')
+  if (check !== '') {
+    return ''
+  } else if (valueIsTooLow && isChildsRoom) {
+    return 'Way too cold for children sleeping'
+  } else if (valueIsTooLow) {
+    return 'Room is too cold'
+  } else if (valueIsTooHigh) {
+    return 'Temperature too high'
+  } return 'Comfortable room temperature'
+  // Comfortable temperature
+  // Temperature too high
+  // Way too cold for children sleeping
+  // Room is too cold
+}
+function childsRoom (room, att1, att2) {
+  const value = defined(room, 'ratings', 'min_temperature')
+  if (value === '') {
+    return false
+  } else if (value === 21) {
+    return true
+  } else return false
+}
 // notification messages
-// Comfortable temperature
 // Comfortable humidity
-// Temp is well above dewpoint
 // Room appears healthy, warm, & dry
-// Temperature too high
 // Humidity too high
-// Way too cold for children sleeping
 // High relative humidity
 // Risk for cold, damp, and mould
 
