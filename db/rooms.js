@@ -17,7 +17,7 @@ function reformatData (data) {
       'updated-at': defined(room, 'attributes', 'updated-at'),
       'grade': rating(room),
       'generalMsg': generalMessage(room),
-      'alertMsg': '',
+      'alertMsg': elertMsg(room),
       'temperature': {
         'value': defined(room, 'readings', 'temperature', 'value'),
         'unit': defined(room, 'readings', 'temperature', 'unit'),
@@ -254,6 +254,10 @@ function generalMessage (room) {
     default:
       return 'room is in poor condition, risk of mold'
   }
+}
+
+function elertMsg (room) {
+  return 'hello'
 }
 
 // number = 100
