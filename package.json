@@ -33,6 +33,7 @@
     "react-chartjs": "^1.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^9.1.0",
+    "react-form": "^3.5.3",
     "react-modal": "^3.3.2",
     "web-push": "^3.3.0",
     "workbox-webpack-plugin": "^3.0.1"
