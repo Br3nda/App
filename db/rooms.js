@@ -16,7 +16,7 @@ function reformatData (data) {
       'roomUse': defined(room, 'type'),
       'updated-at': defined(room, 'attributes', 'updated-at'),
       'grade': rating(room),
-      'generalMsg': '',
+      'generalMsg': generalMessage(room),
       'alertMsg': '',
       'temperature': {
         'value': defined(room, 'readings', 'temperature', 'value'),
@@ -125,8 +125,8 @@ function rating (room) {
     defined(room, 'ratings', 'min_temperature'))
   const humidityIsTooHigh = valueTooHigh(room, 'readings', 'humidity', 'value', humidityLimit)
   const dewPointIsTooHigh = dewPointTooHigh(room, 'readings', 'dewpoint', 'value')
-  console.log('tempIsTooLow:', tempIsTooLow, 'tempIsTooHigh:', tempIsTooHigh,
-    'dewPointIsTooHigh:', dewPointIsTooHigh, 'humidityIsTooHigh:', humidityIsTooHigh)
+  // console.log('tempIsTooLow:', tempIsTooLow, 'tempIsTooHigh:', tempIsTooHigh,
+    // 'dewPointIsTooHigh:', dewPointIsTooHigh, 'humidityIsTooHigh:', humidityIsTooHigh)
   if (!isEnoughToPerformRating(checkTemp, checkHum, checkDew)) {
     return ''
   } else {
@@ -147,7 +147,7 @@ function rating (room) {
 }
 
 function grade (totalRating) {
-  console.log(totalRating)
+  // console.log(totalRating)
   if (totalRating > 95) {
     return 'A'
   } else if (totalRating >= 75) {
@@ -170,7 +170,7 @@ function isEnoughToPerformRating (temp, hum, dew) {
 function dewPointTooHigh (room, att1, att2, att3) {
   const wetBulb = defined(room, att1, att2, att3)
   const dewpoint = dewPointCalc(room)
-  console.log('dewpoint:', dewpoint, 'wetBulb:', wetBulb)
+  // console.log('dewpoint:', dewpoint, 'wetBulb:', wetBulb)
   if (dewpoint < wetBulb || (dewpoint - 2) < wetBulb) {
     return true
   } else { return false }
@@ -239,6 +239,21 @@ function childsRoom (room, att1, att2) {
   } else if (value === 21) {
     return true
   } else return false
+}
+
+function generalMessage (room) {
+  switch (rating(room)) {
+    case 'A':
+      return 'room is dry, warm and healthy'
+    case 'B':
+      return 'room is dry but temperature needs to improve'
+    case 'C':
+      return 'room temperature and humdidity needs to improve'
+    case 'D':
+      return 'risk of mold'
+    default:
+      return 'room is in poor condition, risk of mold'
+  }
 }
 
 // number = 100
