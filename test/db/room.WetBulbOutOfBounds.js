@@ -67,13 +67,13 @@ test(`test 2: if any room wetbulb temp is out of range,
         },
         'readings': {
           'dewpoint': {
-            'value': 13.1
+            'value': 14.8
           },
           'temperature': {
             'value': 15.0
           },
           'humidity': {
-            'value': 88.0
+            'value': 99.0
           }
         }
       },
@@ -152,7 +152,7 @@ test(`test 2: if any room wetbulb temp is out of range,
         'value': 45.0,
         'errorMsg': `There is something wrong with the wet bulb sensor in Janie's room`,
         'tooHigh': true,
-        'checklistMsg': 'Temperature is too close to the dewPoint!'
+        'checklistMsg': ''
       }
     },
     '3': {
@@ -162,27 +162,27 @@ test(`test 2: if any room wetbulb temp is out of range,
         'value': 22.0,
         'errorMsg': ``,
         'tooHigh': false,
-        'checklistMsg': 'Acceptable dewpoint'
+        'checklistMsg': 'Acceptable dew point'
       }
     },
     '4': {
       'name': `Casper's Room`,
       'roomUse': 'Adult bedroom',
       'dewpoint': {
-        'value': 13.1,
+        'value': 14.8,
         'errorMsg': ``,
         'tooHigh': true,
-        'checklistMsg': 'Temperature is too close to the dewPoint!'
+        'checklistMsg': 'Temperature near the dew point'
       }
     },
     '5': {
       'name': `Snoetshy's Room`,
       'roomUse': 'Child bedroom',
       'dewpoint': {
-        'value': 11.0,
+        'value': 10.7,
         'errorMsg': ``,
         'tooHigh': true,
-        'checklistMsg': 'Temperature near the dewPoint'
+        'checklistMsg': 'Temperature is too close to the dew point!'
       }
     },
     '6': {
@@ -192,7 +192,7 @@ test(`test 2: if any room wetbulb temp is out of range,
         'value': 11.0,
         'errorMsg': ``,
         'tooHigh': true,
-        'checklistMsg': 'Temperature near the dewPoint'
+        'checklistMsg': 'Temperature near the dew point'
       }
     },
     '7': {
@@ -201,8 +201,8 @@ test(`test 2: if any room wetbulb temp is out of range,
       'dewpoint': {
         'value': 11.6,
         'errorMsg': ``,
-        'tooHigh': false,
-        'checklistMsg': 'Acceptable dewpoint'
+        'tooHigh': true,
+        'checklistMsg': 'Temperature near the dew point'
       }
     }
   }
