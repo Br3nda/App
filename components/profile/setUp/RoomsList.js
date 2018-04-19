@@ -27,27 +27,45 @@ const mapRooms = mapObjIndexed((room, key) => (
 
 const mapRoomsToValues = pipe(mapRooms, values)
 
-const RoomsList = (props) => {
-  function addRoom(props) {
-    return <AddRoomModal />
+
+class RoomsList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      addRoom: false
+    }
+    this.handleChange = this.handleChange.bind(this)
   }
 
-   return(
-    <div>
-      <h1 className='sm narrow-down-only'>Whare & Rooms</h1>
-      <section className='card'>
-        <header className='condensed'>
-          <h2>Lisefski House</h2>
-          <h4>Owner Occupier</h4>
-          <a className='head-action open-modal' href='#' data-mfp-src='#edit-whare'><img className='svg' src='../../../static/img/icon/edit.svg' alt='edit' /></a>
-        </header>
-        <table className='mob-break'>
-          {mapRoomsToValues(props.roomsData)}
-        </table>
-        <button className='btn-add append-table open-modal' onClick={addRoom()} data-mfp-src='#new-room'><img className='svg' src='../../../static/img/icon/btn-add.svg' alt='icon' />Add room</button>
-      </section>
-    </div>
-  )
+  handleChange(e) {
+    this.setState({
+      addRoom: true
+    })
+    // this.props.onClick(true)
+  }
+
+    render () {
+      console.log('this is roomlist state', this.state);
+     return (
+      <div>
+        <h1 className='sm narrow-down-only'>Whare & Rooms</h1>
+        <section className='card'>
+          <header className='condensed'>
+            <h2>Lisefski House</h2>
+            <h4>Owner Occupier</h4>
+            <a className='head-action open-modal' href='#' data-mfp-src='#edit-whare'><img className='svg' src='../../../static/img/icon/edit.svg' alt='edit' /></a>
+          </header>
+          <table className='mob-break'>
+            {mapRoomsToValues(this.props.roomsData)}
+          </table>
+          <button className='btn-add append-table open-modal' onClick={this.handleChange} data-mfp-src='#new-room'><img className='svg' src='../../../static/img/icon/btn-add.svg' alt='icon' />Add room</button>
+          {
+            (this.state.addRoom ? <AddRoomModal /> :  null)
+          }
+        </section>
+      </div>
+    )
+  }
 }
 
 export default RoomsList
