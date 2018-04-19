@@ -34,7 +34,7 @@ function reformatData (data) {
         'unit': defined(room, 'readings', 'dewpoint', 'unit'),
         'timestamp': defined(room, 'readings', 'dewpoint', 'timestamp'),
         'errorMsg': checkValue(room, 'readings', 'dewpoint', 'value', -20, 40),
-        'checklistMsg': '',
+        'checklistMsg': dewPointChecklistMsg(room),
         'tooHigh': dewPointTooHigh(room, 'readings', 'dewpoint', 'value')
       }
     }
@@ -128,16 +128,23 @@ function ratings () {
 }
 
 function dewPointTooHigh (room, att1, att2, att3) {
-  const dryBulb = defined(room, att1, 'temperature', att3)
   const wetBulb = defined(room, att1, att2, att3)
-  const humidity = defined(room, att1, 'humidity', att3)
+  const dewpoint = dewPointCalc(room)
 
+  if (dewpoint < wetBulb || (dewpoint - 2) < wetBulb) {
+    return true
+  } else { return false }
+}
+
+function dewPointCalc (room) {
+  const dryBulb = defined(room, 'readings', 'temperature', 'value')
+  const humidity = defined(room, 'readings', 'humidity', 'value')
   const L = Math.log(humidity / 100)
   const M = 17.27 * dryBulb
   const N = 237.3 + dryBulb
   const B = (L + (M / N)) / 17.27
   const dewpoint = (237.3 * B) / (1 - B)
-
+  return dewpoint
   // B = (ln(RH / 100) + ((17.27 * T) / (237.3 + T))) / 17.27
   // D = (237.3 * B) / (1 - B)
   // where:
@@ -145,16 +152,27 @@ function dewPointTooHigh (room, att1, att2, att3) {
   // RH = Relative Humidity in percent (%)
   // B = intermediate value (no units)
   // D = Dewpoint in Centigrade (C) degrees
-
-  if (dewpoint < wetBulb || (dewpoint - 2) < wetBulb) {
-    return true
-  } else { return false }
+}
+function dewPointChecklistMsg (room) {
+  const wetBulb = defined(room, 'readings', 'dewpoint', 'value')
+  const dewpoint = dewPointCalc(room)
+  const value = checkValue(room, 'readings', 'dewpoint', 'value', -20, 40)
+  if (value !== '') {
+    return ''
+  } else if (dewpoint < wetBulb) {
+    return 'Temperature is too close to the dew point!'
+  } else if ((dewpoint - 2) < wetBulb) {
+    return 'Temperature near the dew point'
+  } else { return 'Acceptable dew point' }
 }
 
+// Dewpoint checklistMsg
+  // Acceptable dewpoint
+  // 'Temperature is too close to the dewPoint!'
+  // Temperature near the dew point
 // notification messages
 // Comfortable temperature
 // Comfortable humidity
-// Acceptable dewpoint
 // Temp is well above dewpoint
 // Room appears healthy, warm, & dry
 // Temperature too high
