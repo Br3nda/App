@@ -1,4 +1,12 @@
 // const seed = require('./seed.json')
+const maxSensorTemp = 100
+const minSensorTemp = -50
+const maxSensorHum = 100
+const minSensorHum = 0
+const maxSensorDew = 40
+const minSensorDew = -20
+const humidityLimit = 70
+
 
 function reformatData (data) {
   const newFormat = {}
@@ -7,14 +15,14 @@ function reformatData (data) {
       'name': defined(room, 'attributes', 'name'),
       'roomUse': defined(room, 'type'),
       'updated-at': defined(room, 'attributes', 'updated-at'),
-      'grade': '',
+      'grade': rating(room),
       'generalMsg': '',
       'alertMsg': '',
       'temperature': {
         'value': defined(room, 'readings', 'temperature', 'value'),
         'unit': defined(room, 'readings', 'temperature', 'unit'),
         'timestamp': defined(room, 'readings', 'temperature', 'timestamp'),
-        'errorMsg': checkValue(room, 'readings', 'temperature', 'value', -50, 100),
+        'errorMsg': checkValue(room, 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp),
         'checklistMsg': tempChecklistMsg(room),
         'tooLow': valueTooLow(room, 'readings', 'temperature', 'value',
           defined(room, 'ratings', 'min_temperature')),
@@ -25,15 +33,15 @@ function reformatData (data) {
         'value': defined(room, 'readings', 'humidity', 'value'),
         'unit': defined(room, 'readings', 'humidity', 'unit'),
         'timestamp': defined(room, 'readings', 'humidity', 'timestamp'),
-        'errorMsg': checkValue(room, 'readings', 'humidity', 'value', 0, 100),
+        'errorMsg': checkValue(room, 'readings', 'humidity', 'value', minSensorHum, maxSensorHum),
         'checklistMsg': humidityChecklistMsg(room),
-        'tooHigh': valueTooHigh(room, 'readings', 'humidity', 'value', 70)
+        'tooHigh': valueTooHigh(room, 'readings', 'humidity', 'value', humidityLimit)
       },
       'dewpoint': {
         'value': defined(room, 'readings', 'dewpoint', 'value'),
         'unit': defined(room, 'readings', 'dewpoint', 'unit'),
         'timestamp': defined(room, 'readings', 'dewpoint', 'timestamp'),
-        'errorMsg': checkValue(room, 'readings', 'dewpoint', 'value', -20, 40),
+        'errorMsg': checkValue(room, 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew),
         'checklistMsg': dewPointChecklistMsg(room),
         'tooHigh': dewPointTooHigh(room, 'readings', 'dewpoint', 'value')
       }
@@ -107,7 +115,18 @@ function valueTooLow (room, att1, att2, att3, limit) {
   } else return false
 }
 
-function ratings () {
+function rating (room) {
+  const totalRating = 100
+  const checkTemperature = checkValue(room, 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp)
+  const checkHumidity = checkValue(room, 'readings', 'humidity', 'value', minSensorHum, maxSensorHum)
+  const checkDewpoint = checkValue(room, 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew)
+  const tempIsTooHigh = valueTooHigh(room, 'readings', 'temperature', 'value',
+    defined(room, 'ratings', 'max_temperature'))
+  const tempIsTooLow = valueTooLow(room, 'readings', 'temperature', 'value',
+    defined(room, 'ratings', 'min_temperature'))
+  const humidityIsTooHigh = valueTooHigh(room, 'readings', 'humidity', 'value', humidityLimit)
+  const dewPointIsTooHigh = dewPointTooHigh(room, 'readings', 'dewpoint', 'value')
+
   // number = 100
   // return '?' unless enough_info_to_perform_rating?
   // number -= 15 if too_cold?
@@ -156,7 +175,7 @@ function dewPointCalc (room) {
 function dewPointChecklistMsg (room) {
   const wetBulb = defined(room, 'readings', 'dewpoint', 'value')
   const dewpoint = dewPointCalc(room)
-  const check = checkValue(room, 'readings', 'dewpoint', 'value', -20, 40)
+  const check = checkValue(room, 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew)
   if (check !== '') {
     return ''
   } else if (dewpoint < wetBulb) {
@@ -166,8 +185,8 @@ function dewPointChecklistMsg (room) {
   } else { return 'Acceptable dew point' }
 }
 function humidityChecklistMsg (room) {
-  const errorMsg = checkValue(room, 'readings', 'humidity', 'value', 0, 100)
-  const check = valueTooHigh(room, 'readings', 'humidity', 'value', 70)
+  const errorMsg = checkValue(room, 'readings', 'humidity', 'value', minSensorHum, maxSensorHum)
+  const check = valueTooHigh(room, 'readings', 'humidity', 'value', humidityLimit)
   if (errorMsg !== '') {
     return ''
   } else if (check) {
@@ -175,7 +194,7 @@ function humidityChecklistMsg (room) {
   } else return 'Comfortable humidity'
 }
 function tempChecklistMsg (room) {
-  const check = checkValue(room, 'readings', 'temperature', 'value', -50, 100)
+  const check = checkValue(room, 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp)
   const valueIsTooLow = valueTooLow(room, 'readings', 'temperature', 'value',
     defined(room, 'ratings', 'min_temperature'))
   const valueIsTooHigh = valueTooHigh(room, 'readings', 'temperature', 'value',
@@ -190,11 +209,8 @@ function tempChecklistMsg (room) {
   } else if (valueIsTooHigh) {
     return 'Temperature too high'
   } return 'Comfortable room temperature'
-  // Comfortable temperature
-  // Temperature too high
-  // Way too cold for children sleeping
-  // Room is too cold
 }
+
 function childsRoom (room, att1, att2) {
   const value = defined(room, 'ratings', 'min_temperature')
   if (value === '') {
