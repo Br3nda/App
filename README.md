@@ -38,7 +38,9 @@ npm run dev
 
 ## Running the tests
 
-Test are run with Ava TODO instructions
+Tests are run with AVA. 
+```npm i``` to install AVA
+```npm run test``` to run tests
 
 ## Deployment
 TODO set up Heroku deploy
