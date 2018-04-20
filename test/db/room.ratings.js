@@ -1,8 +1,7 @@
 import test from 'ava'
 import rooms from '../../db/rooms'
 
-test.only(`test 3: if any room temperature is out of range,
-  it returns a message to check the sensor in a room`, t => {
+test.only(`test 4: returns a room grade and alertMsg`, t => {
   const testData = {
     'data': [
       {
@@ -167,13 +166,13 @@ test.only(`test 3: if any room temperature is out of range,
       'name': `Sandra's desk`,
       'roomUse': 'Office',
       'grade': '',
-      'alertMsg': ''
+      'alertMsg': `Temp sensor in Sandra's desk is not working. Wet bulb sensor in Sandra's desk is not working. Temperature in Sandra's desk is too low. Dew point in Sandra's desk is too high. `
     },
     '2': {
       'name': `Janie's room`,
       'roomUse': 'Adult bedroom',
       'grade': '',
-      'alertMsg': ''
+      'alertMsg': `Temp sensor in Janie's room is not working. Wet bulb sensor in Janie's room is not working. Temperature in Janie's room is too high. `
     },
     '3': {
       'name': `Zoe's room`,
@@ -185,25 +184,25 @@ test.only(`test 3: if any room temperature is out of range,
       'name': `Anna's room`,
       'roomUse': 'Adult bedroom',
       'grade': 'B',
-      'alertMsg': ''
+      'alertMsg': `Temperature in Anna's room is too high. `
     },
     '5': {
       'name': `Snoetshy's room`,
       'roomUse': 'Adult bedroom',
       'grade': 'D',
-      'alertMsg': ''
+      'alertMsg': `Temperature in Snoetshy's room is too low. Dew point in Snoetshy's room is too high. `
     },
     '6': {
       'name': `Elmo's room`,
       'roomUse': 'Child bedroom',
       'grade': 'C',
-      'alertMsg': ''
+      'alertMsg': `Dew point in Elmo's room is too high. `
     },
     '7': {
       'name': `Gemma's room`,
       'roomUse': 'Adult bedroom',
       'grade': 'F',
-      'alertMsg': ''
+      'alertMsg': `Dew point in Gemma's room is too high. Humidity in Gemma's room is too high.`
     }
   }
 
