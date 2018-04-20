@@ -3,14 +3,17 @@
 import Layouts from '../components/genApp/Layouts'
 import Dashboard from '../components/profile/Dashboard'
 import Menu from '../components/genApp/Menu'
-const exampleData = require('../db/exampleData.json')
+const seed = require('../db/seed.json')
+import db from '../db/rooms'
 import Link from 'next/link'
 import Header from '../components/genApp/Header'
 
 
 class dashboard extends React.Component {
   static async getInitialProps() {
+    const exampleData = db.reformatData(seed)
     const roomsData = exampleData
+    console.log('Roomdata,',roomsData);
     return { roomsData }
 }
 

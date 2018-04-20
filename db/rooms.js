@@ -17,43 +17,55 @@ function reformatData (data) {
       'updated-at': defined(room, 'attributes', 'updated-at'),
       'grade': rating(room),
       'generalMsg': generalMessage(room),
-      'alertMsg': elertMsg(room),
+      'alertMsg': alertMsg(room),
       'temperature': {
-        'value': defined(room, 'readings', 'temperature', 'value'),
-        'unit': defined(room, 'readings', 'temperature', 'unit'),
-        'timestamp': defined(room, 'readings', 'temperature', 'timestamp'),
-        'errorMsg': checkValue(room, 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp),
+        'value': defined(room, 'attributes', 'readings', 'temperature', 'value'),
+        'unit': defined(room, 'attributes', 'readings', 'temperature', 'unit'),
+        'timestamp': defined(room, 'attributes', 'readings', 'temperature', 'timestamp'),
+        'errorMsg': checkValue(room, 'attributes', 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp),
         'checklistMsg': tempChecklistMsg(room),
-        'tooLow': valueTooLow(room, 'readings', 'temperature', 'value',
-          defined(room, 'ratings', 'min_temperature')),
-        'tooHigh': valueTooHigh(room, 'readings', 'temperature', 'value',
-          defined(room, 'ratings', 'max_temperature'))
+        'tooLow': valueTooLow(room, 'attributes', 'readings', 'temperature', 'value',
+          defined(room, 'attributes', 'ratings', 'min_temperature')),
+        'tooHigh': valueTooHigh(room, 'attributes', 'readings', 'temperature', 'value',
+          defined(room, 'attributes', 'ratings', 'max_temperature'))
       },
       'humidity': {
-        'value': defined(room, 'readings', 'humidity', 'value'),
-        'unit': defined(room, 'readings', 'humidity', 'unit'),
-        'timestamp': defined(room, 'readings', 'humidity', 'timestamp'),
-        'errorMsg': checkValue(room, 'readings', 'humidity', 'value', minSensorHum, maxSensorHum),
+        'value': defined(room, 'attributes', 'readings', 'humidity', 'value'),
+        'unit': defined(room, 'attributes', 'readings', 'humidity', 'unit'),
+        'timestamp': defined(room, 'attributes', 'readings', 'humidity', 'timestamp'),
+        'errorMsg': checkValue(room, 'attributes', 'readings', 'humidity', 'value', minSensorHum, maxSensorHum),
         'checklistMsg': humidityChecklistMsg(room),
-        'tooHigh': valueTooHigh(room, 'readings', 'humidity', 'value', humidityLimit)
+        'tooHigh': valueTooHigh(room, 'attributes', 'readings', 'humidity', 'value', humidityLimit)
       },
       'dewpoint': {
-        'value': defined(room, 'readings', 'dewpoint', 'value'),
-        'unit': defined(room, 'readings', 'dewpoint', 'unit'),
-        'timestamp': defined(room, 'readings', 'dewpoint', 'timestamp'),
-        'errorMsg': checkValue(room, 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew),
+        'value': defined(room, 'attributes', 'readings', 'dewpoint', 'value'),
+        'unit': defined(room, 'attributes', 'readings', 'dewpoint', 'unit'),
+        'timestamp': defined(room, 'attributes', 'readings', 'dewpoint', 'timestamp'),
+        'errorMsg': checkValue(room, 'attributes', 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew),
         'checklistMsg': dewPointChecklistMsg(room),
-        'tooHigh': dewPointTooHigh(room, 'readings', 'dewpoint', 'value')
+        'tooHigh': dewPointTooHigh(room, 'attributes', 'readings', 'dewpoint', 'value')
       }
     }
   })
   return newFormat
 }
 
-function defined (room, att1, att2, att3) {
+function defined (room,att1, att2, att3, att4) {
   // checks is the object keys are valid and if it exists in the objects
   // return '' if it doesnt.
-  if (att1 && att2 && att3) {
+  if (room['attributes']['name']==='zGateway'){
+    return ''
+  } else if (att1 && att2 && att3 && att4 ) {
+    if (room.hasOwnProperty(att1)) {
+      if (room[att1].hasOwnProperty(att2) ) {
+        if (room[att1][att2].hasOwnProperty(att3) ) {
+          if(room[att1][att2][att3].hasOwnProperty(att4) ){
+              return room[att1][att2][att3][att4]
+          } else { return '' }
+        } else { return '' }
+      } else { return '' }
+    } else { return '' }
+  } else if (att1 && att2 && att3) {
     if (room.hasOwnProperty(att1)) {
       if (room[att1].hasOwnProperty(att2)) {
         if (room[att1][att2].hasOwnProperty(att3)) {
@@ -76,27 +88,27 @@ function defined (room, att1, att2, att3) {
   }
 }
 
-function checkValue (room, att1, att2, att3, lowerLimit, upperLimit) {
+function checkValue (room, att1, att2, att3, att4, lowerLimit, upperLimit) {
   // checks if a value is within the lower and upperLimit
   // return a message if its out of bounds and '' if not.
-  const value = defined(room, att1, att2, att3)
+  const value = defined(room, att1, att2, att3, att4)
   if (typeof value === 'string') {
     return ''
   } else {
     if (value >= lowerLimit && value <= upperLimit) {
       return ''
     } else {
-      if (att2 === 'dewpoint') {
+      if (att3 === 'dewpoint') {
         return `There is something wrong with the wet bulb sensor in ${room.attributes.name}`
       }
-      return `There is something wrong with the ${att2} sensor in ${room.attributes.name}`
+      return `There is something wrong with the ${att3} sensor in ${room.attributes.name}`
     }
   }
 }
 
-function valueTooHigh (room, att1, att2, att3, limit) {
+function valueTooHigh (room, att1, att2, att3, att4, limit) {
   // checks if a value exceeds the upper limit
-  const value = defined(room, att1, att2, att3)
+  const value = defined(room, att1, att2, att3, att4)
   if (typeof value === 'string') {
     return ''
   } else if (value >= limit) {
@@ -104,9 +116,9 @@ function valueTooHigh (room, att1, att2, att3, limit) {
   } else return false
 }
 
-function valueTooLow (room, att1, att2, att3, limit) {
+function valueTooLow (room, att1, att2, att3, att4, limit) {
   // checks if a value exceeds the lower limit
-  const value = defined(room, att1, att2, att3)
+  const value = defined(room, att1, att2, att3, att4)
   if (typeof value === 'string') {
     return ''
   } else if (value <= limit) {
@@ -116,17 +128,17 @@ function valueTooLow (room, att1, att2, att3, limit) {
 
 function rating (room) {
   let totalRating = 100
-  const checkTemp = checkValue(room, 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp)
-  const checkHum = checkValue(room, 'readings', 'humidity', 'value', minSensorHum, maxSensorHum)
-  const checkDew = checkValue(room, 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew)
-  const tempIsTooHigh = valueTooHigh(room, 'readings', 'temperature', 'value',
-    defined(room, 'ratings', 'max_temperature'))
-  const tempIsTooLow = valueTooLow(room, 'readings', 'temperature', 'value',
-    defined(room, 'ratings', 'min_temperature'))
-  const humidityIsTooHigh = valueTooHigh(room, 'readings', 'humidity', 'value', humidityLimit)
-  const dewPointIsTooHigh = dewPointTooHigh(room, 'readings', 'dewpoint', 'value')
+  const checkTemp = checkValue(room, 'attributes', 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp)
+  const checkHum = checkValue(room, 'attributes', 'readings', 'humidity', 'value', minSensorHum, maxSensorHum)
+  const checkDew = checkValue(room, 'attributes', 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew)
+  const tempIsTooHigh = valueTooHigh(room, 'attributes', 'readings', 'temperature', 'value',
+    defined(room, 'attributes', 'ratings', 'max_temperature'))
+  const tempIsTooLow = valueTooLow(room,'attributes', 'readings', 'temperature', 'value',
+    defined(room, 'attributes', 'ratings', 'min_temperature'))
+  const humidityIsTooHigh = valueTooHigh(room, 'attributes', 'readings', 'humidity', 'value', humidityLimit)
+  const dewPointIsTooHigh = dewPointTooHigh(room, 'attributes', 'readings', 'dewpoint', 'value')
   // console.log('tempIsTooLow:', tempIsTooLow, 'tempIsTooHigh:', tempIsTooHigh,
-    // 'dewPointIsTooHigh:', dewPointIsTooHigh, 'humidityIsTooHigh:', humidityIsTooHigh)
+  //   'dewPointIsTooHigh:', dewPointIsTooHigh, 'humidityIsTooHigh:', humidityIsTooHigh)
   if (!isEnoughToPerformRating(checkTemp, checkHum, checkDew)) {
     return ''
   } else {
@@ -167,8 +179,8 @@ function isEnoughToPerformRating (temp, hum, dew) {
   } else return true
 }
 
-function dewPointTooHigh (room, att1, att2, att3) {
-  const wetBulb = defined(room, att1, att2, att3)
+function dewPointTooHigh (room, att1, att2, att3, att4) {
+  const wetBulb = defined(room, att1, att2, att3, att4)
   const dewpoint = dewPointCalc(room)
   // console.log('dewpoint:', dewpoint, 'wetBulb:', wetBulb)
   if (dewpoint < wetBulb || (dewpoint - 2) < wetBulb) {
@@ -177,8 +189,8 @@ function dewPointTooHigh (room, att1, att2, att3) {
 }
 
 function dewPointCalc (room) {
-  const dryBulb = defined(room, 'readings', 'temperature', 'value')
-  const humidity = defined(room, 'readings', 'humidity', 'value')
+  const dryBulb = defined(room, 'attributes', 'readings', 'temperature', 'value')
+  const humidity = defined(room, 'attributes', 'readings', 'humidity', 'value')
   const L = Math.log(humidity / 100)
   const M = 17.27 * dryBulb
   const N = 237.3 + dryBulb
@@ -194,9 +206,9 @@ function dewPointCalc (room) {
   // D = Dewpoint in Centigrade (C) degrees
 }
 function dewPointChecklistMsg (room) {
-  const wetBulb = defined(room, 'readings', 'dewpoint', 'value')
+  const wetBulb = defined(room, 'attributes', 'readings', 'dewpoint', 'value')
   const dewpoint = dewPointCalc(room)
-  const check = checkValue(room, 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew)
+  const check = checkValue(room, 'attributes', 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew)
   if (check !== '') {
     return ''
   } else if (dewpoint < wetBulb) {
@@ -206,8 +218,8 @@ function dewPointChecklistMsg (room) {
   } else { return 'Acceptable dew point' }
 }
 function humidityChecklistMsg (room) {
-  const errorMsg = checkValue(room, 'readings', 'humidity', 'value', minSensorHum, maxSensorHum)
-  const check = valueTooHigh(room, 'readings', 'humidity', 'value', humidityLimit)
+  const errorMsg = checkValue(room, 'attributes', 'readings', 'humidity', 'value', minSensorHum, maxSensorHum)
+  const check = valueTooHigh(room, 'attributes', 'readings', 'humidity', 'value', humidityLimit)
   if (errorMsg !== '') {
     return ''
   } else if (check) {
@@ -215,12 +227,12 @@ function humidityChecklistMsg (room) {
   } else return 'Comfortable humidity'
 }
 function tempChecklistMsg (room) {
-  const check = checkValue(room, 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp)
-  const valueIsTooLow = valueTooLow(room, 'readings', 'temperature', 'value',
-    defined(room, 'ratings', 'min_temperature'))
-  const valueIsTooHigh = valueTooHigh(room, 'readings', 'temperature', 'value',
-    defined(room, 'ratings', 'max_temperature'))
-  const isChildsRoom = childsRoom(room, 'ratings', 'min_temperature')
+  const check = checkValue(room, 'attributes', 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp)
+  const valueIsTooLow = valueTooLow(room, 'attributes', 'readings', 'temperature', 'value',
+    defined(room, 'attributes', 'ratings', 'min_temperature'))
+  const valueIsTooHigh = valueTooHigh(room, 'attributes', 'readings', 'temperature', 'value',
+    defined(room, 'attributes', 'ratings', 'max_temperature'))
+  const isChildsRoom = childsRoom(room, 'attributes', 'ratings', 'min_temperature')
   if (check !== '') {
     return ''
   } else if (valueIsTooLow && isChildsRoom) {
@@ -233,7 +245,7 @@ function tempChecklistMsg (room) {
 }
 
 function childsRoom (room, att1, att2) {
-  const value = defined(room, 'ratings', 'min_temperature')
+  const value = defined(room, 'attributes', 'ratings', 'min_temperature')
   if (value === '') {
     return false
   } else if (value === 21) {
@@ -256,18 +268,18 @@ function generalMessage (room) {
   }
 }
 
-function elertMsg (room) {
+function alertMsg (room) {
   let concatMsg = ''
   const name = defined(room, 'attributes', 'name')
-  const checkTemp = checkValue(room, 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp)
-  const checkHum = checkValue(room, 'readings', 'humidity', 'value', minSensorHum, maxSensorHum)
-  const checkDew = checkValue(room, 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew)
-  const tempIsTooHigh = valueTooHigh(room, 'readings', 'temperature', 'value',
-    defined(room, 'ratings', 'max_temperature'))
-  const tempIsTooLow = valueTooLow(room, 'readings', 'temperature', 'value',
-    defined(room, 'ratings', 'min_temperature'))
-  const humidityIsTooHigh = valueTooHigh(room, 'readings', 'humidity', 'value', humidityLimit)
-  const dewPointIsTooHigh = dewPointTooHigh(room, 'readings', 'dewpoint', 'value')
+  const checkTemp = checkValue(room, 'attributes', 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp)
+  const checkHum = checkValue(room, 'attributes', 'readings', 'humidity', 'value', minSensorHum, maxSensorHum)
+  const checkDew = checkValue(room, 'attributes', 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew)
+  const tempIsTooHigh = valueTooHigh(room, 'attributes', 'readings', 'temperature', 'value',
+    defined(room, 'attributes', 'ratings', 'max_temperature'))
+  const tempIsTooLow = valueTooLow(room, 'attributes', 'readings', 'temperature', 'value',
+    defined(room, 'attributes', 'ratings', 'min_temperature'))
+  const humidityIsTooHigh = valueTooHigh(room, 'attributes', 'readings', 'humidity', 'value', humidityLimit)
+  const dewPointIsTooHigh = dewPointTooHigh(room, 'attributes', 'readings', 'dewpoint', 'value')
 
   if (checkTemp !== '') {
     concatMsg += `Temp sensor in ${name} is not working. `

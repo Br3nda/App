@@ -1,11 +1,14 @@
 import Layout from '../components/genApp/Layouts'
 import Account from '../components/profile/account/Account'
 import Menu from '../components/genApp/Menu'
-const exampleData = require('../db/exampleData.json')
+const seed = require('../db/seed.json')
+import db from '../db/rooms'
 
 class account extends React.Component {
   static async getInitialProps() {
+    const exampleData = db.reformatData(seed)
     const roomsData = exampleData
+    console.log('Roomdata,',roomsData);
     return { roomsData }
 }
 

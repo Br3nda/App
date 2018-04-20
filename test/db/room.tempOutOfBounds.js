@@ -9,21 +9,21 @@ test.only(`test 3: if any room temperature is out of range,
         'id': '1',
         'type': 'Office',
         'attributes': {
-          'name': `Sandra's desk`
-        },
-        'ratings': {
-          'min_temperature': 18.0,
-          'max_temperature': 30.0
-        },
-        'readings': {
-          'dewpoint': {
-            'value': -22.0
+          'name': `Sandra's desk`,
+          'ratings': {
+            'min_temperature': 18.0,
+            'max_temperature': 30.0
           },
-          'temperature': {
-            'value': -100.0
-          },
-          'humidity': {
-            'value': 20.0
+          'readings': {
+            'dewpoint': {
+              'value': -22.0
+            },
+            'temperature': {
+              'value': -100.0
+            },
+            'humidity': {
+              'value': 20.0
+            }
           }
         }
       },
@@ -31,21 +31,21 @@ test.only(`test 3: if any room temperature is out of range,
         'id': '2',
         'type': 'Adult bedroom',
         'attributes': {
-          'name': `Janie's room`
-        },
-        'ratings': {
-          'min_temperature': 18.0,
-          'max_temperature': 30.0
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 45.0
+          'name': `Janie's room`,
+          'ratings': {
+            'min_temperature': 18.0,
+            'max_temperature': 30.0
           },
-          'temperature': {
-            'value': 101
-          },
-          'humidity': {
-            'value': 50.0
+          'readings': {
+            'dewpoint': {
+              'value': 45.0
+            },
+            'temperature': {
+              'value': 101
+            },
+            'humidity': {
+              'value': 50.0
+            }
           }
         }
       },
@@ -53,21 +53,21 @@ test.only(`test 3: if any room temperature is out of range,
         'id': '3',
         'type': 'Child bedroom',
         'attributes': {
-          'name': `Zoe's room`
-        },
-        'ratings': {
-          'min_temperature': 21.0,
-          'max_temperature': 30.0
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 18.0
+          'name': `Zoe's room`,
+          'ratings': {
+            'min_temperature': 21.0,
+            'max_temperature': 30.0
           },
-          'temperature': {
-            'value': 22.0
-          },
-          'humidity': {
-            'value': 50.0
+          'readings': {
+            'dewpoint': {
+              'value': 18.0
+            },
+            'temperature': {
+              'value': 22.0
+            },
+            'humidity': {
+              'value': 50.0
+            }
           }
         }
       },
@@ -75,21 +75,21 @@ test.only(`test 3: if any room temperature is out of range,
         'id': '4',
         'type': 'Adult bedroom',
         'attributes': {
-          'name': `Anna's room`
-        },
-        'ratings': {
-          'min_temperature': 18.0,
-          'max_temperature': 30.0
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 14.8
+          'name': `Anna's room`,
+          'ratings': {
+            'min_temperature': 18.0,
+            'max_temperature': 30.0
           },
-          'temperature': {
-            'value': 15.0
-          },
-          'humidity': {
-            'value': 99.0
+          'readings': {
+            'dewpoint': {
+              'value': 14.8
+            },
+            'temperature': {
+              'value': 15.0
+            },
+            'humidity': {
+              'value': 99.0
+            }
           }
         }
       },
@@ -97,21 +97,21 @@ test.only(`test 3: if any room temperature is out of range,
         'id': '5',
         'type': 'Adult bedroom',
         'attributes': {
-          'name': `Snoetshy's room`
-        },
-        'ratings': {
-          'min_temperature': 18.0,
-          'max_temperature': 30.0
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 11.0
+          'name': `Snoetshy's room`,
+          'ratings': {
+            'min_temperature': 18.0,
+            'max_temperature': 30.0
           },
-          'temperature': {
-            'value': 33.0
-          },
-          'humidity': {
-            'value': 60.0
+          'readings': {
+            'dewpoint': {
+              'value': 11.0
+            },
+            'temperature': {
+              'value': 33.0
+            },
+            'humidity': {
+              'value': 60.0
+            }
           }
         }
       },
@@ -119,21 +119,21 @@ test.only(`test 3: if any room temperature is out of range,
         'id': '6',
         'type': 'Child bedroom',
         'attributes': {
-          'name': `Elmo's room`
-        },
-        'ratings': {
-          'min_temperature': 21.0,
-          'max_temperature': 30.0
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 11.0
+          'name': `Elmo's room`,
+          'ratings': {
+            'min_temperature': 21.0,
+            'max_temperature': 30.0
           },
-          'temperature': {
-            'value': 19.0
-          },
-          'humidity': {
-            'value': 60.0
+          'readings': {
+            'dewpoint': {
+              'value': 11.0
+            },
+            'temperature': {
+              'value': 19.0
+            },
+            'humidity': {
+              'value': 60.0
+            }
           }
         }
       }
