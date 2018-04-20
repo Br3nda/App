@@ -1,17 +1,17 @@
 {
   "6": {
-    "name": "Sandra's desk",
-    "roomUse": "office",
+    "name": "Zoe's desk",
+    "roomUse": "Office",
     "updated-at": "2018-04-06T02:04:45.394Z",
     "grade": "B",
-    "generalMsg": "the humidity is slightly high",
+    "generalMsg": "The humidity is slightly high",
     "alertMsg": "",
     "temperature": {
       "value": 23.5,
       "unit": "°C",
       "timestamp": "2018-04-06 02:04:45 UTC",
       "errorMsg": "",
-      "checklistMsg": "the temperature is good",
+      "checklistMsg": "The temperature is good",
       "tooLow": false,
       "tooHigh": false
     },
@@ -20,7 +20,7 @@
       "unit": "%",
       "timestamp": "2018-04-06 02:04:45 UTC",
       "errorMsg": "",
-      "checklistMsg": "humidity too high",
+      "checklistMsg": "The humidity is too high",
       "tooHigh": true
     },
     "dewpoint": {
@@ -28,7 +28,7 @@
       "unit": "°C",
       "timestamp": "2018-04-06 02:04:45 UTC",
       "errorMsg": "",
-      "checklistMsg": "the dewpoint is acceptable",
+      "checklistMsg": "The dewpoint is acceptable",
       "tooHigh": false
     }
   },
@@ -37,14 +37,14 @@
     "roomUse": "Adult bedroom",
     "updated-at": "2018-04-06T02:04:45.394Z",
     "grade": "F",
-    "generalMsg": "temperature is too low",
+    "generalMsg": "The temperature is too low",
     "alertMsg": "Janie's Room temperature is TOO LOW",
     "temperature": {
       "value": 14.0,
       "unit": "°C",
       "timestamp": "2018-03-06 02:04:45 UTC",
       "errorMsg": "",
-      "checklistMsg": "the temperature is too low",
+      "checklistMsg": "The temperature is too low",
       "tooLow": true,
       "tooHigh": false
     },

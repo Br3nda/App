@@ -1,7 +1,7 @@
 {
-  "short_name" : "App",
+  "short_name" : "WhareHauoraApp",
   "name" : "Whare Hauora App",
-  "start_url": "pages/account.js",
+  "start_url": "/account",
   "icons": [{
     "src": "./img/icon/icon.png",
     "type": "image/png",
@@ -19,5 +19,6 @@
     "type": "image/png",
     "sizes": "192x192"
   }],
+  "background_color": "#abcc75",
   "display": "standalone"
 }

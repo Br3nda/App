@@ -1,3 +1,5 @@
+// NOTE: service worker and push manager commented out
+
 const express = require('express')
 const bodyParser = require('body-parser')
 // const compression = require('compression')
@@ -6,7 +8,6 @@ const { parse } = require('url')
 const next = require('next')
 const dotenv = require('dotenv').config()
 // const workboxBuild = require('workbox-build')
-
 
 const router = require('express').Router()
 module.exports = router
@@ -32,10 +33,10 @@ app.prepare().then(() => {
   const server = express()
   server.use(bodyParser.json())
 
-  server.get('/service-worker.js', (req, res) => {
-    res.setHeader('content-type', 'text/javascript')
-    createReadStream('./service-worker.js').pipe(res)
-  })
+  // server.get('/service-worker.js', (req, res) => {
+  //   res.setHeader('content-type', 'text/javascript')
+  //   createReadStream('./service-worker.js').pipe(res)
+  // })
 
 // give all Nextjs's request to Nextjs before anything else
   server.get('/_next/*', (req, res) => {
@@ -46,31 +47,31 @@ app.prepare().then(() => {
     handle(req, res)
   })
 
-  webpush.setVapidDetails(
-  'mailto:meghan@manu.net.nz',
-  process.env.PUBLIC_VAPID_KEY,
-  process.env.PRIVATE_VAPID_KEY
-)
+//   webpush.setVapidDetails(
+//   'mailto:meghan@manu.net.nz',
+//   process.env.PUBLIC_VAPID_KEY,
+//   process.env.PRIVATE_VAPID_KEY
+// )
 
   let subscription
   let pushIntervalID
 
-  server.post('/register', (req, res) => {
-    subscription = req.body
-    console.log(subscription)
-    res.sendStatus(201)
-    pushIntervalID = setInterval(() => {
-      // sendNotification can only take a string as it's second parameter
-      webpush.sendNotification(subscription, JSON.stringify(testData))
-        .catch(() => clearInterval(pushIntervalID))
-    }, 30000)
-  })
-
-  server.delete('/unregister', (req, res, next) => {
-    subscription = null
-    clearInterval(pushIntervalID)
-    res.sendStatus(200)
-  })
+  // server.post('/register', (req, res) => {
+  //   subscription = req.body
+  //   console.log(subscription)
+  //   res.sendStatus(201)
+  //   pushIntervalID = setInterval(() => {
+  //     // sendNotification can only take a string as it's second parameter
+  //     webpush.sendNotification(subscription, JSON.stringify(testData))
+  //       .catch(() => clearInterval(pushIntervalID))
+  //   }, 30000)
+  // })
+  //
+  // server.delete('/unregister', (req, res, next) => {
+  //   subscription = null
+  //   clearInterval(pushIntervalID)
+  //   res.sendStatus(200)
+  // })
 
   server.get('*', (req, res) => {
     const url = URL_MAP[req.path]
