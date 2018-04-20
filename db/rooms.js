@@ -257,7 +257,43 @@ function generalMessage (room) {
 }
 
 function elertMsg (room) {
-  return 'hello'
+  let concatMsg = ''
+  const name = defined(room, 'attributes', 'name')
+  const checkTemp = checkValue(room, 'readings', 'temperature', 'value', minSensorTemp, maxSensorTemp)
+  const checkHum = checkValue(room, 'readings', 'humidity', 'value', minSensorHum, maxSensorHum)
+  const checkDew = checkValue(room, 'readings', 'dewpoint', 'value', minSensorDew, maxSensorDew)
+  const tempIsTooHigh = valueTooHigh(room, 'readings', 'temperature', 'value',
+    defined(room, 'ratings', 'max_temperature'))
+  const tempIsTooLow = valueTooLow(room, 'readings', 'temperature', 'value',
+    defined(room, 'ratings', 'min_temperature'))
+  const humidityIsTooHigh = valueTooHigh(room, 'readings', 'humidity', 'value', humidityLimit)
+  const dewPointIsTooHigh = dewPointTooHigh(room, 'readings', 'dewpoint', 'value')
+
+  if (checkTemp !== '') {
+    concatMsg += `Temp sensor in ${name} is not working. `
+  }
+  if (checkHum !== '') {
+    concatMsg += `Humidity sensor in ${name} is not working. `
+  }
+  if (checkDew !== '') {
+    concatMsg += `Wet bulb sensor in ${name} is not working. `
+  }
+  if (tempIsTooLow) {
+    concatMsg += `Temperature in ${name} is too low. `
+  }
+  if (tempIsTooHigh) {
+    concatMsg += `Temperature in ${name} is too high. `
+  }
+  if (dewPointIsTooHigh) {
+    concatMsg += `Dew point in ${name} is too high. `
+  }
+  if (humidityIsTooHigh) {
+    concatMsg += `Humidity in ${name} is too high.`
+  }
+  if (concatMsg === '') {
+    console.log('CONCAT MSG,', concatMsg)
+    return ''
+  } else return concatMsg
 }
 
 // number = 100
