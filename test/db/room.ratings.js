@@ -8,21 +8,21 @@ test.only(`test 4: returns a room grade and alertMsg`, t => {
         'id': '1',
         'type': 'Office',
         'attributes': {
-          'name': `Sandra's desk`
-        },
-        'ratings': {
-          'min_temperature': 18.0,
-          'max_temperature': 30.0
-        },
-        'readings': {
-          'dewpoint': {
-            'value': -22.0
+          'name': `Sandra's desk`,
+          'ratings': {
+            'min_temperature': 18.0,
+            'max_temperature': 30.0
           },
-          'temperature': {
-            'value': -100.0
-          },
-          'humidity': {
-            'value': 20.0
+          'readings': {
+            'dewpoint': {
+              'value': -22.0
+            },
+            'temperature': {
+              'value': -100.0
+            },
+            'humidity': {
+              'value': 20.0
+            }
           }
         }
       },
@@ -30,21 +30,21 @@ test.only(`test 4: returns a room grade and alertMsg`, t => {
         'id': '2',
         'type': 'Adult bedroom',
         'attributes': {
-          'name': `Janie's room`
-        },
-        'ratings': {
-          'min_temperature': 18.0,
-          'max_temperature': 30.0
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 45.0
+          'name': `Janie's room`,
+          'ratings': {
+            'min_temperature': 18.0,
+            'max_temperature': 30.0
           },
-          'temperature': {
-            'value': 101
-          },
-          'humidity': {
-            'value': 50.0
+          'readings': {
+            'dewpoint': {
+              'value': 45.0
+            },
+            'temperature': {
+              'value': 101
+            },
+            'humidity': {
+              'value': 50.0
+            }
           }
         }
       },
@@ -52,21 +52,21 @@ test.only(`test 4: returns a room grade and alertMsg`, t => {
         'id': '3',
         'type': 'Child bedroom',
         'attributes': {
-          'name': `Zoe's room`
-        },
-        'ratings': {
-          'min_temperature': 21.0,
-          'max_temperature': 30.0
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 11
+          'name': `Zoe's room`,
+          'ratings': {
+            'min_temperature': 21.0,
+            'max_temperature': 30.0
           },
-          'temperature': {
-            'value': 25.0
-          },
-          'humidity': {
-            'value': 50.0
+          'readings': {
+            'dewpoint': {
+              'value': 11
+            },
+            'temperature': {
+              'value': 25.0
+            },
+            'humidity': {
+              'value': 50.0
+            }
           }
         }
       },
@@ -74,21 +74,21 @@ test.only(`test 4: returns a room grade and alertMsg`, t => {
         'id': '4',
         'type': 'Adult bedroom',
         'attributes': {
-          'name': `Anna's room`
-        },
-        'ratings': {
-          'min_temperature': 18.0,
-          'max_temperature': 30.0
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 11.0
+          'name': `Anna's room`,
+          'ratings': {
+            'min_temperature': 18.0,
+            'max_temperature': 30.0
           },
-          'temperature': {
-            'value': 33.0
-          },
-          'humidity': {
-            'value': 60.0
+          'readings': {
+            'dewpoint': {
+              'value': 11.0
+            },
+            'temperature': {
+              'value': 33.0
+            },
+            'humidity': {
+              'value': 60.0
+            }
           }
         }
       },
@@ -96,21 +96,21 @@ test.only(`test 4: returns a room grade and alertMsg`, t => {
         'id': '5',
         'type': 'Adult bedroom',
         'attributes': {
-          'name': `Snoetshy's room`
-        },
-        'ratings': {
-          'min_temperature': 18.0,
-          'max_temperature': 30.0
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 11.0
+          'name': `Snoetshy's room`,
+          'ratings': {
+            'min_temperature': 18.0,
+            'max_temperature': 30.0
           },
-          'temperature': {
-            'value': 18.0
-          },
-          'humidity': {
-            'value': 60.0
+          'readings': {
+            'dewpoint': {
+              'value': 11.0
+            },
+            'temperature': {
+              'value': 18.0
+            },
+            'humidity': {
+              'value': 60.0
+            }
           }
         }
       },
@@ -118,43 +118,43 @@ test.only(`test 4: returns a room grade and alertMsg`, t => {
         'id': '6',
         'type': 'Child bedroom',
         'attributes': {
-          'name': `Elmo's room`
-        },
-        'ratings': {
-          'min_temperature': 21.0,
-          'max_temperature': 30.0
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 5.36
+          'name': `Elmo's room`,
+          'ratings': {
+            'min_temperature': 21.0,
+            'max_temperature': 30.0
           },
-          'temperature': {
-            'value': 24.0
-          },
-          'humidity': {
-            'value': 30.0
+          'readings': {
+            'dewpoint': {
+              'value': 5.36
+            },
+            'temperature': {
+              'value': 24.0
+            },
+            'humidity': {
+              'value': 30.0
+            }
           }
-        }
+        },
       },
       {
         'id': '7',
         'type': 'Adult bedroom',
         'attributes': {
-          'name': `Gemma's room`
-        },
-        'ratings': {
-          'min_temperature': 18.0,
-          'max_temperature': 30.0
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 15.47
+          'name': `Gemma's room`,
+          'ratings': {
+            'min_temperature': 18.0,
+            'max_temperature': 30.0
           },
-          'temperature': {
-            'value': 19.0
-          },
-          'humidity': {
-            'value': 80.0
+          'readings': {
+            'dewpoint': {
+              'value': 15.47
+            },
+            'temperature': {
+              'value': 19.0
+            },
+            'humidity': {
+              'value': 80.0
+            }
           }
         }
       }

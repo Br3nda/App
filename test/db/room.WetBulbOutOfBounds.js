@@ -9,17 +9,17 @@ test(`test 2: if any room wetbulb temp is out of range,
         'id': '1',
         'type': 'Office',
         'attributes': {
-          'name': `Sandra's desk`
-        },
-        'readings': {
-          'dewpoint': {
-            'value': -22.0
-          },
-          'temperature': {
-            'value': 23.5
-          },
-          'humidity': {
-            'value': 20.0
+          'name': `Sandra's desk`,
+          'readings': {
+            'dewpoint': {
+              'value': -22.0
+            },
+            'temperature': {
+              'value': 23.5
+            },
+            'humidity': {
+              'value': 20.0
+            }
           }
         }
       },
@@ -27,17 +27,17 @@ test(`test 2: if any room wetbulb temp is out of range,
         'id': '2',
         'type': 'Adult bedroom',
         'attributes': {
-          'name': `Janie's room`
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 45.0
-          },
-          'temperature': {
-            'value': 40.0
-          },
-          'humidity': {
-            'value': 50.0
+          'name': `Janie's room`,
+          'readings': {
+            'dewpoint': {
+              'value': 45.0
+            },
+            'temperature': {
+              'value': 40.0
+            },
+            'humidity': {
+              'value': 50.0
+            }
           }
         }
       },
@@ -45,17 +45,17 @@ test(`test 2: if any room wetbulb temp is out of range,
         'id': '3',
         'type': 'Child bedroom',
         'attributes': {
-          'name': `Zoe's room`
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 22.0
-          },
-          'temperature': {
-            'value': 40.0
-          },
-          'humidity': {
-            'value': 50.0
+          'name': `Zoe's room`,
+          'readings': {
+            'dewpoint': {
+              'value': 22.0
+            },
+            'temperature': {
+              'value': 40.0
+            },
+            'humidity': {
+              'value': 50.0
+            }
           }
         }
       },
@@ -63,17 +63,17 @@ test(`test 2: if any room wetbulb temp is out of range,
         'id': '4',
         'type': 'Adult bedroom',
         'attributes': {
-          'name': `Casper's Room`
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 14.8
-          },
-          'temperature': {
-            'value': 15.0
-          },
-          'humidity': {
-            'value': 99.0
+          'name': `Casper's Room`,
+          'readings': {
+            'dewpoint': {
+              'value': 14.8
+            },
+            'temperature': {
+              'value': 15.0
+            },
+            'humidity': {
+              'value': 99.0
+            }
           }
         }
       },
@@ -81,17 +81,17 @@ test(`test 2: if any room wetbulb temp is out of range,
         'id': '5',
         'type': 'Child bedroom',
         'attributes': {
-          'name': `Snoetshy's Room`
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 10.7
-          },
-          'temperature': {
-            'value': 16.0
-          },
-          'humidity': {
-            'value': 70.0
+          'name': `Snoetshy's Room`,
+          'readings': {
+            'dewpoint': {
+              'value': 10.7
+            },
+            'temperature': {
+              'value': 16.0
+            },
+            'humidity': {
+              'value': 70.0
+            }
           }
         }
       },
@@ -99,17 +99,17 @@ test(`test 2: if any room wetbulb temp is out of range,
         'id': '6',
         'type': 'Adult bedroom',
         'attributes': {
-          'name': `Adrea's Room`
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 11.0
-          },
-          'temperature': {
-            'value': 19.0
-          },
-          'humidity': {
-            'value': 60.0
+          'name': `Adrea's Room`,
+          'readings': {
+            'dewpoint': {
+              'value': 11.0
+            },
+            'temperature': {
+              'value': 19.0
+            },
+            'humidity': {
+              'value': 60.0
+            }
           }
         }
       },
@@ -117,17 +117,17 @@ test(`test 2: if any room wetbulb temp is out of range,
         'id': '7',
         'type': 'Adult bedroom',
         'attributes': {
-          'name': `Joann's Room`
-        },
-        'readings': {
-          'dewpoint': {
-            'value': 11.6
-          },
-          'temperature': {
-            'value': 21.0
-          },
-          'humidity': {
-            'value': 55.0
+          'name': `Joann's Room`,
+          'readings': {
+            'dewpoint': {
+              'value': 11.6
+            },
+            'temperature': {
+              'value': 21.0
+            },
+            'humidity': {
+              'value': 55.0
+            }
           }
         }
       }
@@ -220,12 +220,12 @@ test(`test 2: if any room wetbulb temp is out of range,
       if (typeof expected[id][key] === 'object') {
         const readings = Object.keys(expected[id][key])
         readings.map(reading => {
-          // console.log(value[id][key][reading], ' = ', expected[id][key][reading])
+          console.log(value[id][key][reading], ' = ', expected[id][key][reading])
           t.is(value[id][key][reading], expected[id][key][reading], 'returns ' + reading)
         })
         // else test the values
       } else {
-        // console.log(value[id][key], ' = ', expected[id][key])
+        console.log(value[id][key], ' = ', expected[id][key])
         t.is(value[id][key], expected[id][key], 'returns ' + key)
       }
     })
