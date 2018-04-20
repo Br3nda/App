@@ -58,10 +58,7 @@ class RoomsList extends React.Component {
           <table className='mob-break'>
             {mapRoomsToValues(this.props.roomsData)}
           </table>
-          <button className='btn-add append-table open-modal' onClick={this.handleChange} data-mfp-src='#new-room'><img className='svg' src='../../../static/img/icon/btn-add.svg' alt='icon' />Add room</button>
-          {
-            (this.state.addRoom ? <AddRoomModal /> :  null)
-          }
+          <a className='btn-add append-table open-modal' onClick={this.handleChange} data-mfp-src='#new-room'><img className='svg' src='../../../static/img/icon/btn-add.svg' alt='icon' />Add room</a>
         </section>
       </div>
     )
@@ -69,5 +66,8 @@ class RoomsList extends React.Component {
 }
 
 export default RoomsList
+// {
+//   (this.state.addRoom ? <AddRoomModal /> :  null)
+// }
 
 // <AddRoomModal />
