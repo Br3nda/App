@@ -10,7 +10,7 @@ With this information we hope to empower and educate residents on how they can m
 
 ## Deployed production version
 
-You can check out the state of the PWA [here](https://whare-hauora-tqqtijywdg.now.sh/). NOTE: the service workers and push manager registration are set up and working, but they have been commented out for the duration of development. This means some main features of a PWA - being prompted to add a shortcut to your homescreen and get push notifications - are not active on this deploy. Coding with active service workers is hard work! Instructions on how to activate the service workers are found in the files ``server.js`` ``service-worker.js`` ``Dashboard.js``.
+You can check out the state of the PWA [here](https://whare-hauora-wjtgrymhmu.now.sh). NOTE: the service workers and push manager registration are set up and working, but they have been commented out for the duration of development. This means some main features of a PWA - being prompted to add a shortcut to your homescreen and get push notifications - are not active on this deploy. Coding with active service workers is hard work! Instructions on how to activate the service workers are found in the files ``server.js`` ``service-worker.js`` ``Dashboard.js``.
 
 ## Stack overview
 
